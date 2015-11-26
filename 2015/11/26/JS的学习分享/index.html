@@ -9,13 +9,13 @@
     
     <meta name="author" content="左手">
     
-    <meta name="description" content="一、js引入方式:
+    <meta name="description" content="#一、js引入方式:
     &amp;lt;script type=“text/javascript”&amp;gt;
 alert(“javascript”);弹出一个信息窗口，它是一个函数
 &amp;lt;/script&amp;gt;
 
 &amp;lt;script type=“text/javascript” src=“js/
-in">
+i">
     
     
     
@@ -284,7 +284,7 @@ in">
     </p>
   <p class="article-time">
     <time datetime="2015-11-26T07:38:28.000Z" itemprop="datePublished">2015-11-26</time>
-    更新日期:<time datetime="2015-11-26T08:50:20.000Z" itemprop="dateModified">2015-11-26</time>
+    更新日期:<time datetime="2015-11-26T09:42:57.000Z" itemprop="dateModified">2015-11-26</time>
     
   </p>
 </header>
@@ -296,7 +296,7 @@ in">
 		
 		</div>
 		
-		<p>一、js引入方式:</p>
+		<p>#一、js引入方式:</p>
 <pre><code>    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">“text</span>/<span class="attribute">javascript</span>”&gt;</span><span class="undefined">
 alert(“javascript”);弹出一个信息窗口，它是一个函数
 </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
@@ -322,39 +322,29 @@ alert(“javascript”);弹出一个信息窗口，它是一个函数
     script外部引入<span class="tag">&lt;<span class="title">最常用</span>&gt;</span>；
     script内部引入<span class="tag">&lt;<span class="title">不建议常用</span>&gt;</span>；
     script行间样式。
-</code></pre><p>输出方式：</p>
-<pre><code>document.write();<span class="comment">//往html里输出；&lt;不常用,会覆盖HTML&gt;</span>
-
-当页面加载完成后，使用document.write 会覆盖HTML的内容。
-
-alert();<span class="comment">//在浏览器窗口弹出，缺点效果明显，不易调试。&lt;不常</span>
-用,太流氓&gt;
-案例：alert(“<span class="number">123456</span>”)会在页面弹出
-
-console.<span class="built_in">log</span>();<span class="comment">//往控制台里输出，需要调出控制台，方便调</span>
-试。可以多个同时输出。&lt;最常用&gt;
-案例：console.<span class="built_in">log</span>(“<span class="number">211433</span>”,”<span class="number">123244</span>”)在调试台弹出
-</code></pre><p>语法:</p>
-<pre><code>对大小写敏感，要区分大小写
-
-命名第一个字必须为字母、下划线、或美元符号。推荐驼峰式命名
-
-单行注释：//
-双行注释：/<span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>/
-</code></pre><p>关键字:<br>有特定作用的关键字，不能用作标识符</p>
-<pre><code>ECMAScript全部关键字
-<span class="keyword">break</span> ,<span class="keyword">else</span>, <span class="keyword">new</span>, <span class="keyword">var</span>,
-<span class="keyword">case</span>, <span class="keyword">finally</span>, <span class="keyword">return</span>, <span class="literal">void</span>
-<span class="keyword">catch</span>, <span class="keyword">for</span> ,<span class="keyword">switch</span>, <span class="keyword">while</span>,
-<span class="keyword">continue</span>, <span class="keyword">function</span> ,<span class="keyword">this</span> ,<span class="keyword">with</span>,
-<span class="keyword">default</span>, <span class="keyword">if</span> ,<span class="keyword">throw</span>, 
-<span class="keyword">delete</span>, <span class="keyword">in</span>, <span class="keyword">try</span>, <span class="keyword">debugger</span>是es6新增关键字
-<span class="keyword">do</span> ,<span class="keyword">instanceof</span> ,<span class="keyword">typeof</span>,
-</code></pre><p>保留字：<br>目前没有特定作用，以后会成为关键词。不能用作标识符</p>
-<pre><code><span class="keyword">abstract</span>, double, goto, native, static, 
-boolean, <span class="class"><span class="keyword">enum</span>, <span class="title">implements</span>, <span class="title">package</span>, <span class="title">super</span>.</span>
-</code></pre><p>二、var关键字 </p>
-<p>作用声明变量用的</p>
+</code></pre><ul>
+<li><p>输出方式：</p>
+<p>  document.write();//往html里输出；&lt;不常用,会覆盖HTML&gt;</p>
+<p>  当页面加载完成后，使用document.write 会覆盖HTML的内容。</p>
+<p>  alert();//在浏览器窗口弹出，缺点效果明显，不易调试。&lt;不常<br>  用,太流氓&gt;<br>  案例：alert(“123456”)会在页面弹出</p>
+<p>  console.log();//往控制台里输出，需要调出控制台，方便调<br>  试。可以多个同时输出。&lt;最常用&gt;<br>  案例：console.log(“211433”,”123244”)在调试台弹出</p>
+</li>
+<li><p>语法:</p>
+<p>  对大小写敏感，要区分大小写</p>
+<p>  命名第一个字必须为字母、下划线、或美元符号。推荐驼峰式命名</p>
+<p>  单行注释：//<br>  双行注释：/<em>**</em>/</p>
+</li>
+<li><p>关键字:<br>有特定作用的关键字，不能用作标识符</p>
+<p>  ECMAScript全部关键字<br>  break ,else, new, var,<br>  case, finally, return, void<br>  catch, for ,switch, while,<br>  continue, function ,this ,with,<br>  default, if ,throw,<br>  delete, in, try, debugger是es6新增关键字<br>  do ,instanceof ,typeof,</p>
+</li>
+<li><p>保留字：<br>目前没有特定作用，以后会成为关键词。不能用作标识符</p>
+<p>  abstract, double, goto, native, static,<br>  boolean, enum, implements, package, super.</p>
+</li>
+</ul>
+<p>#二、var关键字 </p>
+<ul>
+<li>作用声明变量用的</li>
+</ul>
 <p>什么是变量？</p>
 <pre><code>保存信息或数据用的。
 
@@ -376,7 +366,7 @@ boolean, <span class="class"><span class="keyword">enum</span>, <span class="tit
 
 console.log(girls);<span class="comment">//调用变量，不能用引号！！！</span>
 </code></pre><p>总结：1.所有的变量最好都用var声明<br>     2.变量名采用驼峰样式<br>     3.var声明的变量，没有值的情况下，默认值是undefined<br>     4.全局变量不推荐使用</p>
-<p>三、javascript的数据类型：</p>
+<p>#三、javascript的数据类型：</p>
 <p>为了方便我们知道 我们保存的是什么东西！</p>
 <p>五种基础数据类型：</p>
 <ol>
@@ -414,21 +404,23 @@ console.log(girls);<span class="comment">//调用变量，不能用引号！！�
 <pre><code>案例<span class="keyword">var</span> str2;
 </code></pre></li>
 </ol>
-<p>1种复杂的数据类型：</p>
-<pre><code><span class="built_in">Object</span> 对象类型 如果这个值是对象或<span class="keyword">null</span>
-
-案例<span class="keyword">var</span> obj = { }
-</code></pre><p>Array 数组</p>
-<pre><code>案例var arr = [ ]; arr = [<span class="number">1</span>,<span class="number">2</span>，<span class="number">3</span>]数组,下面对应的都有数
-字，从<span class="number">0</span>开始; u = arr[<span class="number">1</span>]
-有长度属性还有push（有序的插入）方法
-</code></pre><p>Function 函数 </p>
-<pre><code>如果这个值是函数
-案例<span class="keyword">var</span> fu = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
-}
-</code></pre><p>= 赋值</p>
-<p>== 比较 是否相等</p>
-<p>四、</p>
+<ul>
+<li><p>1种复杂的数据类型：</p>
+<p>  Object 对象类型 如果这个值是对象或null</p>
+<p>  案例var obj = { }</p>
+</li>
+<li><p>Array 数组</p>
+<p>  案例var arr = [ ]; arr = [1,2，3]数组,下面对应的都有数<br>  字，从0开始; u = arr[1]<br>  有长度属性还有push（有序的插入）方法</p>
+</li>
+<li><p>Function 函数 </p>
+<p>  如果这个值是函数<br>  案例var fu = function(){<br>  }</p>
+</li>
+<li><p>= 赋值</p>
+</li>
+<li><p>== 比较 是否相等</p>
+</li>
+</ul>
+<p>#四、</p>
 <ol>
 <li><p>Number提取数值的方法&lt;不推荐使用&gt;</p>
 <p> var num1 = “123aaa”;一旦有字符转换为NaN<br> var num2 =“123”;纯数字串可以转换成数字<br> var num3 = “3.1415926”;</p>
@@ -445,11 +437,12 @@ console.log(girls);<span class="comment">//调用变量，不能用引号！！�
 <span class="variable"><span class="keyword">var</span> num3</span> = “<span class="number">3.1415926</span>”;
 </code></pre><p>console.log (parseInt(num1，10));  // 后面的10表示十进制<br>console.log (parseInt(num1));  //后面没有进制</p>
 <p>console.log (isNaN(num1));  //isNaN判断是否为数值，是不是”非数“，是的话输出true,不是输出false</p>
-<p>string:”或者”</p>
-<pre><code><span class="built_in">string</span>（）可以用于任何类型，转换成字符串类型
-用于，数值、布尔、对象、字符串操作：
-toString();<span class="literal">null</span>和<span class="literal">undefined</span>
-</code></pre><p>五、运算符</p>
+<ul>
+<li><p>string:”或者”</p>
+<p>  string（）可以用于任何类型，转换成字符串类型<br>  用于，数值、布尔、对象、字符串操作：<br>  toString();null和undefined</p>
+</li>
+</ul>
+<p>#五、运算符</p>
 <pre><code><span class="comment">一元运算符：</span>
 <span class="literal">+</span><span class="literal">+</span><span class="comment">递增</span>  
 <span class="comment">——递减</span>
@@ -492,11 +485,15 @@ lists[lists[i].index].style.backgroundColor =
     ‘red’;<span class="comment">//执行red</span>
 }
 }
-</code></pre><p>获取id节点：<br>           document.getElementById(“id名”);<br>           document.getElementsByClassName(“id名”);<br>          document.getElementsByTagName(“id名”);</p>
-<pre><code><span class="built_in">document</span>.<span class="built_in">querySelector</span>(“id名”);<span class="comment">//获取一个标签元素</span>
-<span class="built_in">document</span>.<span class="built_in">querySelectorAll</span>(“id名”);<span class="comment">//获取一组标签元素</span>
-obj.style.cssName = value;
-</code></pre><ol>
+</code></pre><ul>
+<li><p>获取id节点：</p>
+<pre><code> document.getElementById(“<span class="property">id</span>名”);
+ document.getElementsByClassName(“<span class="property">id</span>名”);
+document.getElementsByTagName(“<span class="property">id</span>名”);
+</code></pre><p>   document.querySelector(“id名”);//获取一个标签元素<br>   document.querySelectorAll(“id名”);//获取一组标签元素<br>   obj.style.cssName = value;</p>
+</li>
+</ul>
+<ol>
 <li><p>js文件位置引用</p>
 </li>
 <li><p>querySelector(“body div”);选择一个元素 所有div中第一个div</p>
@@ -506,74 +503,72 @@ obj.style.cssName = value;
 <li><p>var box = document.querySelector(“#xxx”);</p>
 </li>
 </ol>
-<p>六、点击事件：onclick</p>
-<p>鼠标移入 onmouseover<br>       移出 onmouseout </p>
-<p>id起名要加“# ”</p>
-<p>事件的基础写法</p>
-<pre><code> box.onclick = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
- alert(<span class="string">"dhhfhjdfk"</span>);
- }
-
-box.onmoseout = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
-alert(<span class="string">"dhhfhjdfk"</span>);
- }
-</code></pre><p>innerHTML</p>
-<pre><code><span class="keyword">var</span> text = <span class="built_in">document</span>.querySelector(<span class="string">".text"</span>);
-<span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">".btn"</span>);
-btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-div.innerHTML = “kkkk”; div标签赋予新的内容；
-}
-</code></pre><p>字符串</p>
+<p>#六、点击事件：onclick</p>
+<ul>
+<li><p>鼠标移入 onmouseover </p>
+<pre><code>移出 onmouseout 
+</code></pre></li>
+<li><p>id起名要加“# ”</p>
+</li>
+</ul>
+<ol>
+<li><p>事件的基础写法</p>
+<p>  box.onclick = function(){<br>  alert(“dhhfhjdfk”);<br>  }</p>
+<p> box.onmoseout = function(){<br> alert(“dhhfhjdfk”);<br>  }</p>
+</li>
+<li><p>innerHTML</p>
+<p> var text = document.querySelector(“.text”);<br> var btn = document.querySelector(“.btn”);<br> btn.onclick = function(){<br> div.innerHTML = “kkkk”; div标签赋予新的内容；<br> }</p>
+</li>
+</ol>
+<p>字符串</p>
 <pre><code>不用+链接的是字符串
 用+链接的是变量
 属性一定要用引号引起来
 </code></pre><p>字符串的拼接规则，外面双引号，里面的话就用单引号；外面是单引号，里面就用双引号。</p>
-<p>七、for循环</p>
-<p>var i = 0 变量归零<br>for(var i = 0 ; i &lt; btns.length ; i++){<br>    console.log(i)<br>}</p>
-<pre><code><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;btns.length;i++){
-btns[i].index = i;
-<span class="comment">// index是用来表示li是第几个</span>
-<span class="comment">// 在方法外面i的值是0、1、2、3、4、5，存放于btns[i]数组中</span>
-<span class="comment">// console.log(btns[i].index);</span>
-btns[i].onmouseover = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
-    <span class="comment">// 在方法中i等于length</span>
-    <span class="comment">// console.log(i);</span>
+<p>#七、for循环</p>
+<ul>
+<li><p>var i = 0 变量归零<br>for(var i = 0 ; i &lt; btns.length ; i++){<br>  console.log(i)<br>}</p>
+<p>  for(var i = 0;i&lt;btns.length;i++){<br>  btns[i].index = i;<br>  // index是用来表示li是第几个<br>  // 在方法外面i的值是0、1、2、3、4、5，存放于btns[i]数组中<br>  // console.log(btns[i].index);<br>  btns[i].onmouseover = function(){</p>
+<pre><code><span class="comment">// 在方法中i等于length</span>
+<span class="comment">// console.log(i);</span>
 
-    <span class="comment">// 第一种方法使按钮只有一个变色</span>
-    <span class="comment">// for(var j = 0;j&lt;btns.length;j++){</span>
-    <span class="comment">//     btns[j].style.backgroundColor = "gray";</span>
-    <span class="comment">// }</span>
-    <span class="comment">// this.style.backgroundColor = "green";</span>
+<span class="comment">// 第一种方法使按钮只有一个变色</span>
+<span class="comment">// for(var j = 0;j&lt;btns.length;j++){</span>
+<span class="comment">//     btns[j].style.backgroundColor = "gray";</span>
+<span class="comment">// }</span>
+<span class="comment">// this.style.backgroundColor = "green";</span>
 
-    <span class="comment">// 第二种方法使按钮只有一个变色</span>
-    <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>;j&lt;btns.length;j++){
-        btns[j].className = <span class="string">""</span>;
-    }
-    <span class="keyword">if</span>(this.className == “<span class="string">"){       如果它没有名字，
-        this.className = “sp"</span>;         那么它就叫sp,
-    }<span class="keyword">else</span>{                             否则
-        this.className = “<span class="string">";            它就没名字  
-    }
-    pic.style.marginLeft = "</span>-<span class="string">" + 800*this.index + "</span>px<span class="string">";
+<span class="comment">// 第二种方法使按钮只有一个变色</span>
+<span class="keyword">for</span>(var j = <span class="number">0</span>;j&lt;btns.length;j++){
+    btns[j].className = <span class="string">""</span>;
 }
-}</span>
-</code></pre><p>用for循环做大小对比</p>
-<p>最大对比：</p>
-<pre><code>var arr=[-<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">8</span>];<span class="comment">//从0开始对应共7个数</span>
-var num=<span class="number">0</span>;
-<span class="keyword">for</span>(var i = <span class="number">0</span>;i&lt;arr.length;i++){
-    <span class="keyword">if</span>(arr[i]&gt;num){           <span class="comment">//开始对比-1小于0所以不显示，3大于1所以显示，2不大于2所以不显示</span>
-        num=arr[i]；
-    }
+<span class="keyword">if</span>(<span class="keyword">this</span>.className == “<span class="string">"){       如果它没有名字，
+    this.className = “sp"</span>;         那么它就叫sp,
+}<span class="keyword">else</span>{                             否则
+    <span class="keyword">this</span>.className = “<span class="string">";            它就没名字  
 }
-</code></pre><p>最小对比：</p>
-<pre><code><span class="keyword">var</span> <span class="built_in">min</span>=arr[-<span class="number">1</span>];<span class="comment">//从arr里面选出任意一个数值，最好是第一个</span>
-<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++){
-    <span class="keyword">if</span>(arr[i]&lt;<span class="built_in">min</span>){
-        <span class="built_in">min</span>=arr[i]；
-    }
+pic.style.marginLeft = "</span>-<span class="string">" + 800*this.index + "</span>px<span class="string">";</span>
+</code></pre><p>  }<br>  }</p>
+</li>
+</ul>
+<p>用for循环做大小对比</p>
+<ul>
+<li><p>最大对比：</p>
+<p>  var arr=[-1,3,2,4,6,1,8];//从0开始对应共7个数<br>  var num=0;<br>  for(var i = 0;i&lt;arr.length;i++){</p>
+<pre><code><span class="keyword">if</span>(arr[i]&gt;<span class="built_in">num</span>){           <span class="comment">//开始对比-1小于0所以不显示，3大于1所以显示，2不大于2所以不显示</span>
+    <span class="built_in">num</span>=arr[i]；
 }
-</code></pre><p>八、逻辑与或非：</p>
+</code></pre><p>  }</p>
+</li>
+<li><p>最小对比：</p>
+<p>  var min=arr[-1];//从arr里面选出任意一个数值，最好是第一个<br>  for(var i=0;i&lt;arr.length;i++){</p>
+<pre><code><span class="keyword">if</span>(arr[i]&lt;<span class="built_in">min</span>){
+    <span class="built_in">min</span>=arr[i]；
+}
+</code></pre><p>  }</p>
+</li>
+</ul>
+<p>#八、逻辑与或非：</p>
 <p>（1） 逻辑非：！</p>
 <pre><code>逻辑非操作符由一个符号（！）表示，可以应用于任何值，不论类
 型，该操作符都会返回一个布尔值。
@@ -627,54 +622,77 @@ var num=<span class="number">0</span>;
 <span class="header">=== 全等</span>
 ！==不全等
 </code></pre><p>相等和全等使用没什么区别，相等操作会转换数据类型再比较，全等不会，全等必须要在类型相等的情况下才会比较。</p>
-<p>条件操作符：</p>
+<ul>
+<li><p>条件操作符：</p>
 <pre><code>表达式为：表达式<span class="number">1</span>？表达式<span class="number">2</span>：表达式<span class="number">3</span>
-求解关系表达式，根据关系表达式的布尔值决定取值：关系表达式的
-值为<span class="literal">true</span>时取表达式<span class="number">1</span>的值；关系表达式的值为<span class="literal">false</span>时取表达式<span class="number">2</span>
+求解关系表达式，根据关系表达式的布尔值决定取值：关系表达
+式的
+值为<span class="literal">true</span>时取表达式<span class="number">1</span>的值；关系表达式的值为<span class="literal">false</span>时取表达
+式<span class="number">2</span>
 的值。
 案例：var num1 = <span class="number">10</span>;
 var num2 = <span class="number">20</span>;
 var num3 = num1&gt;num2?num1:num2;
 alert(num3);
-</code></pre><p>if语句：</p>
+</code></pre></li>
+<li><p>if语句：</p>
 <pre><code><span class="keyword">if</span>(条件语句{
     内部代码；
 }
 <span class="keyword">if</span>( ){ }<span class="keyword">else</span>{ }
 
 <span class="keyword">if</span>( ){ }<span class="keyword">else</span> <span class="keyword">if</span>( ){ }<span class="keyword">else</span>{ }
-</code></pre><p>最常用最简单的语句</p>
-<p>do-while语句：</p>
+</code></pre></li>
+</ul>
+<p>最常用最简单的语句</p>
+<ul>
+<li><p>do-while语句：</p>
 <pre><code>var i=<span class="number">0</span>;
 <span class="keyword">do</span>{
 i+=<span class="number">2</span>;
 }<span class="keyword">while</span>(i&lt;<span class="number">10</span>);
-</code></pre><p>先执行代码语句，再做条件判断，如果成立，继续循环，不成立的话，终止循环。</p>
-<p>while语句：</p>
+</code></pre></li>
+</ul>
+<p>先执行代码语句，再做条件判断，如果成立，继续循环，不成立的话，终止循环。</p>
+<ul>
+<li><p>while语句：</p>
 <pre><code>var i=<span class="number">0</span>;
 <span class="keyword">while</span>(i&lt;<span class="number">10</span>){
 i+=<span class="number">2</span>;
 };
-</code></pre><p>类似于for循环语句，符合条件才会执行内部代码。前测试循环语句。</p>
-<p>for语句</p>
+</code></pre></li>
+</ul>
+<p>类似于for循环语句，符合条件才会执行内部代码。前测试循环语句。</p>
+<ul>
+<li><p>for语句</p>
 <pre><code><span class="keyword">for</span>(var <span class="built_in">i</span>=<span class="number">0</span>;<span class="built_in">i</span>&lt;xx.<span class="built_in">length</span>;<span class="built_in">i</span>++)<span class="cell">{ }</span>
-</code></pre><p>执行顺序，初始化变量，当条件成立后执行内部代码，然后执行i++，完成一遍循环。</p>
-<p>for无限循环：</p>
+</code></pre></li>
+</ul>
+<p>执行顺序，初始化变量，当条件成立后执行内部代码，然后执行i++，完成一遍循环。</p>
+<ul>
+<li><p>for无限循环：</p>
 <pre><code><span class="keyword">for</span>(;;){ }
-</code></pre><p>这个格式，for里面内容将无限循环下去。</p>
-<p>break;打断终止循环运算</p>
+</code></pre></li>
+</ul>
+<p>这个格式，for里面内容将无限循环下去。</p>
+<ol>
+<li><p>break;打断终止循环运算</p>
 <pre><code>案例：<span class="keyword">for</span>(var i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++){
     <span class="keyword">if</span>(i==<span class="number">50</span>){              <span class="comment">//到50时，终止循环</span>
         <span class="keyword">break</span>;
     }
 }
-</code></pre><p>continue;继续循环</p>
+</code></pre></li>
+<li><p>continue;继续循环</p>
 <pre><code>案例：<span class="keyword">for</span>(var i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++){
     <span class="keyword">if</span>(i==<span class="number">50</span>){            <span class="comment">//跳过50继续循环</span>
         <span class="keyword">continue</span>;   
     }
 }
-</code></pre><p>如果是套循环要终止哪一个循环，需要在循环外面给它以命名：</p>
+</code></pre></li>
+</ol>
+<ul>
+<li><p>如果是套循环要终止哪一个循环，需要在循环外面给它以命名：</p>
 <pre><code>例如：
 heike:
 <span class="keyword">for</span>(var j=<span class="number">0</span>;j&lt;<span class="number">100</span>;j++){
@@ -685,7 +703,8 @@ hongke:
         }
     }
 }
-</code></pre><p>switch:开关,本身没有循环功能，用来断开</p>
+</code></pre></li>
+<li><p>switch:开关,本身没有循环功能，用来断开</p>
 <pre><code>案例：<span class="keyword">for</span>(var i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++){
     <span class="keyword">switch</span>(i){
     <span class="keyword">case</span> <span class="number">10</span>:
@@ -701,23 +720,29 @@ hongke:
         console.<span class="built_in">log</span>(i); 查找i值
 }
 }
-</code></pre><p>function 函数名（非必需的参数1，参数2……）{<br>    内部代码<br>}</p>
-<pre><code>函数名（）<span class="comment">;</span>
-每一个函数都是相对独立的，除非函数名一样
-</code></pre><p>arguments 是函数的属性，表示当前函数的参数,有length属性。表示参数长度</p>
+</code></pre></li>
+<li><p>function 函数名（非必需的参数1，参数2……）{<br>  内部代码<br>}</p>
+<p>  函数名（）;<br>  每一个函数都是相对独立的，除非函数名一样</p>
+</li>
+</ul>
+<ol>
+<li><p>arguments 是函数的属性，表示当前函数的参数,有length属性。表示参数长度</p>
 <pre><code>案例：
 <span class="function">function <span class="title">doAdd</span><span class="params">()</span></span>{
-    <span class="keyword">if</span>(arguments.length==<span class="number">1</span>){
-        <span class="keyword">return</span> arguments[<span class="number">0</span>];    <span class="comment">//arguments[0]代表1</span>
+<span class="keyword">if</span>(arguments.length==<span class="number">1</span>){
+<span class="keyword">return</span> arguments[<span class="number">0</span>];    <span class="comment">//arguments[0]代表1</span>
     }<span class="keyword">else</span> <span class="keyword">if</span>(arguments.length==<span class="number">2</span>){
         <span class="keyword">return</span> arguments[<span class="number">0</span>]+arguments[<span class="number">1</span>];
     }
 }
 doAdd(<span class="number">10</span>,<span class="number">20</span>);   <span class="comment">//用函数名传参数（10，20）</span>
-</code></pre><p>return 返回值；</p>
+</code></pre></li>
+</ol>
+<ol>
+<li><p>return 返回值；</p>
 <pre><code>案例：
 <span class="function">function <span class="title">doAdd</span><span class="params">()</span></span>{
-    <span class="keyword">if</span>(arguments.length==<span class="number">1</span>){
+<span class="keyword">if</span>(arguments.length==<span class="number">1</span>){
         <span class="keyword">return</span> arguments[<span class="number">0</span>];
     }<span class="keyword">else</span> <span class="keyword">if</span>(arguments.length==<span class="number">2</span>){
         <span class="keyword">return</span> arguments[<span class="number">0</span>]+arguments[<span class="number">1</span>];
@@ -729,17 +754,24 @@ doAdd(<span class="number">10</span>,<span class="number">20</span>);
     <span class="keyword">return</span> <span class="number">100</span>;<span class="comment">//当return生效以后，后面的语句将不再执行；</span>
     console.<span class="built_in">log</span>(‘<span class="number">1000</span>’);
 }
-</code></pre><p>用函数获取多个id参数值：</p>
+</code></pre></li>
+</ol>
+<ul>
+<li><p>用函数获取多个id参数值：</p>
 <pre><code><span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params"></span>)</span>{
     <span class="keyword">return</span> <span class="built_in">document</span>.querySelector(<span class="string">'#'</span>+<span class="built_in">arguments</span>[<span class="number">0</span>]);
 }
 <span class="keyword">var</span> box = $(<span class="string">'box'</span>)
-</code></pre><p>用函数获取多个class参数值：</p>
+</code></pre></li>
+<li><p>用函数获取多个class参数值：</p>
 <pre><code><span class="function"><span class="keyword">function</span> <span class="title">className</span>(<span class="params"></span>)</span>{
     <span class="keyword">return</span> <span class="built_in">document</span>.querySelectorAll(<span class="built_in">arguments</span>[<span class="number">0</span>]+<span class="built_in">arguments</span>[<span class="number">1</span>]);
 }
 className(‘div<span class="string">','</span>.test<span class="string">')</span>
-</code></pre><p>给每个class命名：</p>
+</code></pre></li>
+</ul>
+<ul>
+<li><p>给每个class命名：</p>
 <pre><code><span class="function"><span class="keyword">function</span> <span class="title">className</span>(<span class="params"></span>)</span>{
     <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;list.length;i++){
         list[i].className+=<span class="string">' '</span>+<span class="built_in">arguments</span>[<span class="number">2</span>];
@@ -747,7 +779,9 @@ className(‘div<span class="string">','</span>.test<span class="string">')</spa
     <span class="keyword">return</span> <span class="built_in">document</span>.querySelectorAll(<span class="built_in">arguments</span>[<span class="number">0</span>]+<span class="built_in">arguments</span>[<span class="number">1</span>]);
 }
 className(<span class="string">'div'</span>,<span class="string">'.test'</span>,<span class="string">''</span>);
-</code></pre>  
+</code></pre></li>
+</ul>
+  
 	</div>
 		<footer class="article-footer clearfix">
 
@@ -858,17 +892,13 @@ className(<span class="string">'div'</span>,<span class="string">'.test'</span>,
   <div class="linklist">
 <h3 rel="grow" class="grow asidetitle">Blogroll</h3>
 <ul class="entry">
-<li><a href="http://www.cnblogs.com/voidy/" title="voidy's Blog">小鱼</a></li>
-<li><a href="http://haodong.net.cn/" title="haodong">耗子</a></li>
-<li><a href="http://lanlazy.gitcafe.io/" title="lanlazy">兰懒懒</a></li>
-<li><a href="http://chenxiaohua.net/" >努力加餐饭</a></li>
-<li><a href="http://www.techug.com/" >程序师</a></li>
-<li><a href="http://coolshell.cn/" >酷壳</a></li>
-<li><a href="http://www.ruanyifeng.com/blog/" >阮一峰</a></li>
-<li><a href="http://www.chenshake.com/" >陈沙克</a></li>
-<li><a href="http://mindhacks.cn/" >刘未鹏</a></li>
-<li><a href="http://www.cnblogs.com/gorlf/">刘飞</a></li>
-<li><a href="http://rico93.xyz/">Rico</a></li>
+<li><a href="http://hanmingyang.github.io/">韩明洋</a></li>
+<li><a href="http://zy8232003.github.io/">张跃</a></li>
+<li><a href="http://gcsHaya.github.io/">张俊琪</a></li>
+<li><a href="http://jameblunt1973.github.io/" >张记文</a></li>
+<li><a href="http://running11.github.io/" >邝艳芝</a></li>
+<li><a href="http://zgmn.github.io/" >胡月</a></li>
+<li><a href="http://haomark.github.io/" >郝云鹏</a></li>
 </ul>
 </div>
 
