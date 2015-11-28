@@ -265,7 +265,7 @@
 
     </header>
     <div id="container">
-      <div id="main" class="js" itemscope itemprop="blogPost">
+      <div id="main" class="post" itemscope itemprop="blogPost">
 	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
   <h1 itemprop="name">
@@ -278,7 +278,7 @@
     </p>
   <p class="article-time">
     <time datetime="2015-11-28T01:11:31.000Z" itemprop="datePublished">2015-11-28</time>
-    更新日期:<time datetime="2015-11-28T02:00:45.000Z" itemprop="dateModified">2015-11-28</time>
+    更新日期:<time datetime="2015-11-28T02:02:26.000Z" itemprop="dateModified">2015-11-28</time>
     
   </p>
 </header>
@@ -401,6 +401,11 @@
 
 
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#javascript预解析还有作用域"><span class="toc-number">1.</span> <span class="toc-text">javascript预解析还有作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-javascript预解析还有作用域-"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.javascript预解析还有作用域.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-javascript分为全局作用域、局部作用域（函数）-"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.javascript分为全局作用域、局部作用域（函数）.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-匿名函数、函数表达式、声明函数-"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.匿名函数、函数表达式、声明函数.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-（）执行运算符的运用-"><span class="toc-number">1.0.4.</span> <span class="toc-text">4.（）执行运算符的运用.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-return的用法，函数参数的解析-"><span class="toc-number">1.0.5.</span> <span class="toc-text">5.return的用法，函数参数的解析.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-每个函数都有自己的默认返回值是undefined;return的默认返回值是undefined-"><span class="toc-number">1.0.6.</span> <span class="toc-text">6.每个函数都有自己的默认返回值是undefined;return的默认返回值是undefined.</span></a></li></ol></li></ol></li></ol>
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -610,6 +615,46 @@ $(document).ready(function(){
 </script>
 
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
 
 
 
@@ -633,7 +678,7 @@ var _hmt = _hmt || [];
 <script src="/js/scrolltop.js"></script>
 
   </body>
- </html>
+</html>
 
 
 <a href="https://github.com/Voidly"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
