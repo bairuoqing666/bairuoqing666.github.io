@@ -287,7 +287,7 @@ va">
     </p>
   <p class="article-time">
     <time datetime="2015-12-02T14:23:41.000Z" itemprop="datePublished">2015-12-02</time>
-    更新日期:<time datetime="2015-12-02T15:06:22.000Z" itemprop="dateModified">2015-12-02</time>
+    更新日期:<time datetime="2015-12-02T15:17:24.000Z" itemprop="dateModified">2015-12-02</time>
     
   </p>
 </header>
@@ -355,9 +355,7 @@ change(<span class="string">'#box'</span>,<span class="string">'border-top'</spa
 <li>instanceof 判断数据类型 针对Function ,Object ,Array ,new Number() ,new String(), new Boolean()</li>
 </ul>
 <ol>
-<li>数组和对象的关系？</li>
-</ol>
-<p>数组是对象的子集，对象包含数组。</p>
+<li><p>数组和对象的关系？<br>数组是对象的子集，对象包含数组。</p>
 <pre><code><span class="keyword">var</span> fn3 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
 <span class="keyword">var</span> a =<span class="number">10</span>;
 <span class="keyword">var</span> b = <span class="number">20</span>;
@@ -366,10 +364,8 @@ change(<span class="string">'#box'</span>,<span class="string">'border-top'</spa
 原理<span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();
 
 <span class="built_in">console</span>.log(arr <span class="keyword">instanceof</span> <span class="built_in">Object</span>);
-</code></pre><ol>
-<li>函数和对象的关系？</li>
-</ol>
-<p>函数不是对象，对象都是函数。<br>鸡与蛋的关系。</p>
+</code></pre></li>
+<li><p>函数和对象的关系？<br>函数不是对象，对象都是函数。<br>鸡与蛋的关系。</p>
 <pre><code><span class="keyword">var</span> fn2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
 <span class="keyword">var</span> a =<span class="number">10</span>;
 <span class="keyword">var</span> b=<span class="number">20</span>;
@@ -380,7 +376,9 @@ change(<span class="string">'#box'</span>,<span class="string">'border-top'</spa
 
 <span class="built_in">console</span>.log(<span class="keyword">typeof</span> fn2);
 <span class="built_in">console</span>.log(str <span class="keyword">instanceof</span> <span class="built_in">String</span>)
-</code></pre><h2 id="prototype_原型_当前函数的原型">prototype 原型 当前函数的原型</h2><ol>
+</code></pre></li>
+</ol>
+<h2 id="prototype_原型_当前函数的原型">prototype 原型 当前函数的原型</h2><ol>
 <li><strong>proto</strong>指向创建当前对象的函数的prototype,它前面有两个下划线后面有两个下划线。</li>
 <li>所有的函数都有prototype属性，该属性是一个对象。</li>
 <li>所有的对象都有一个<strong>proto</strong>属性,该属性前面有两个下划线后面有两个下划线<br>，该属性也是一个对象。</li>
@@ -422,14 +420,17 @@ console.log(fn2);
 <pre><code>var arr = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];
 </code></pre></li>
 </ol>
-<pre><code>简化：var arr2 =[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];
-
-原理：var arr2 = <span class="keyword">new</span> Array();
-
+<ul>
+<li><p>简化：var arr2 =[1,2,3,4];</p>
+<pre><code>  原理：var arr2 = <span class="keyword">new</span> Array();
 arr2[<span class="number">0</span>]=<span class="number">1</span>;
-
+arr2[<span class="number">1</span>]=<span class="number">2</span>;
+arr2[<span class="number">2</span>]=<span class="number">3</span>;
+arr2[<span class="number">3</span>]=<span class="number">4</span>;
 console.<span class="built_in">log</span>(Arrgy.prototype);
-</code></pre><h3 id="原型链">原型链</h3><ul>
+</code></pre></li>
+</ul>
+<h3 id="原型链">原型链</h3><ul>
 <li><p>在JavaScript中,一共有两种类型的值,原始值和对象值.每个对象都有一个内部属性[[prototype]],我们通常称之为原型.原型的值可以是一个对象,也可以是null.如果它的值是一个对象,则这个对象也一定有自己的原型.这样就形成了一条线性的链,我们称之为原型链.</p>
 <pre><code>事例：<span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{};
 <span class="keyword">var</span> obj = <span class="keyword">new</span> fn();
@@ -446,7 +447,8 @@ obj.__proto__.a =‘好好’;<span class="comment">//这句话是在函数里�
 </code></pre></li>
 </ul>
 <ol>
-<li>在全局作用域下面调用this，this指向global，也就是window。<br>函数声明 匿名函数 函数表达式在全局中调用 this指向window。</li>
+<li>在全局作用域下面调用this，this指向global，也就是window。<pre><code>函数声明 匿名函数 函数表达式在全局中调用 <span class="keyword">this</span>指向<span class="built_in">window</span>。
+</code></pre></li>
 </ol>
 <pre><code>事例：(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
     <span class="built_in">console</span>.log(<span class="keyword">this</span>);
