@@ -10,15 +10,15 @@
     <meta name="author" content="左手">
     
     <meta name="description" content="太难理解了！！！！！
-对象：var obj = {};
-var arr = [ ];
-var isNone = null;
-var fn = function(){
+对象：
+案例：var obj = {}; //对象
+var arr = [ ];//数组
+var isNone = null;//空
+var fn = function(){ //函数表达式
     return 10;
 };
 
-对象是属性的集合,类比数组进行记忆，区别:对象给数组中的元素再取名字,对象没有length
-va">
+对象是属性的集合,类比数组进行记忆，区别:对象给">
     
     
     
@@ -287,7 +287,7 @@ va">
     </p>
   <p class="article-time">
     <time datetime="2015-12-02T14:23:41.000Z" itemprop="datePublished">2015-12-02</time>
-    更新日期:<time datetime="2015-12-02T15:17:24.000Z" itemprop="dateModified">2015-12-02</time>
+    更新日期:<time datetime="2015-12-02T15:28:07.000Z" itemprop="dateModified">2015-12-02</time>
     
   </p>
 </header>
@@ -300,13 +300,14 @@ va">
 		</div>
 		
 		<p>太难理解了！！！！！<br><img src="http://7xoqfs.com1.z0.glb.clouddn.com/TK11-10.jpg"></p>
-<h2 id="对象：">对象：</h2><pre><code><span class="variable"><span class="keyword">var</span> obj</span> = {};
-<span class="variable"><span class="keyword">var</span> arr</span> = [ ];
-<span class="variable"><span class="keyword">var</span> isNone</span> = <span class="literal">null</span>;
-<span class="variable"><span class="keyword">var</span> fn</span> = function(){
+<h2 id="对象：">对象：</h2><ul>
+<li><p>案例：var obj = {}; //对象</p>
+<pre><code><span class="keyword">var</span> arr = [ ];<span class="comment">//数组</span>
+<span class="keyword">var</span> isNone = <span class="literal">null</span>;<span class="comment">//空</span>
+<span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{ <span class="comment">//函数表达式</span>
     <span class="keyword">return</span> <span class="number">10</span>;
 };
-</code></pre><ul>
+</code></pre></li>
 <li><p>对象是属性的集合,类比数组进行记忆，区别:对象给数组中的元素再取名字,对象没有length</p>
 <pre><code><span class="keyword">var</span> arr = [<span class="number">1</span>,’<span class="number">123</span>’,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{},<span class="literal">false</span>];<span class="comment">//数组</span>
 <span class="built_in">console</span>.log(arr[<span class="number">2</span>]);<span class="comment">//取值</span>
@@ -446,10 +447,7 @@ obj.__proto__.a =‘好好’;<span class="comment">//这句话是在函数里�
 <pre><code>案例：<span class="function"><span class="title">hasOwnproperty</span><span class="params">(<span class="string">""</span>)</span></span>
 </code></pre></li>
 </ul>
-<ol>
-<li>在全局作用域下面调用this，this指向global，也就是window。<pre><code>函数声明 匿名函数 函数表达式在全局中调用 <span class="keyword">this</span>指向<span class="built_in">window</span>。
-</code></pre></li>
-</ol>
+<p>1、 在全局作用域下面调用this，this指向global，也就是window。<br>       函数声明 匿名函数 函数表达式在全局中调用 this指向window。</p>
 <pre><code>事例：(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
     <span class="built_in">console</span>.log(<span class="keyword">this</span>);
     <span class="keyword">this</span>.x=<span class="number">10</span>;
@@ -474,16 +472,14 @@ add();
 }
 obj();
 <span class="built_in">console</span>.log(<span class="keyword">this</span>);
-</code></pre><ol>
-<li><p>new关键词构造的对象，this指向创建该对象的函数。</p>
+</code></pre><p>2、 new关键词构造的对象，this指向创建该对象的函数。</p>
 <pre><code>事例：<span class="keyword">var</span> obj=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
     <span class="built_in">console</span>.log(<span class="keyword">this</span>);
     <span class="keyword">this</span>.x=<span class="number">10</span>;
     <span class="keyword">this</span>.y=<span class="number">20</span>;
 }
  <span class="keyword">var</span> ne= <span class="keyword">new</span> obj;
-</code></pre></li>
-<li><p>this当前的函数为对象属性的时候，this指向该对象。</p>
+</code></pre><p>3、 this当前的函数为对象属性的时候，this指向该对象。</p>
 <pre><code>事例：<span class="keyword">var</span> obj = {
     x:<span class="number">10</span>,
     y:<span class="number">20</span>,
@@ -493,9 +489,7 @@ obj();
 }
 obj.fn1();
 congsole.log(obj.x);
-</code></pre></li>
-</ol>
-  
+</code></pre>  
 	</div>
 		<footer class="article-footer clearfix">
 
