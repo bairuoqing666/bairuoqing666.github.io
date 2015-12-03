@@ -287,7 +287,7 @@ var fn = function(){ //函数表达式
     </p>
   <p class="article-time">
     <time datetime="2015-12-02T14:23:41.000Z" itemprop="datePublished">2015-12-02</time>
-    更新日期:<time datetime="2015-12-02T15:28:07.000Z" itemprop="dateModified">2015-12-02</time>
+    更新日期:<time datetime="2015-12-03T01:12:02.000Z" itemprop="dateModified">2015-12-03</time>
     
   </p>
 </header>
@@ -448,47 +448,47 @@ obj.__proto__.a =‘好好’;<span class="comment">//这句话是在函数里�
 </code></pre></li>
 </ul>
 <p>1、 在全局作用域下面调用this，this指向global，也就是window。<br>       函数声明 匿名函数 函数表达式在全局中调用 this指向window。</p>
-<pre><code>事例：(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-    <span class="built_in">console</span>.log(<span class="keyword">this</span>);
-    <span class="keyword">this</span>.x=<span class="number">10</span>;
-    <span class="keyword">this</span>.y=<span class="number">20</span>;
-})()
-<span class="built_in">console</span>.log(<span class="keyword">this</span>);
+<pre><code>* 事例：(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+      <span class="built_in">console</span>.log(<span class="keyword">this</span>);
+      <span class="keyword">this</span>.x=<span class="number">10</span>;
+      <span class="keyword">this</span>.y=<span class="number">20</span>;
+      })()
+      <span class="built_in">console</span>.log(<span class="keyword">this</span>);
 
-<span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>{
-    <span class="built_in">console</span>.log(<span class="keyword">this</span>);
-    <span class="keyword">this</span>.x=<span class="number">10</span>;
-    <span class="keyword">this</span>.y=<span class="number">20</span>;
-    <span class="keyword">return</span> <span class="keyword">this</span>.x+<span class="keyword">this</span>.y;
-}
-add();
-<span class="keyword">var</span> fn=<span class="keyword">new</span> add();
-<span class="built_in">console</span>.log(<span class="keyword">this</span>);
+     <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>{
+      <span class="built_in">console</span>.log(<span class="keyword">this</span>);
+      <span class="keyword">this</span>.x=<span class="number">10</span>;
+      <span class="keyword">this</span>.y=<span class="number">20</span>;
+      <span class="keyword">return</span> <span class="keyword">this</span>.x+<span class="keyword">this</span>.y;
+      }
+      add();
+      <span class="keyword">var</span> fn=<span class="keyword">new</span> add();
+      <span class="built_in">console</span>.log(<span class="keyword">this</span>);
 
-<span class="keyword">var</span> obj=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-    <span class="built_in">console</span>.log(<span class="keyword">this</span>);
-    <span class="keyword">this</span>.x=<span class="number">10</span>;
-    <span class="keyword">this</span>.y=<span class="number">20</span>;
-}
-obj();
-<span class="built_in">console</span>.log(<span class="keyword">this</span>);
+      <span class="keyword">var</span> obj=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+      <span class="built_in">console</span>.log(<span class="keyword">this</span>);
+      <span class="keyword">this</span>.x=<span class="number">10</span>;
+      <span class="keyword">this</span>.y=<span class="number">20</span>;
+      }
+      obj();
+      <span class="built_in">console</span>.log(<span class="keyword">this</span>);
 </code></pre><p>2、 new关键词构造的对象，this指向创建该对象的函数。</p>
-<pre><code>事例：<span class="keyword">var</span> obj=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-    <span class="built_in">console</span>.log(<span class="keyword">this</span>);
-    <span class="keyword">this</span>.x=<span class="number">10</span>;
-    <span class="keyword">this</span>.y=<span class="number">20</span>;
-}
- <span class="keyword">var</span> ne= <span class="keyword">new</span> obj;
+<pre><code>* 事例：<span class="keyword">var</span> obj=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="built_in">console</span>.log(<span class="keyword">this</span>);
+        <span class="keyword">this</span>.x=<span class="number">10</span>;
+        <span class="keyword">this</span>.y=<span class="number">20</span>;
+        }
+        <span class="keyword">var</span> ne= <span class="keyword">new</span> obj;
 </code></pre><p>3、 this当前的函数为对象属性的时候，this指向该对象。</p>
-<pre><code>事例：<span class="keyword">var</span> obj = {
-    x:<span class="number">10</span>,
-    y:<span class="number">20</span>,
-    fn1:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+<pre><code>* 事例：<span class="keyword">var</span> obj = {
+         x:<span class="number">10</span>,
+         y:<span class="number">20</span>,
+        fn1:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
         <span class="keyword">this</span>.x=<span class="number">20</span>;
-    }
-}
-obj.fn1();
-congsole.log(obj.x);
+           }
+        }
+        obj.fn1();
+        congsole.log(obj.x);
 </code></pre>  
 	</div>
 		<footer class="article-footer clearfix">
