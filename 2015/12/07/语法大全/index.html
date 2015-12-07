@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>语法大全 | TK-Person</title>
+    <title>TK-Person</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="左手">
@@ -267,20 +267,20 @@ JavaScript 有六种数据类型。主要的类型有 number、string、object �
 
     </header>
     <div id="container">
-      <div id="main" class="js" itemscope itemprop="blogPost">
+      <div id="main" class="post" itemscope itemprop="blogPost">
 	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/12/07/语法大全/" title="语法大全" itemprop="url">语法大全</a>
+      <a href="/2015/12/07/语法大全/" title="" itemprop="url"></a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="左手">左手</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-12-07T07:48:19.000Z" itemprop="datePublished">2015-12-07</time>
-    更新日期:<time datetime="2015-12-07T07:49:26.000Z" itemprop="dateModified">2015-12-07</time>
+    <time datetime="2015-12-07T07:52:02.000Z" itemprop="datePublished">2015-12-07</time>
+    更新日期:<time datetime="2015-12-07T07:52:02.000Z" itemprop="dateModified">2015-12-07</time>
     
   </p>
 </header>
@@ -369,7 +369,7 @@ JavaScript 有六种数据类型。主要的类型有 number、string、object �
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2015/12/07/语法大全/" data-title="语法大全 | TK-Person" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2015/12/07/语法大全/" data-title="TK-Person" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -391,7 +391,7 @@ JavaScript 有六种数据类型。主要的类型有 number、string、object �
 
 
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2015/12/07/语法大全/" data-title="语法大全" data-url="http://yoursite.com/2015/12/07/语法大全/"></div>
+	<div class="ds-thread" data-thread-key="2015/12/07/语法大全/" data-title="" data-url="http://yoursite.com/2015/12/07/语法大全/"></div>
 	<!-- 多说评论框 end -->
 </div>  
 
@@ -401,6 +401,11 @@ JavaScript 有六种数据类型。主要的类型有 number、string、object �
 
 
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -426,7 +431,7 @@ JavaScript 有六种数据类型。主要的类型有 number、string、object �
   <ul class="entry">
     
       <li>
-        <a href="/2015/12/07/语法大全/">语法大全</a>
+        <a href="/2015/12/07/语法大全/"></a>
       </li>
     
       <li>
@@ -609,6 +614,46 @@ $(document).ready(function(){
 </script>
 
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
 
 
 
@@ -632,7 +677,7 @@ var _hmt = _hmt || [];
 <script src="/js/scrolltop.js"></script>
 
   </body>
- </html>
+</html>
 
 
 <a href="https://github.com/Voidly"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
