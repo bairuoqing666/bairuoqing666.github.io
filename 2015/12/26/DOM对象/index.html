@@ -1,0 +1,1030 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>DOM对象 | TK-Person</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="左手">
+    
+    <meta name="description" content="要记得东西太多，记性不好就要多背了！
+&lt;!----&gt;
+DOM:document object model文档对象模型。
+dom对象层级方式划分：兄弟节点，子级节点，父级节点
+
+类型方式划分：元素节点、属性节点、文本节点、注释节点、document节点
+
+作用于：html和xml。
+
+dom是关于如何">
+    
+    
+    
+    
+    <link rel="alternate" href="/atom.xml## RSS address." title="TK-Person" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/pacman.png">
+    
+    
+    <link rel="apple-touch-icon" href="/img/fish_footer.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/fish_footer.jpg">
+    
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    
+    <!-- 标签云侵入样式 -->
+  <style>
+    .tagcloudlist {position:relative; height:300px;}
+    .tagcloudlist  a {position:absolute; top:0px; left:0px;  text-decoration:none; padding: 3px 6px; }
+    .tagcloudlist  a:hover {border: 1px solid #eee; background: #000; }
+    
+    .ac_results {
+            padding: 0px;
+            border: 1px solid black;
+            background-color: white;
+            overflow: hidden;
+            z-index: 99999;
+        }
+    .ac_results ul {
+        width: 100%;
+        list-style-position: outside;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .ac_results li {
+        margin: 0px;
+        padding: 2px 5px;
+        cursor: default;
+        display: block;
+        font: menu;
+        font-size: 12px;
+        line-height: 16px;
+        overflow: hidden;
+    }
+    .ac_loading {
+        background: #FFF;
+    }
+    .ac_odd {
+        background-color: #EEE;
+    }
+    .ac_over {
+        background-color: #AAA;
+        color: #FFF;
+    }
+
+  </style>
+
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/autocomplete.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/miaov.js"></script>
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/fish_font.jpg" alt="TK-Person" title="TK-Person"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="TK-Person">TK-Person</a></h1>
+				<h2 class="blog-motto">The key person</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/about">About Me</a></li>
+					
+					
+					<li> <a href="/atom.xml">RSS</a> </li>
+
+					<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+
+				<li>
+					
+					 <form id="searchform" class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+                    <label>Search</label>
+                    <input type="text" id="search" autocomplete="off" name="q" maxlength="20" placeholder="搜索" />
+               		 </form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/12/26/DOM对象/" title="DOM对象" itemprop="url">DOM对象</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="左手">左手</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2015-12-26T13:26:41.000Z" itemprop="datePublished">2015-12-26</time>
+    更新日期:<time datetime="2015-12-26T14:20:57.000Z" itemprop="dateModified">2015-12-26</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM:document_object_model文档对象模型。"><span class="toc-number">1.</span> <span class="toc-text">DOM:document object model文档对象模型。</span></a></li></ol>
+		</div>
+		
+		<p>要记得东西太多，记性不好就要多背了！</p>
+<!--<img src="http://7xoqfs.com1.z0.glb.clouddn.com/TK11-12.jpg"/>-->
+<h2 id="DOM:document_object_model文档对象模型。">DOM:document object model文档对象模型。</h2><ol>
+<li><p>dom对象层级方式划分：兄弟节点，子级节点，父级节点</p>
+</li>
+<li><p>类型方式划分：元素节点、属性节点、文本节点、注释节点、document节点</p>
+</li>
+<li><p>作用于：html和xml。</p>
+</li>
+<li><p>dom是关于如何创建、添加、修改或者删除页面元素的标准。<br>所以与页面相关的操作都属于dom操作。 </p>
+</li>
+</ol>
+<p>document//指html整个文档</p>
+<p>innerHTML,title,URL,write;//可以修改hmtl里的内容</p>
+<pre><code>例如：
+document.title=“草原<span class="string">";</span>
+</code></pre><ul>
+<li><p>document.getElementById;//获取所有ID名，所有浏览器都可以用，支持IE6、7、8</p>
+</li>
+<li><p>document.getElementsByTagName;//获取所有p标签，所有浏览器都可以用，支持IE6、7、8</p>
+</li>
+<li><p>document.getElementsByClassName;//获取所有class名，不是所有浏览器都可以用，支持IE9,不支持IE6、7、8</p>
+</li>
+<li><p>document.querySelector || document.querySelectorAll;//不支持IE6、7、8，只支持标准浏览器</p>
+</li>
+<li><p>getComputedStyle();  //获取非行间样式，标准浏览器使用</p>
+</li>
+<li><p>节点名.currentStyle.属性名; //获取非行间样式,IE浏览器用的</p>
+</li>
+</ul>
+<p>一、浏览器兼容的方式：</p>
+<ol>
+<li><p>第一种 if else判断</p>
+<pre><code><span class="keyword">var</span> div1=document.getElementById(“div1");
+function getStyle(ele,haha){
+    <span class="keyword">if</span>(<span class="keyword">window</span>.getComputedStyle){
+        <span class="keyword">return</span> <span class="keyword">window</span>.getComputedStyle(ele,null)
+        [haha]
+    }<span class="keyword">else</span> <span class="keyword">if</span>(ele.currentStyle){
+        <span class="keyword">return</span> ele.currentStyle[haha]
+    }
+    <span class="keyword">return</span> null;
+};
+getStyle(节点名,”属性名");
+console.<span class="literal">log</span>(getStyle(div1,<span class="string">"width"</span>));
+console.<span class="literal">log</span>(getComputedStyle(div1,null).width);
+</code></pre></li>
+<li><p>第二种 三元运算符</p>
+<pre><code><span class="keyword">var</span> heihei=ele.currentStyle ? ele.currentStyle : <span class="built_in">window</span>.getComputedStyle(ele,<span class="keyword">null</span>);
+</code></pre></li>
+<li><p>第三种 逻辑或</p>
+<pre><code><span class="keyword">var</span> heihei=ele.currentStyle || <span class="built_in">window</span>.getComputedStyle(ele.<span class="keyword">null</span>);
+</code></pre></li>
+</ol>
+<p>二、 childNodes;//子节点集合 是个集合</p>
+<p>console.log(document.childNodes);</p>
+<p>console.log(document.childNodes[1].childNodes);//标准查找文本节点用法，不过会有多余的text的节点，没有空格和转行就可以消除text节点</p>
+<p>console.log(document.childNodes[1].children);//非标准用法，快要废弃，不会有多余的text的节点</p>
+<p>console.log(document.childNodes[1].children[1].children);</p>
+<p>console.log(document.childNodes[1].children[1].innerHTML);//可以在IE浏览器使用</p>
+<p>var div1=document.getElementsByTagName(“div”)[0];</p>
+<p>console.log(div1.lastChild);</p>
+<p>console.log(div1.firstElementChild);//标准属性 但是IE678不支持 简写firstChild</p>
+<ol>
+<li><p>lastChild//找p节点 支持所有的浏览器但是不能过滤掉text和空节点</p>
+</li>
+<li><p>lastElementChild//标准属性 能过滤掉text节点但是IE678不支持 简写lastChild</p>
+</li>
+<li><p>firstChild//找首个子节点 支持所有的浏览器但是不能过滤掉text和空节点</p>
+</li>
+</ol>
+<ul>
+<li>firstElementChild//标准属性 能过滤掉text节点但是IE678不支持 简写firstChild</li>
+</ul>
+<ol>
+<li>nextSibling//下一个兄弟节点 //支持所有的浏览器但是不能过滤掉text和空节点</li>
+</ol>
+<ul>
+<li>nextElementSibling//标准属性 能过滤掉text节点但是IE678不支持 简写naxtSibling</li>
+</ul>
+<ol>
+<li>previousSibling//上一个兄弟节点 支持所有的浏览器但是不能过滤掉text和空节点</li>
+</ol>
+<ul>
+<li>previousElementSibling//标准属性 能过滤掉text节点但是IE678不支持 简写previousSibling</li>
+</ul>
+<ol>
+<li>parentNode//找父级节点 支持所有的浏览器但是不能过滤掉text和空节点</li>
+</ol>
+<ul>
+<li><p>parentNodeElement//标准属性 能过滤掉text节点和空节点<br>但是IE678不支持 简写parentNode</p>
+<pre><code>父级案例：
+<span class="keyword">var</span> btns = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'span'</span>);
+<span class="keyword">var</span> length = btns.length;
+
+<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;length;i++){
+    btns[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="keyword">this</span>.parentNode.style.display = <span class="string">'none'</span>;
+    }
+};
+</code></pre></li>
+</ul>
+<p>三、attributes获取当前节点的所有属性集合</p>
+<p>var div1 = document.getElementById(‘heihei’);<br>console.log(div1.attributes[0].nodeType);<br>console.log(div1.firstChild.nodeName);</p>
+<ol>
+<li><p>nodeType//查看节点类型</p>
+<pre><code><span class="number">9</span> document 对象节点
+
+<span class="number">8</span> 注释节点
+
+<span class="number">3</span> 空节点
+
+<span class="number">2</span> 属性节点
+
+<span class="number">1</span> 元素节点
+
+console.<span class="built_in">log</span>(btns[<span class="number">0</span>].nodeType);
+</code></pre></li>
+<li><p>nodeName//查看节点名称</p>
+<pre><code><span class="tag">console</span><span class="class">.log</span>(<span class="tag">btns</span><span class="attr_selector">[0]</span><span class="class">.nodeName</span>);
+
+<span class="tag">console</span><span class="class">.log</span>(<span class="tag">btns</span><span class="attr_selector">[0]</span><span class="class">.innerHTML</span>);
+</code></pre></li>
+<li><p>nodeValue//查看节点的值</p>
+<p>console.log(btns[0].nodeValue);</p>
+</li>
+</ol>
+<pre><code>案例：
+<span class="function"><span class="keyword">function</span> <span class="title">first</span>(<span class="params">ele</span>)</span>{
+    <span class="comment">//firstChild 浏览器都支持</span>
+    <span class="comment">//firstElementChild 非IE678都支持</span>
+
+    <span class="comment">//一种方法</span>
+    <span class="keyword">var</span> nodes=ele.children;
+    <span class="keyword">if</span>(nodes.length&gt;<span class="number">0</span>){
+        <span class="keyword">return</span> children[<span class="number">0</span>];<span class="comment">//返回第一个</span>
+        <span class="comment">//return children[length];返回最后一个</span>
+    }
+
+    <span class="comment">//另一种方法</span>
+    <span class="keyword">var</span> list=ele.childNodes;
+    <span class="keyword">if</span>(list.length&gt;<span class="number">0</span>){
+        <span class="keyword">var</span> length=list.length;
+        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;length;i++){
+            <span class="keyword">if</span>(list[i].nodeType==<span class="number">1</span>){
+                <span class="keyword">return</span> list[i];
+                <span class="keyword">break</span>;
+            }
+        }
+    }
+
+    <span class="comment">// 第三种方法</span>
+    <span class="keyword">var</span> obj = ele.firstElementChild || ele.firstChild;
+    <span class="keyword">if</span>(obj.nodeType==<span class="number">3</span>){
+        <span class="keyword">return</span> obj.nextsibling;
+    }
+    <span class="keyword">if</span>(obj.nodeType==<span class="number">1</span>){
+        <span class="keyword">return</span> obj;
+    }
+};
+
+案例：
+<span class="comment">//查找p节点</span>
+<span class="function"><span class="keyword">function</span> <span class="title">last</span>(<span class="params">ele</span>)</span>{
+    <span class="keyword">if</span>(!ele){
+        <span class="keyword">return</span> <span class="literal">null</span>;
+    }<span class="keyword">else</span>{
+        <span class="keyword">var</span> obj = ele.lastElementChild || ele.lastChild;
+        <span class="keyword">if</span>(ele.children.length &gt;<span class="number">0</span>){
+            <span class="keyword">if</span>(obj.nodeType == <span class="number">3</span>){
+                <span class="keyword">return</span> obj.previousSibling;
+            }
+            <span class="keyword">if</span>(obj.nodeType == <span class="number">1</span>){
+                <span class="keyword">return</span> obj;
+            }
+        }<span class="keyword">else</span>{
+            <span class="keyword">return</span> <span class="literal">null</span>;
+        }
+    }
+
+}
+<span class="keyword">var</span> heihei = <span class="built_in">document</span>.getElementById(<span class="string">"heihei"</span>);
+last(heihei);
+<span class="built_in">console</span>.log(last(heihei));
+
+<span class="comment">//查找首个子节点</span>
+<span class="function"><span class="keyword">function</span> <span class="title">first</span>(<span class="params">ele</span>)</span>{
+    <span class="keyword">if</span>(!ele){
+        <span class="keyword">return</span> <span class="literal">null</span>;
+    }<span class="keyword">else</span>{
+        <span class="keyword">var</span> obj = ele.firstElementChild || ele.firstChild;
+        <span class="keyword">if</span>(ele.children.length&gt;<span class="number">0</span>){
+            <span class="keyword">if</span>(obj.nodeType == <span class="number">3</span>){
+                <span class="keyword">return</span> obj.nextSibling;
+            }
+            <span class="keyword">if</span>(obj.nodeType == <span class="number">1</span>){
+                <span class="keyword">return</span> obj;
+            }
+        }<span class="keyword">else</span>{
+            <span class="keyword">return</span> <span class="literal">null</span>;
+        }
+    }
+
+}
+first(heihei);
+<span class="built_in">console</span>.log(first(heihei));
+<span class="comment">//查找下一个兄弟节点</span>
+<span class="function"><span class="keyword">function</span> <span class="title">next</span>(<span class="params">ele</span>)</span>{
+    <span class="keyword">if</span>(!ele){
+        <span class="keyword">return</span> <span class="literal">null</span>;
+    }<span class="keyword">else</span>{
+        <span class="keyword">var</span> obj = ele.nextElementChild || ele.nextSibling;
+        <span class="keyword">if</span>(ele.children.length&gt;<span class="number">0</span>){
+            <span class="keyword">if</span>(obj.nodeType == <span class="number">3</span>){
+                <span class="keyword">return</span> obj.nextSibling;
+            }
+            <span class="keyword">if</span>(obj.nodeType == <span class="number">1</span>){
+                <span class="keyword">return</span> obj;
+            }
+        }<span class="keyword">else</span>{
+            <span class="keyword">return</span> <span class="literal">null</span>;
+        }
+    }
+
+}
+next(heihei);
+<span class="built_in">console</span>.log(next(heihei));
+<span class="comment">//查找上一个兄弟节点</span>
+<span class="function"><span class="keyword">function</span> <span class="title">previous</span>(<span class="params">ele</span>)</span>{
+    <span class="keyword">if</span>(!ele){
+        <span class="keyword">return</span> <span class="literal">null</span>;
+    }<span class="keyword">else</span>{
+        <span class="keyword">var</span> obj = ele.previousElementChild || ele.previousSibling;
+        <span class="keyword">if</span>(ele.children.length&gt;<span class="number">0</span>){
+            <span class="keyword">if</span>(obj.nodeType == <span class="number">3</span>){
+                <span class="keyword">return</span> obj.previousSibling;
+            }
+            <span class="keyword">if</span>(obj.nodeType == <span class="number">1</span>){
+                <span class="keyword">return</span> obj;
+            }
+        }<span class="keyword">else</span>{
+            <span class="keyword">return</span> <span class="literal">null</span>;
+        }
+    }
+
+}
+previous(heihei);
+<span class="built_in">console</span>.log(previous(heihei));
+
+<span class="comment">// 获取含有你需要的名字(hehe)的所有元素</span>
+<span class="function"><span class="keyword">function</span> <span class="title">getClassName</span>(<span class="params">name</span>)</span>{
+    <span class="keyword">var</span> all = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"*"</span>);<span class="comment">//*是通配选择器</span>
+    <span class="keyword">var</span> length = all.length;
+    <span class="keyword">var</span> arr = [];
+    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;length;i++){
+        <span class="keyword">if</span>(all[i].className == name){
+            arr.push(all[i]);
+        }
+    }
+    <span class="keyword">return</span> arr;
+}
+<span class="built_in">console</span>.log(getClassName(<span class="string">"haha"</span>))；
+<span class="comment">// 结束</span>
+</code></pre><ul>
+<li>获取属性:</li>
+</ul>
+<p>getAttribute 获取节点属性</p>
+<pre><code>案例：
+<span class="keyword">var</span> div1 = document.getElementById(<span class="string">"heihei"</span>);
+<span class="comment">//console.log(div1.getAttribute(“id或class”));//没有该属性的时候，返回null。</span>
+
+<span class="function"><span class="keyword">function</span> <span class="title">getAt</span><span class="params">(ele,xixi)</span></span>{
+    <span class="keyword">var</span> <span class="keyword">list</span> = ele.attributes;
+    <span class="keyword">if</span>(!<span class="keyword">list</span>){
+        <span class="keyword">return</span> <span class="keyword">null</span>;
+    }
+    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="keyword">list</span>.length;i++){
+        <span class="keyword">if</span>(<span class="keyword">list</span>[i].nodeName == xixi){
+            <span class="keyword">return</span> <span class="keyword">list</span>[i].nodeValue;
+        }
+    }
+    <span class="keyword">return</span> <span class="keyword">null</span>;
+}
+console.log(getAt(div1,<span class="string">"id"</span>));
+</code></pre><ul>
+<li><p>setAttribute 设置节点属性</p>
+<pre><code>案例：
+<span class="built_in">var</span> div1 = document<span class="built_in">.</span>getElementById(<span class="string">"heihei"</span>);
+div1<span class="built_in">.</span>setAttribute(<span class="string">"class"</span>,<span class="string">"gaga xixi bibi”);//新建参数，可以直接在这里新建,修改参数属性
+div1.setAttribute("</span>style<span class="string">","</span>border:<span class="number">10</span>px blue solid<span class="string">");
+removeAttribute 移除节点属性
+案例：
+div1.removeAttribute(“style"</span>);<span class="comment">//移除参数，只能移除一个参数</span>
+</code></pre></li>
+</ul>
+<pre><code>hasClass(<span class="string">""</span>)? //判断是否有此<span class="class"><span class="keyword">class</span>名</span>
+addClass()    //设置<span class="class"><span class="keyword">class</span>名</span>
+removeClass()//移除<span class="class"><span class="keyword">class</span>名</span>
+案例：
+判断<span class="class"><span class="keyword">class</span>名,并添加点击效果</span>
+<span class="function"><span class="keyword">function</span> <span class="title">hasClass</span>(</span>ele,xixi){
+    <span class="keyword">if</span>(!ele.className){
+        <span class="keyword">return</span> <span class="literal">null</span>;
+    }
+    var list = ele.className;
+    <span class="keyword">if</span>(list.indexOf(xixi) != -<span class="number">1</span>){
+        <span class="keyword">return</span> <span class="literal">true</span>;
+    }
+    <span class="keyword">return</span> <span class="literal">false</span>;
+}
+
+console.<span class="built_in">log</span>(hasClass,<span class="string">"haha"</span>);
+
+点击效果
+div1.onclick = <span class="function"><span class="keyword">function</span>(</span>){
+    <span class="keyword">if</span>(hasClass(this,<span class="string">"haha"</span>)){
+        this.style.backgroundColor = <span class="string">"gold"</span>;
+    }
+}
+
+设置<span class="class"><span class="keyword">class</span>名，可以新建,修改属性</span>
+<span class="function"><span class="keyword">function</span> <span class="title">addClass</span>(</span>ele,xixi){
+    <span class="keyword">if</span>(!ele.className){
+        ele.setAttribute(<span class="string">"class"</span>,xixi);
+    }<span class="keyword">else</span>{
+        ele.className += <span class="string">" "</span>+xixi;
+    }
+}
+addClass(div1,<span class="string">"gaga"</span>);
+
+移除<span class="class"><span class="keyword">class</span>名</span>
+<span class="function"><span class="keyword">function</span> <span class="title">removeClass</span>(</span>ele,xixi){
+    <span class="keyword">if</span>(!ele.className){
+        <span class="keyword">return</span> <span class="literal">false</span>;
+    }
+    var arr = ele.className.split(<span class="string">" "</span>);
+    <span class="keyword">for</span>(var i=<span class="number">0</span>;i&lt;arr.length;i++){
+        <span class="keyword">if</span>(arr[i] == xixi){
+            arr[i] = <span class="string">""</span>;
+            break;
+        }
+    }
+    var name = arr.join(<span class="string">" "</span>);
+    <span class="keyword">return</span> ele.className = name;
+}
+removeClass(div1,”haha<span class="string">");</span>
+</code></pre><ol>
+<li><p>createElement()//创建元素  </p>
+</li>
+<li><p>insertBefore()//可以根据需求决定创建元素的位置，有两个参数，第一个是要添加的节点，第二个是位置</p>
+</li>
+<li><p>createElement() || insertBefore()不能同时使用</p>
+<pre><code>案例：
+<span class="keyword">var</span> newnode = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);
+newnode.href = <span class="string">"http://www.baidu.com"</span>;
+newnode.id = <span class="string">"gg"</span>;
+newnode.className = <span class="string">"mm-bb-cc"</span>;
+newnode.style.border = <span class="string">"1px red solid"</span>;
+newnode.innerHTML = <span class="string">"12233487859"</span>;
+div1.appendChild(newnode);<span class="comment">//往div1容器最后一个子集位置添加元素</span>
+div1.insertBefore(newnode,div1.firstElementChild);<span class="comment">//往div1里添加元素，newnode后面是添加元素的位置，这个是添加在第一个字节位置</span>
+</code></pre></li>
+<li><p>removeChild()//删除元素</p>
+<pre><code>案例：
+<span class="tag">div1</span><span class="class">.removeChild</span>(<span class="tag">newnode</span>);
+</code></pre></li>
+</ol>
+<ul>
+<li>offsetParent;//离当前节点最近的具有定位属性的祖先节点；</li>
+</ul>
+<p>如果没有设置position以body为准，设置了position的以position为准</p>
+<ul>
+<li>如果所有祖先节点都没有定位属性：</li>
+</ul>
+<ol>
+<li><p>对于一个有定位属性的元素：</p>
+<pre><code>IE6、<span class="number">7</span>:offsetParent 是HTML节点
+
+其他浏览器：offsetParent 是body节点
+</code></pre></li>
+<li><p>对于一个没有定位的元素：</p>
+<pre><code>IE6、<span class="number">7</span>：最近的一个触发了haslayout
+
+属性的祖先节点，如果所有祖先节点都没有触发haslayout,默认为<span class="keyword">body</span>节点。
+
+其他浏览器为<span class="keyword">body</span>.
+</code></pre></li>
+</ol>
+<ul>
+<li>如果当前节点有display:none;属性在iell</li>
+</ul>
+<p>以上及标准浏览器，offsetParent为null;</p>
+<p>IE10以上浏览器不受影响。</p>
+<pre><code><span class="keyword">var</span> div1 = <span class="built_in">document</span>.querySelector(<span class="string">"<span class="subst">#div1</span>"</span>);
+
+<span class="built_in">console</span>.log(div1.offsetParent);
+</code></pre><ul>
+<li><p>console.log(div1.offsetLeft);//对象元素与offsetParent的左边距离</p>
+</li>
+<li><p>console.log(div1.offsetTop);//对象元素与offsetParent的上边距离</p>
+</li>
+<li><p>没有所谓的offsetRight和offsetBottom</p>
+</li>
+</ul>
+<p>console.log(div1.offsetWidth);//ele.width+padding+border</p>
+<p>console.log(div1.offsetHeight);//ele.height+padding+border</p>
+<p>console.log(div1.clientWidth);//ele.width+padding</p>
+<p>console.log(div1.clientHeight);//ele.height+padding</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2015/12/26/DOM对象/" data-title="DOM对象 | TK-Person" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="prev">
+<a href="/2015/12/19/Math和日期对象/"  title="Math和日期对象">
+ <strong>PREVIOUS:</strong><br/> 
+ <span>Math和日期对象
+</span>
+</a>
+</div>
+
+</nav>
+
+
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2015/12/26/DOM对象/" data-title="DOM对象" data-url="http://yoursite.com/2015/12/26/DOM对象/"></div>
+	<!-- 多说评论框 end -->
+</div>  
+
+<script src="/js/snowstorm-min.js"></script>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"right","bdTop":"100"},"image":{"viewList":["weixin","qzone","tsina","tqq","renren"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["weixin","qzone","tsina","tqq","renren"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM:document_object_model文档对象模型。"><span class="toc-number">1.</span> <span class="toc-text">DOM:document object model文档对象模型。</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  <div>
+<script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_wh.js"></script>
+</div>
+
+
+  <div class="music">
+<p class="asidetitle">Music</p>
+<div class="music_player clearfix">
+<script type="text/javascript" src="http://www.xiami.com/widget/player-single?uid=45521081&sid=381307&mode=js"></script>
+</div>
+</div>
+
+  
+
+  
+<div class="categorieslist">
+<p class="asidetitle">Recent Posts</p>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2015/12/26/DOM对象/">DOM对象</a>
+      </li>
+    
+      <li>
+        <a href="/2015/12/19/Math和日期对象/">Math和日期对象</a>
+      </li>
+    
+      <li>
+        <a href="/2015/12/19/字符串和数组的操作/">字符串和数组的操作</a>
+      </li>
+    
+      <li>
+        <a href="/2015/12/07/语法大全/">JS语法大全</a>
+      </li>
+    
+      <li>
+        <a href="/2015/12/07/CSS选择符命名/">CSS选择符命名</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">Archives</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">6</span></li></ul>
+  </div>
+
+
+  
+<div class="widget">
+  <p class="asidetitle">Recent Comments</p>
+    
+<ul class="entry ds-recent-comments" data-num-items="8" data-show-avatars="0" data-show-time="1" data-show-admin="0" data-excerpt-length="70"></ul>
+</div>
+
+
+  
+
+
+  <div class="linklist">
+<h3 rel="grow" class="grow asidetitle">Blogroll</h3>
+<ul class="entry">
+<li><a href="http://hanmingyang.github.io/">韩明洋</a></li>
+<li><a href="http://zy8232003.github.io/">张跃</a></li>
+<li><a href="http://gcsHaya.github.io/">张俊琪</a></li>
+<li><a href="http://jameblunt1973.github.io/" >张记文</a></li>
+<li><a href="http://running11.github.io/" >邝艳芝</a></li>
+<li><a href="http://zgmn.github.io/" >胡月</a></li>
+<li><a href="http://haomark.github.io/" >郝云鹏</a></li>
+<li><a href="http://luqiqi1225.github.io/">陆琦</a></li>
+<li><a href="http://chumengxing1121.github.io/">褚梦星</a></li>
+<li><a href="http://aoyi551083.github.io/">敖艺</a></li>
+<li><a href="http://zoeyzhou.github.io/">周叶</a></li>
+<li><a href="http://athenachu.github.io/">汪凌峰</a></li>
+<li><a href="http://sundyfuther.github.io/">陈晓佳</a></li>
+<li><a href="http://sh5054.github.io/">孙浩</a></li>
+<li><a href="http://quanquanxuan.github.io/">宣圆圆</a></li>
+<li><a href="http://baobeiaini.github.io/">王贝贝</a></li>
+<li><a href="http://crerich.github.io/">程华</a></li>
+<li><a href="http://tyl1002353363.github.io/">谭于磊</a></li>
+<li><a href="http://yamanai.github.io/">张明</a></li>
+<li><a href="http://lck297231489.github.io/">刘臣康</a></li>
+<li><a href="http://tavey.github.io/">王晓伟</a></li>
+<li><a href="http://weibo0909.github.io/">魏传波</a></li>
+<li><a href="http://wj1213180604.github.io/">王娟</a></li>
+<li><a href="http://tang0916tang.github.io/">张晓翠</a></li>
+<li><a href="http://zhuqy.github.io/">祝倩莹</a></li>
+<li><a href="http://quangege.github.io/">张涌泉</a></li>
+<li><a href="http://niexiaofei1988.github.io/">聂海锋</a></li>
+<li><a href="http://changxiangru.github.io/">常相如</a></li>
+<li><a href="http://xuyanchao.github.io/">许颜超</a></li>
+<li><a href="http://samguoqiang.github.io/">陈国强</a></li>
+</ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2015 
+		
+		<a href="http://yoursite.com" target="_blank" title="左手">左手</a>
+		
+		</p>
+</div>
+</footer>
+    
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9723e4a6c94c2638d915c2747e92aef9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<div id="totop" style="position:fixed;bottom:50px;right:50px;cursor: pointer;">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+<script src="/js/scrolltop.js"></script>
+
+  </body>
+</html>
+
+
+<a href="https://github.com/Voidly"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
