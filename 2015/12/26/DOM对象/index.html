@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>DOM对象 | TK-Person</title>
+    <title>DOM对象和可视区 | TK-Person</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="左手">
@@ -279,7 +279,7 @@ dom是关于如何创建、添加、修">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/12/26/DOM对象/" title="DOM对象" itemprop="url">DOM对象</a>
+      <a href="/2015/12/26/DOM对象/" title="DOM对象和可视区" itemprop="url">DOM对象和可视区</a>
   </h1>
   <p class="article-author">By
     
@@ -287,7 +287,7 @@ dom是关于如何创建、添加、修">
     </p>
   <p class="article-time">
     <time datetime="2015-12-26T13:26:41.000Z" itemprop="datePublished">2015-12-26</time>
-    更新日期:<time datetime="2015-12-26T14:25:17.000Z" itemprop="dateModified">2015-12-26</time>
+    更新日期:<time datetime="2015-12-26T14:35:51.000Z" itemprop="dateModified">2015-12-26</time>
     
   </p>
 </header>
@@ -296,7 +296,7 @@ dom是关于如何创建、添加、修">
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM:document_object_model文档对象模型。"><span class="toc-number">1.</span> <span class="toc-text">DOM:document object model文档对象模型。</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM:document_object_model文档对象模型。"><span class="toc-number">1.</span> <span class="toc-text">DOM:document object model文档对象模型。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可视区：能够看到网页内容的区域"><span class="toc-number">2.</span> <span class="toc-text">可视区：能够看到网页内容的区域</span></a></li></ol>
 		</div>
 		
 		<p>要记得东西太多，记性不好就要多背了！</p>
@@ -707,6 +707,50 @@ div1.insertBefore(newnode,div1.firstElementChild);<span class="comment">//往div
 <p>console.log(div1.offsetHeight);//ele.height+padding+border</p>
 <p>console.log(div1.clientWidth);//ele.width+padding</p>
 <p>console.log(div1.clientHeight);//ele.height+padding</p>
+<h2 id="可视区：能够看到网页内容的区域">可视区：能够看到网页内容的区域</h2><ol>
+<li><p>可视区宽度：</p>
+<pre><code>标准：window<span class="class">.innerWidth</span>
+ie6/<span class="number">7</span>/<span class="number">8</span>:document<span class="class">.documentElement</span><span class="class">.clientWidth</span>
+</code></pre></li>
+<li><p>可视区高度：</p>
+<pre><code>标准：window<span class="class">.innerHeight</span>
+ie6/<span class="number">7</span>/<span class="number">8</span>:document<span class="class">.documentElement</span><span class="class">.clientHeight</span>
+</code></pre></li>
+</ol>
+<p>clientWidth:width+padding</p>
+<ul>
+<li><p>window.onscroll 当页面发生滚动的时候触发的事件</p>
+</li>
+<li><p>window.rescroll 当页面窗口尺寸发生改变时触发的事件</p>
+</li>
+<li><p>window.onload  当html文档加载完成之后执行的事件</p>
+</li>
+</ul>
+<p>一、滚动的距离：页面向上或向左滚动的距离</p>
+<ol>
+<li><p>滚动宽度：拉动滚动条向右时，页面向左滚动的尺寸</p>
+<pre><code>标准浏览器：window<span class="class">.pageXOffset</span>
+ie6/<span class="number">7</span>/<span class="number">8</span>:document<span class="class">.documentElement</span><span class="class">.scrollLeft</span>
+</code></pre></li>
+<li><p>滚动高度：拉动滚动条向下时，页面向上滚动的尺寸</p>
+<pre><code>标准浏览器：window<span class="class">.pageYOffset</span>
+ie6/<span class="number">7</span>/<span class="number">8</span>:document<span class="class">.documentElement</span><span class="class">.scrollTop</span>
+</code></pre></li>
+</ol>
+<p>二、内容标签元素：</p>
+<ol>
+<li><p>scrollHeight:内容高度，由body内容所撑出来的高度</p>
+</li>
+<li><p>body元素:document.body.scrollHeight如果内容高度没有可视区域高度高 scrollHeight为可视区域</p>
+</li>
+<li><p>offsetHeight:文档高度，标签的样式高度</p>
+</li>
+<li><p>clientHeight 就是透过浏览器看内容的这个区域高度</p>
+</li>
+</ol>
+<blockquote>
+<p>scrollHeight / offsetHeight / clientHeight</p>
+</blockquote>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -716,7 +760,7 @@ div1.insertBefore(newnode,div1.firstElementChild);<span class="comment">//往div
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2015/12/26/DOM对象/" data-title="DOM对象 | TK-Person" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2015/12/26/DOM对象/" data-title="DOM对象和可视区 | TK-Person" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -738,7 +782,7 @@ div1.insertBefore(newnode,div1.firstElementChild);<span class="comment">//往div
 
 
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2015/12/26/DOM对象/" data-title="DOM对象" data-url="http://yoursite.com/2015/12/26/DOM对象/"></div>
+	<div class="ds-thread" data-thread-key="2015/12/26/DOM对象/" data-title="DOM对象和可视区" data-url="http://yoursite.com/2015/12/26/DOM对象/"></div>
 	<!-- 多说评论框 end -->
 </div>  
 
@@ -751,7 +795,7 @@ div1.insertBefore(newnode,div1.firstElementChild);<span class="comment">//往div
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM:document_object_model文档对象模型。"><span class="toc-number">1.</span> <span class="toc-text">DOM:document object model文档对象模型。</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM:document_object_model文档对象模型。"><span class="toc-number">1.</span> <span class="toc-text">DOM:document object model文档对象模型。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可视区：能够看到网页内容的区域"><span class="toc-number">2.</span> <span class="toc-text">可视区：能够看到网页内容的区域</span></a></li></ol>
   </div>
 
 <div id="asidepart">
@@ -778,7 +822,7 @@ div1.insertBefore(newnode,div1.firstElementChild);<span class="comment">//往div
   <ul class="entry">
     
       <li>
-        <a href="/2015/12/26/DOM对象/">DOM对象</a>
+        <a href="/2015/12/26/DOM对象/">DOM对象和可视区</a>
       </li>
     
       <li>
