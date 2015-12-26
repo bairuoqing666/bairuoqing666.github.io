@@ -4,17 +4,21 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>字符串和数组的操作 | TK-Person</title>
+    <title>Math和日期对象 | TK-Person</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="左手">
     
-    <meta name="description" content="字符串和数组的操作
-字符串操作：
-indexOf()方法可返回某个指定字符串值在字符串中首次出现的位置，从前往后查找如果没有找到匹配的字符串则返回-1indexOf(*strValue.position)
+    <meta name="description" content="Math和日期对象
+Math 对象用于执行数学任务。
+Math.PI返回圆周率（约等于3.14159）
 案例：
-var str = &quot;hello world&quot;;
-console.log(str.in">
+console.log(math)
+
+Math.abs(100);//取绝对值，去负的过程
+var num = 10.1;
+
+console.log(Math.ceil(num));//对">
     
     
     
@@ -275,15 +279,15 @@ console.log(str.in">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/12/19/字符串和数组的操作/" title="字符串和数组的操作" itemprop="url">字符串和数组的操作</a>
+      <a href="/2015/12/19/Math和日期对象/" title="Math和日期对象" itemprop="url">Math和日期对象</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="左手">左手</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-12-19T09:39:50.000Z" itemprop="datePublished">2015-12-19</time>
-    更新日期:<time datetime="2015-12-19T11:03:23.000Z" itemprop="dateModified">2015-12-19</time>
+    <time datetime="2015-12-19T11:14:44.000Z" itemprop="datePublished">2015-12-19</time>
+    更新日期:<time datetime="2015-12-26T13:21:28.000Z" itemprop="dateModified">2015-12-26</time>
     
   </p>
 </header>
@@ -292,164 +296,201 @@ console.log(str.in">
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串和数组的操作"><span class="toc-number">1.</span> <span class="toc-text">字符串和数组的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串操作："><span class="toc-number">1.0.1.</span> <span class="toc-text">字符串操作：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组："><span class="toc-number">1.0.2.</span> <span class="toc-text">数组：</span></a></li></ol></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Math和日期对象"><span class="toc-number">1.</span> <span class="toc-text">Math和日期对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Math_对象用于执行数学任务。"><span class="toc-number">1.1.</span> <span class="toc-text">Math 对象用于执行数学任务。</span></a></li></ol></li></ol>
 		</div>
 		
-		<h1 id="字符串和数组的操作">字符串和数组的操作</h1><p><img src="http://7xoqfs.com1.z0.glb.clouddn.com/TK11-14.jpg"></p>
-<h3 id="字符串操作：">字符串操作：</h3><ul>
-<li><p>indexOf()方法可返回某个指定字符串值在字符串中首次出现的位置，从前往后查找如果没有找到匹配的字符串则返回-1<br>indexOf(*strValue.position)</p>
+		<h2 id="Math和日期对象">Math和日期对象</h2><p><img src="http://7xoqfs.com1.z0.glb.clouddn.com/TK11-11.jpg"></p>
+<h3 id="Math_对象用于执行数学任务。">Math 对象用于执行数学任务。</h3><ul>
+<li><p>Math.PI<br>返回圆周率（约等于3.14159）</p>
 <pre><code>案例：
-var <span class="built_in">str</span> = <span class="string">"hello world"</span>;
-console.<span class="built_in">log</span>(<span class="built_in">str</span>.indexOf(<span class="string">"o"</span>,<span class="number">5</span>));
-lastIndexOf()方法可返回某个指定字符串值在字符串中首次
-出现
-的位置,从后往前查找
-如果没有找到匹配的字符串则返回-<span class="number">1</span>
-lastIndexOf(*strValue.position)
-
-案例：
-var <span class="built_in">str</span> = <span class="string">"hello world"</span>;
-console.<span class="built_in">log</span>(<span class="built_in">str</span>.lastIndexOf(<span class="string">"o"</span>,<span class="number">5</span>));
-slice()方法可提取字符串的某个部分，并以新的字符串返回被
-提取
-的部分。
-slice(*positionStart,positionEnd)
-
-案例：
-var <span class="built_in">str</span> = <span class="string">"1-2-3-4-5"</span>;
-console.<span class="built_in">log</span>(<span class="built_in">str</span>.slice(<span class="number">3</span>,<span class="number">6</span>));<span class="comment">//字符串长度 6-3 //从</span>
-<span class="number">3</span>开始 不包含<span class="number">6</span>
-<span class="built_in">split</span>()方法用于把一个字符串分割成字符串数组。
-<span class="built_in">split</span>(*strValue,length)
-
-案例：
-var <span class="built_in">str</span> = <span class="string">"1-2-3-4-5"</span>;
-var arr = <span class="built_in">str</span>.<span class="built_in">split</span>(“-“,<span class="number">2</span>);<span class="comment">//用-号分开2个字符串</span>
-[<span class="string">"1"</span>,<span class="string">"2"</span>]
-console.<span class="built_in">log</span>(arr);
+console.<span class="function"><span class="title">log</span><span class="params">(math)</span></span>
 </code></pre></li>
-<li><p>substring()提取相应区间的字符</p>
-<p>substring(*starIndex,endIndex);</p>
+<li><p>Math.abs(100);//取绝对值，去负的过程</p>
+<pre><code><span class="keyword">var</span> <span class="built_in">num</span> = <span class="number">10.1</span>;
+</code></pre></li>
+<li><p>console.log(Math.ceil(num));//对数值进行上舍入,有小数点时就进1</p>
+<pre><code><span class="keyword">var</span> <span class="built_in">num</span> = <span class="number">10.1</span>;
+</code></pre></li>
+<li><p>console.log(Math.floor(num));//对数值进行下舍入,有小数点时就舍去</p>
+<pre><code><span class="keyword">var</span> <span class="built_in">num</span> = <span class="number">10.9</span>;
+</code></pre></li>
+<li><p>console.log(Math.round(num));//对数值进行四舍五入</p>
 </li>
 </ul>
-<p>取的字符串长度为：endIndex-starIndex</p>
-<p>取的字符内容不包括endIndex字符</p>
-<pre><code>案例：
-var <span class="built_in">str</span> = <span class="string">"1-2-3-4-5"</span>;
-console.<span class="built_in">log</span>(<span class="built_in">str</span>.substring(<span class="number">3</span>));<span class="comment">//从下标3开始</span>
-console.<span class="built_in">log</span>(<span class="built_in">str</span>.substring(<span class="number">3</span>,<span class="number">6</span>));<span class="comment">//字符串长度 6-3 //</span>
-从<span class="number">3</span>开始 不包含<span class="number">6</span>
-charCodeAt()返回指定下标位置的字符Unicode编码
-
-案例：
-console.<span class="built_in">log</span>(“abc”&gt;<span class="string">"aaa"</span>);<span class="comment">//true</span>
-var str2=“abc”.charCodeAt(<span class="number">0</span>);<span class="comment">//通过括号内的下标来查找</span>
-字符串内数字的编码
-console.<span class="built_in">log</span>(str2);
-charAt()返回指定位置的字符
-
-案例：
-var <span class="built_in">str</span>=<span class="string">"abcdefj"</span>;
-var str2=<span class="built_in">str</span>.charAt(<span class="number">2</span>);<span class="comment">//通过括号内的下标来查找字符</span>
-console.<span class="built_in">log</span>(str2);
-toUpperCase()把字符串转化为大写；
-
-案例：
-var <span class="built_in">str</span> = <span class="string">"abcdefj"</span>;
-var str2 = <span class="built_in">str</span>.toUpperCase();<span class="comment">//只能字符串整体变大，不</span>
-能传参或指定字符变大
-console.<span class="built_in">log</span>(str2);
-toLowerCase()把字符串转化为小写；
-
-案例：
-var <span class="built_in">str</span> = <span class="string">"ABCDEFJ"</span>;
-console.<span class="built_in">log</span>(<span class="built_in">str</span>.toLowerCase());<span class="comment">//只能字符串整体变小，</span>
-不能传参或指定字符变小
-</code></pre><ul>
-<li><p>delete删除属性</p>
-<pre><code>案例：
-<span class="keyword">var</span> obj={name:”bai”,age:”<span class="number">16</span>”};
-<span class="keyword">delete</span> obj.name<span class="comment">//删除成功显示true</span>
-
-quange=“funny”;
-<span class="keyword">delete</span> quange<span class="comment">//删除成功显示true</span>
-</code></pre></li>
-</ul>
-<h3 id="数组：">数组：</h3><ul>
-<li><p>join()用于把数组中的所有元素，通过指定的分隔符放入一个字符串</p>
-<pre><code>案例：
-var arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>];
-var <span class="built_in">str</span> = <span class="string">''</span>;
-<span class="built_in">str</span> = arr.<span class="built_in">join</span>(<span class="string">'|'</span>);<span class="comment">//可以指定分隔符</span>
-console.<span class="built_in">log</span>(<span class="built_in">str</span>);
-</code></pre></li>
-<li><p>pop()移除数组中的最后一个元素并返回该元素</p>
-</li>
-</ul>
-<p>pop()方法将删除Array的最后一个元素，把数组长度减1，并且返回它删除的元素的值，如果数组已经为空，则pop()不改变数组，并返回undfined值</p>
-<pre><code>案例：
-var arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>];
-console.<span class="built_in">log</span>(arr.pop(),arr);
-</code></pre><ul>
-<li>shift()移除数组中的第一个元素并返回该元素</li>
-</ul>
-<p>如果数组是空的，那么shift()方法将不进行任何操作，返回undfined值。请注意，该方法不创建新数组，而是直接修改原因的Array.</p>
-<pre><code>案例：
-var arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>];
-console.<span class="built_in">log</span>(arr.shift(),arr);
-</code></pre><ul>
-<li>push()向数组的末尾添加一个或更多元素，并返回新的长度。</li>
-</ul>
-<p>push()方法可把它的参数顺序添加到Array的尾部。它直接修改arrayObject,而不是创建一个新的数组</p>
-<pre><code>案例：
-var arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>];
-console.<span class="built_in">log</span>(arr.push(<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>),arr);
-</code></pre><p>数组：</p>
-<p>一、</p>
 <ol>
-<li><p>sort()方法用于对数组的元素排序<br>参数可选，不选参数的话，按字母顺序排序，先字符串化，再按照字符编码排序。<br>参数必须是函数，比较函数,这个函数写在外面</p>
+<li><p>max(x,y);<br>返回x,y中的最高值</p>
+</li>
+<li><p>min(x,y);<br>返回x,y中的最底值</p>
+</li>
+<li><p>random();<br>返回0~1之间的随机数</p>
+</li>
+</ol>
+<p>consloe.log(Math.random());</p>
+<ul>
+<li>random()用法</li>
+</ul>
+<p>生成n到m之间的整数；</p>
+<p>生成n~m,包含n但不包含m的整数；</p>
+<p>第一步算出m-n的值，假设等于w；<br>第二步Math.random()<em>w；<br>第三步Math.random()</em>w+n；<br>第四步parseInt(Math.random()*w+n,10)//十进制</p>
 <pre><code>案例：
-var arr=[<span class="number">10</span>,<span class="number">20</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">100</span>];
-console.<span class="built_in">log</span>(arr.sort());
-</code></pre></li>
-<li><p>比较函数：<br>function(a,b){return b-a || a-b}<br>ab代表数组两个任意数值。<br>return&gt;0的值 b在a的前面。<br>return&lt;0的值 a在b的前面。<br>return = 0?<br>简化一下：a-b输出从小到大排序，b-a输出从大到小排序。</p>
+<span class="keyword">var</span> <span class="keyword">n</span>=50,<span class="keyword">m</span>=100;
+<span class="keyword">var</span> w=<span class="keyword">m</span>-<span class="keyword">n</span>;
+console.<span class="literal">log</span>(parseInt(Math.random()*w+<span class="keyword">n</span>,10));<span class="comment">//</span>
+50~99之间随机
+</code></pre><ul>
+<li>生成n~m,不包含n但包含m的整数；</li>
+</ul>
+<p>第一步算出m-n的值，假设等于w<br>第二步Math.random()<em>w<br>第三步Math.random()</em>w+n<br>第四步Math.floor(Math.random()*w+n)+1</p>
+<ul>
+<li>生成n~m,不包含n和m的整数；</li>
+</ul>
+<p>第一步算出m-n-2的值，假设等于w<br>第二步Math.random()<em>w<br>第三步Math.random()</em>w+n+1<br>第四步Math.round(Math.random()<em>w+n+1)或者Math.ceil(Math.random()</em>w+n+1)</p>
+<ol>
+<li>定时器：<br>setInterval()循环定时器，间隔是毫秒1s=1000ms</li>
+</ol>
+<p>setInterval()函数语法</p>
+<p>clearInterval()清除定时</p>
 <pre><code>案例：
-var arr=[<span class="number">10</span>,<span class="number">20</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">100</span>];
-<span class="function">function <span class="title">fn</span><span class="params">(a,b)</span></span>{
-     <span class="keyword">return</span> a-b;<span class="comment">//大于0，小于0，等于0的(有兼容问题)</span>
-    <span class="comment">// return b-a;</span>
+<span class="keyword">var</span> id=setInterval(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{},<span class="number">1000</span>);
+clearInterval(id);
+</code></pre><p>在任何地方使用定时器，先保存它</p>
+<pre><code><span class="keyword">var</span> xx = <span class="literal">null</span>;
+<span class="keyword">var</span> yy = <span class="literal">null</span>;
+<span class="keyword">var</span> num = <span class="number">0</span>;
+(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    xx = setInterval(add,<span class="number">2000</span>);
+    <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">()</span></span>{
+        num ++;
+        <span class="keyword">if</span>(num &gt; <span class="number">10</span>){
+            clearInterval(xx);
+        }
+    }
+})()
+</code></pre><ul>
+<li>单次定时器：</li>
+</ul>
+<p>setTimeout(‘’,3000);//3秒后执行这个方法，只运行一次</p>
+<p>clearTimeout();//清除定时器</p>
+<pre><code>案例：
+<span class="keyword">var</span> id=setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{},<span class="number">1000</span>);
+clearTimeout(id);
+</code></pre><p>在任何地方使用定时器，先保存它</p>
+<pre><code><span class="keyword">var</span> xx = <span class="literal">null</span>;
+<span class="keyword">var</span> yy = <span class="literal">null</span>;
+<span class="keyword">var</span> num = <span class="number">0</span>;
+(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    xx = setTimeout(add,<span class="number">2000</span>);
+    <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">()</span></span>{
+        num ++;
+        <span class="keyword">if</span>(num &gt; <span class="number">10</span>){
+            clearTimeout(xx);
+        }
+    }
+})()
+</code></pre><p>函数都有什么？</p>
+<p>答：1.arguments 参数对象<br>       2.prototype 原型对象<br>       3.默认的返回值undefined<br>   4.call和apply<br>call和apply是用一个对象来替换当前对象的</p>
+<pre><code>案例：
+<span class="function"><span class="keyword">function</span> <span class="title">Man</span><span class="params">()</span></span>{
+    <span class="keyword">this</span>.name = <span class="string">"huai"</span>;
+    <span class="keyword">this</span>.showName = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+        alert(<span class="keyword">this</span>.name);
+    }
 }
-console.<span class="built_in">log</span>(arr.sort(fn));
-</code></pre></li>
-<li><p>reverse()方法用于对数组元素逆向排序</p>
-<pre><code>案例：
-var arr=[<span class="number">10</span>,<span class="number">20</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">100</span>];
-console.<span class="built_in">log</span>(arr.reverse());
-</code></pre></li>
+<span class="function"><span class="keyword">function</span> <span class="title">All</span><span class="params">()</span></span>{
+    <span class="keyword">this</span>.name = <span class="string">"hao"</span>;
+    <span class="comment">// alert(this.name);</span>
+}
+<span class="keyword">var</span> man = <span class="keyword">new</span> Man();
+<span class="keyword">var</span> all = <span class="keyword">new</span> All();
+<span class="keyword">var</span> obj = {};
+<span class="comment">// man.showName.apply(all,[]);//调用的时候必须要用词组</span>
+方法
+man.showName.call(all,<span class="string">""</span>);<span class="comment">//调用的时候不限定是什么方法</span>
+</code></pre><ol>
+<li>日期对象：</li>
 </ol>
-<p>二、</p>
+<p>var time = new Date();//日期对象，时间对象，date对象</p>
+<p>console.log(time.getFullYear());//方法</p>
+<p>console.log(time.getYeat()+1900);//废了</p>
+<p>console.log(time.getMonth());//0~11 0代表1月，11代表12月</p>
+<p>console.log(time.getDate());//1~31 代表31天 获取日数</p>
+<p>console.log(time.getDay());//0~6 0代表周日 获取周几</p>
+<p>console.log(time.getHours());//0~23 0~11 am 12~23 pm 获取24个小时</p>
+<p>console.log(time.getMinutes());//0~59 代表60分 获取分</p>
+<p>console.log(time.getSeconds());//0~59 代表60秒 获取秒</p>
+<pre><code>案例：
+<span class="keyword">var</span> box = <span class="built_in">document</span>.<span class="built_in">querySelector</span>(<span class="string">"body"</span>);
+
+setInterval(function(){
+    <span class="keyword">var</span> time = <span class="keyword">new</span> Date();
+    console.log(time);
+    box.innerHTML = time.getFullYear()+<span class="string">"年"</span>+(time.getMonth()+<span class="number">1</span>)+<span class="string">"月"</span>+time.getDate()+<span class="string">"日"</span>+shiduan(time.getHours())+buling(time.getHours())+<span class="string">":"</span>+buling(time.getMinutes())+<span class="string">":"</span>+buling(time.getSeconds())+<span class="string">"星期"</span>+buzhou(time.getDay());
+},<span class="number">30</span>)
+function buling(<span class="built_in">num</span>){
+    <span class="keyword">if</span>(parseInt(<span class="built_in">num</span>,<span class="number">10</span>)&lt;<span class="number">10</span>){
+        <span class="keyword">return</span> <span class="string">"0"</span>+<span class="built_in">num</span>;
+    }<span class="keyword">else</span>{
+        <span class="keyword">return</span> <span class="built_in">num</span>;
+    }
+}
+function buzhou(<span class="built_in">num</span>){
+    <span class="keyword">if</span>(<span class="built_in">num</span> == <span class="number">0</span>){
+        <span class="keyword">return</span> <span class="string">"天"</span>;
+    }<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">num</span> == <span class="number">1</span>){
+        <span class="keyword">return</span> <span class="string">"一"</span>;
+    }<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">num</span> == <span class="number">2</span>){
+        <span class="keyword">return</span> <span class="string">"二"</span>;
+    }<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">num</span> == <span class="number">3</span>){
+        <span class="keyword">return</span> <span class="string">"三"</span>;
+    }<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">num</span> == <span class="number">4</span>){
+        <span class="keyword">return</span> <span class="string">"四"</span>;
+    }<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">num</span> == <span class="number">5</span>){
+        <span class="keyword">return</span> <span class="string">"五"</span>;
+    }<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">num</span> == <span class="number">6</span>){
+        <span class="keyword">return</span> <span class="string">"六"</span>;
+    }
+}
+function shiduan(<span class="built_in">num</span>){
+    <span class="keyword">if</span>(<span class="built_in">num</span>&lt;<span class="number">12</span>){
+        <span class="keyword">return</span> <span class="string">"am"</span>;
+    }<span class="keyword">else</span>{
+        <span class="keyword">return</span> <span class="string">"pm"</span>
+    }
+}
+</code></pre><p>new Date的传参的四种方式：</p>
+<p>第一种最常用</p>
 <ol>
-<li><p>slice()该方法可从指定数组中返回选定的元素<br>slice(*starIndex,endIndex)<br>第一个参数可为负数,-1代表最后一个<br>可用于数组和字符串</p>
-<pre><code>案例：
-var arr=[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>];
-console.<span class="built_in">log</span>(arr.slice(<span class="number">2</span>,<span class="number">6</span>));
-</code></pre></li>
-<li><p>splice()用于对数组的删除，替换，插入，返回被删除的项<br>arr.splice(starIndex,deletCount,item…)<br>starIndex表示位置坐标<br>delet要删除的个数0的话，表示不删除<br>item表示要替换，插入的序列</p>
-<pre><code>案例：
-var arr=[<span class="number">0,1,2,3</span>,<span class="number">4,5,6,7</span>,8]<span class="comment">;</span>
-var arr2<span class="comment">;</span>
-arr2=arr.splice(2,1,'abc')<span class="comment">;</span>
-console.log(arr2,arr)<span class="comment">;</span>
-</code></pre></li>
-<li><p>forEach()</p>
-<pre><code>案例：
-var arr=[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>];
-arr.forEach(function(aa,bb,cc){
-    console.<span class="built_in">log</span>(aa,bb,cc);<span class="comment">//第三个参数代表数组本</span>
-    身，第二个参数代表下标，第一个参数代表下标对应的元素
-});
+<li>var time = new Date(2015,11,30,23,50,50);//传参，设置时间，年月日，时分秒，毫秒<br>console.log(time);</li>
+<li>var time2 = new Date(“July 23,2015,23:12:34”);<br>console.log(time);</li>
+<li>var time3 = time.getTime();//1700年1月1日至今的毫秒数<br>console.log(time3);</li>
+<li><p>var time4 = new Date(1451490650000);<br>console.log(time4);</p>
+<pre><code>month[<span class="number">0</span>]=<span class="string">"January"</span>;<span class="comment">//一月 </span>
+
+month[<span class="number">0</span>]=<span class="string">"February"</span>;<span class="comment">//二月</span>
+
+month[<span class="number">0</span>]=<span class="string">"March"</span>;<span class="comment">//三月</span>
+
+month[<span class="number">0</span>]=<span class="string">"April"</span>;<span class="comment">//四月</span>
+
+month[<span class="number">0</span>]=<span class="string">"May"</span>;<span class="comment">//五月</span>
+
+month[<span class="number">0</span>]=<span class="string">"June"</span>;<span class="comment">//六月</span>
+
+month[<span class="number">0</span>]=<span class="string">"July"</span>;<span class="comment">//七月</span>
+
+month[<span class="number">0</span>]=<span class="string">"August"</span>;<span class="comment">//八月</span>
+
+month[<span class="number">0</span>]=<span class="string">"September"</span>;<span class="comment">//九月</span>
+
+month[<span class="number">0</span>]=<span class="string">"October"</span>;<span class="comment">//十月  </span>
+
+month[<span class="number">0</span>]=<span class="string">"November"</span>;<span class="comment">//十一月</span>
+
+month[<span class="number">0</span>]=“December<span class="string">";//十二月</span>
 </code></pre></li>
 </ol>
+<p>如何设计倒计时：</p>
+<p>请看案例！</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -459,7 +500,7 @@ arr.forEach(function(aa,bb,cc){
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2015/12/19/字符串和数组的操作/" data-title="字符串和数组的操作 | TK-Person" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2015/12/19/Math和日期对象/" data-title="Math和日期对象 | TK-Person" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -468,19 +509,11 @@ arr.forEach(function(aa,bb,cc){
 	
 <nav class="article-nav clearfix">
  
- <div class="next" >
- <a href="/2015/12/19/Math和日期对象/" title="Math和日期对象">
-  <strong>NEXT:</strong><br/>
-  <span>
-  Math和日期对象</span>
-</a>
-</div>
-
 
 <div class="prev">
-<a href="/2015/12/07/语法大全/"  title="JS语法大全">
+<a href="/2015/12/19/字符串和数组的操作/"  title="字符串和数组的操作">
  <strong>PREVIOUS:</strong><br/> 
- <span>JS语法大全
+ <span>字符串和数组的操作
 </span>
 </a>
 </div>
@@ -489,7 +522,7 @@ arr.forEach(function(aa,bb,cc){
 
 
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2015/12/19/字符串和数组的操作/" data-title="字符串和数组的操作" data-url="http://yoursite.com/2015/12/19/字符串和数组的操作/"></div>
+	<div class="ds-thread" data-thread-key="2015/12/19/Math和日期对象/" data-title="Math和日期对象" data-url="http://yoursite.com/2015/12/19/Math和日期对象/"></div>
 	<!-- 多说评论框 end -->
 </div>  
 
@@ -502,7 +535,7 @@ arr.forEach(function(aa,bb,cc){
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串和数组的操作"><span class="toc-number">1.</span> <span class="toc-text">字符串和数组的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串操作："><span class="toc-number">1.0.1.</span> <span class="toc-text">字符串操作：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组："><span class="toc-number">1.0.2.</span> <span class="toc-text">数组：</span></a></li></ol></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Math和日期对象"><span class="toc-number">1.</span> <span class="toc-text">Math和日期对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Math_对象用于执行数学任务。"><span class="toc-number">1.1.</span> <span class="toc-text">Math 对象用于执行数学任务。</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
