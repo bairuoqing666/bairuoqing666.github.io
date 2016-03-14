@@ -4,12 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello World | TK-Person</title>
+    <title>css重点回顾 | TK-Person</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="左手">
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in ">
+    <meta name="description" content="css知识点回顾－ css 样式由选择符和声明组成，而声明又由属性和值组成
+
+选择器{属性:值}
+
+声明：在英文大括号“｛｝”中的的就是声明，属性和值之间用英文冒号“：”分隔。当有多条声明时，中间可以英文分号“;”分隔
+
+注释方式 /**/
+
+
+－ css引入方式 优缺点 场景    优先级
+
+内联">
     
     
     
@@ -270,15 +281,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/01/05/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2016/02/26/css重点回顾/" title="css重点回顾" itemprop="url">css重点回顾</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="左手">左手</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-01-05T15:23:49.000Z" itemprop="datePublished">2016-01-05</time>
-    更新日期:<time datetime="2015-11-24T13:07:00.000Z" itemprop="dateModified">2015-11-24</time>
+    <time datetime="2016-02-26T03:09:42.000Z" itemprop="datePublished">2016-02-26</time>
+    更新日期:<time datetime="2016-02-26T13:56:18.000Z" itemprop="dateModified">2016-02-26</time>
     
   </p>
 </header>
@@ -287,18 +298,135 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#css知识点回顾"><span class="toc-number">1.</span> <span class="toc-text">css知识点回顾</span></a></li></ol>
 		</div>
 		
-		<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+		<h3 id="css知识点回顾">css知识点回顾</h3><p>－ css 样式由选择符和声明组成，而声明又由属性和值组成</p>
+<ul>
+<li><p>选择器{属性:值}</p>
+</li>
+<li><p>声明：在英文大括号“｛｝”中的的就是声明，属性和值之间用英文冒号“：”分隔。当有多条声明时，中间可以英文分号“;”分隔</p>
+</li>
+<li><p>注释方式 /**/</p>
+</li>
+</ul>
+<p>－ css引入方式 优缺点 场景    优先级</p>
+<ul>
+<li>内联式css样式 把css代码直接写在现有的HTML标签中，如下面代码：</li>
+</ul>
+<p></p><p style="color:red">这里文字是红色。</p> 优点：优先级高，不会被其他样式覆盖影响。缺点：不利于代码的维护，没有样式内容分离。影响阅读体验。<p></p>
+<ul>
+<li><p>内部引用 style 位置在head </p>
+</li>
+<li><p>外部引用 link 位置在head</p>
+</li>
+<li><p>@import url(reset.css);使用@import会增加页面的总体加载时间。<br>IE中使用@import会改变文件的加载顺序。这可能会增加CSS文件的加载时间，阻碍页面渲染。</p>
+</li>
+</ul>
+<p>－选择器 及 优先级</p>
+<ul>
+<li>id选择器 ＃id</li>
+<li>class选择器 .class</li>
+<li>标签选择器 tag</li>
+<li>通配选择器 *</li>
+<li>层级选择器 div span div&gt;span</li>
+<li>分组选择器 html,body{width:100%;height:100%} 偏重于代码优化，html,body{width:100%;height:100%;}</li>
+<li>伪类选择器 A的4个伪类</li>
+<li>伪元素选择器 : ::</li>
+</ul>
+<p>－ !important 为某些样式设置最高权值</p>
+<p>－ 尺寸 width height </p>
+<p>－ 颜色值</p>
+<ul>
+<li><p>关键词 直接使用的名字的颜色值称为命名颜色，CSS支持17种合法命名颜色(标准颜色):<br>aqua fuchsia lime olive red white black gray maroon orange silver yellow blue green navy purple teal    浏览器支持140种颜色</p>
+</li>
+<li><p>16进制 6进制是设置颜色值的常用方式，将三个介于00-FF的十六进制数连接起来，若16进制的3组数各自成对，则可简写为3位</p>
+</li>
+<li><p>rgb 通过组合不同的红色、绿色、蓝色分量创造出的颜色成为RGB模式的颜色。显示器是由一个个像素构成，利用电子束来表现色彩。像素把光的三原色:红色(R)、绿色(G)、蓝色(B)组合起来。每像素包含8位元色彩的信息量，有0-255的256个单元，其中0是完全无光状态，255是最亮状态 ,若数值小于最小值0,则默认调整为0;若数值大小最大值255,则默认调整为255.</p>
+</li>
+</ul>
+<p><img src="http://p3.pstatp.com/large/23b00095416e3d2f534"></p>
+<ul>
+<li><p>rgba (IE8-浏览器不支持) rgba模式是在RGB基础上增加了alpha通道，用来设置颜色的透明度，其中这个通道值的范围是0-1。0代表完全透明，1代表完全不透明</p>
+</li>
+<li><p>hsl (IE8-浏览器不支持) HSL模式是通过对色调(H)、饱和度(S)、亮度(L)三个颜色通道的变化以及它们相互的叠加得到各式各样的颜色。HSL标准几乎可以包括人类视力所能感知的所有颜色.h:色调(hue)可以为任意整数。0(或360或-360)表示红色，60表示黄色，120表示绿色，180表示青色，240表示蓝色，300表示洋红(当h值大于360时，实际的值等于该值模360后的值).s:饱和度(saturation)，就是指颜色的深浅度和鲜艳程度。取0-100%范围的值，其中0表示灰度(没有该颜色)，100%表示饱和度最高(颜色最鲜艳).l:亮度(lightness)，取0-100%范围的值，其中0表示最暗(黑色)，100%表示最亮(白色)</p>
+</li>
+</ul>
+<p><img src="http://p1.pstatp.com/large/25a000cd7db6b60cf59"><br><img src="http://p3.pstatp.com/large/25a000cd7e117b4c2c0"></p>
+<ul>
+<li>hsla (IE8-浏览器不支持)HSLA模式是HSL的扩展模式，在HSL的基础上增加一个透明通道alpha来设置透明度<br>  hsla(<length>,<percentage>,<percentage>,<opacity>)</opacity></percentage></percentage></length></li>
+</ul>
+<p>－ 单位</p>
+<ul>
+<li><p>px 具体单位 具体到像素</p>
+</li>
+<li><p>100% 百分比 根据父级</p>
+</li>
+<li><p>em 单位被定义为当前字体大小 根据body 例如：body{font-size:14px}</p>
+</li>
+<li><p>rem root em 基于根元素html进行设置</p>
+</li>
+</ul>
+<p>－ vh和vw 视窗单位  vh等于viewport高度的1/100.例如，如果浏览器的高是900px,1vh求得的值为9px。同理，如果显示窗口宽度为750px,1vw求得的值为7.5px</p>
+<p>－ line-height</p>
+<ul>
+<li>基线、底线、顶线<br><img src="http://images.cnblogs.com/cnblogs_com/rainman/139529/o_line_height.png"></li>
+</ul>
+<p>行高指的是文本行的基线间的距离。<br>基线并不是汉字的下端沿，而是英文字母”x”的下端沿</p>
+<ul>
+<li>行距、行高</li>
+</ul>
+<p><img src="http://images.cnblogs.com/cnblogs_com/rainman/139529/o_text_018.gif"></p>
+<p>－ font字体</p>
+<p>字体是文字的外在形式，就是文字的风格，是文字的外衣。比如行书、楷书、草书，都是一种字体。同样一个字每个人写起来都会有差异，可以说每个人都有一套潜在的字体库。对于web页面来说，字体就是计算机上存储的一套文字显示方式。通过对文字进行一些特殊处理（比如末端加强）来提高不同环境中文字的可读性。</p>
+<p>比如同样大小的文字，在不同字体下的可读性是不同的。</p>
+<p><img src="http://images.cnitblog.com/blog2015/412020/201503/282109339112098.png"></p>
+<ul>
+<li><p>font-family 将一系列近似的字体按照优先级顺序组成一个列表，浏览器从第一项开始依次查找，找到第一种可用的字体来显示文字。font-family: Times New Roman,”open-sans”,”幼圆”,sans-serif—当浏览器显示一个字符时，会首先从Times New Roman中寻找这个字符，如果找到就用Times New Roman字体来显示这个字符。如果没找到就去open-sans中寻找，如果找到就用该字体显示字符，没找到就会依次寻找下去，如果在通用字体库sans-serif中也没有找到就会用一个缺字符代替（通常是小方框）。</p>
+</li>
+<li><p>font-family中有时候字体加引号有时候不加引号。区别在于对字体名称中空格的处理不同。不加引号时，忽略字体左右两端的空白字符，单词之间的空白字符被解释为一个空白字符。比如font-family:   Times   New   Roman   , sans-serif。被解释为font-family:Times New Roman,sans-serif。加引号时，需要保留引号内的所有空格。比如font-family:”Times    New Roman”,sans-serif。浏览器会去寻找“Times   New Roman”这个字体。</p>
+</li>
+<li><p><img src="http://images.cnitblog.com/blog2015/412020/201503/282251580201426.png"></p>
+</li>
+</ul>
+<ul>
+<li><p>具有继承性</p>
+</li>
+<li><p>w3c建议在定义字体是最后以一个类别结尾，例如sans-serif，来保证不同操作系统下网页都能够正确显示。常见的字体族为serif（衬线字体）、sans-serif（非衬线字体），可以简单理解为在所有字体都是失效的情况下，浏览器从字体族中选择一种字体来显示</p>
+</li>
+</ul>
+<ul>
+<li><p>sans-serif 非衬线字体，衬线字体以外的所有字体都成为非衬线字体。非衬线字体的线条比较均匀，通常在艺术字、标题中的使用较多。<img src="http://images.cnitblog.com/blog2015/412020/201503/290915103024376.png"></p>
+</li>
+<li><p>serif 衬线字体，通常是指使用末端加强原则的字体，通过在文字末端加入细小变化来改变小号文字的可读性<img src="http://images.cnitblog.com/blog2015/412020/201503/290907507558692.png"></p>
+</li>
+</ul>
+<p>－ BFC</p>
+<ul>
+<li><p>FC全称”Formatting Context”, 中文为“格式化上下文”</p>
+</li>
+<li><p>BFC全称”Block Formatting Context”, 中文为“块级格式化上下文”</p>
+</li>
+<li><p>IFC全称”Block Formatting Context”, 中文为“行级格式化上下文”</p>
+</li>
+</ul>
+<p>－ BFC的生成<br>满足下列CSS声明之一的元素便会生成BFC。</p>
+<ul>
+<li>根元素</li>
+<li>float的值不为none</li>
+<li>overflow的值不为visible</li>
+<li>display的值为inline-block、table-cell、table-caption</li>
+<li>position的值为absolute或fixed</li>
+</ul>
+<p>－ BFC的约束规则</p>
+<ul>
+<li><p>生成BFC元素的子元素会一个接一个的放置。垂直方向上他们的起点是一个包含块的顶部，两个相邻子元素之间的垂直距离取决于元素的margin特性。在BFC中相邻的块级元素外边距会折叠。</p>
+</li>
+<li><p>生成BFC元素的子元素中，每一个子元素做外边距与包含块的左边界相接触，（对于从右到左的格式化，右外边距接触右边界），即使浮动元素也是如此（尽管子元素的内容区域会由于浮动而压缩），除非这个子元素也创建了一个新的BFC（如它自身也是一个浮动元素）。</p>
+</li>
+</ul>
+<p>内部的Box会在垂直方向上一个接一个的放置<br>垂直方向上的距离由margin决定。（完整的说法是：属于同一个BFC的两个相邻Box的margin会发生重叠，与方向无关。）<br>每个元素的左外边距与包含块的左边界相接触（从左向右），即使浮动元素也是如此。（这说明BFC中子元素不会超出他的包含块，而position为absolute的元素可以超出他的包含块边界）<br>BFC的区域不会与float的元素区域重叠<br>计算BFC的高度时，浮动子元素也参与计算<br>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面元素，反之亦然</p>
+<p>如想更深入了解：可以看一下这个<a href="http://www.zhangxinxu.com/wordpress/2015/02/css-deep-understand-flow-bfc-column-two-auto-layout/" target="_blank" rel="external">http://www.zhangxinxu.com/wordpress/2015/02/css-deep-understand-flow-bfc-column-two-auto-layout/</a>和<a href="http://www.cnblogs.com/dojo-lzz/p/3999013.html" target="_blank" rel="external">http://www.cnblogs.com/dojo-lzz/p/3999013.html</a>这个，不错的分享。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -308,7 +436,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2016/01/05/hello-world/" data-title="Hello World | TK-Person" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2016/02/26/css重点回顾/" data-title="css重点回顾 | TK-Person" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -318,18 +446,18 @@
 <nav class="article-nav clearfix">
  
  <div class="next" >
- <a href="/2016/01/05/语法大全/" title="JS语法大全">
+ <a href="/2016/02/26/css复习一/" title="css复习一">
   <strong>NEXT:</strong><br/>
   <span>
-  JS语法大全</span>
+  css复习一</span>
 </a>
 </div>
 
 
 <div class="prev">
-<a href="/2015/12/26/DOM对象/"  title="DOM对象和可视区">
+<a href="/2016/02/25/前端复习一/"  title="前端复习一">
  <strong>PREVIOUS:</strong><br/> 
- <span>DOM对象和可视区
+ <span>前端复习一
 </span>
 </a>
 </div>
@@ -338,7 +466,7 @@
 
 
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2016/01/05/hello-world/" data-title="Hello World" data-url="http://yoursite.com/2016/01/05/hello-world/"></div>
+	<div class="ds-thread" data-thread-key="2016/02/26/css重点回顾/" data-title="css重点回顾" data-url="http://yoursite.com/2016/02/26/css重点回顾/"></div>
 	<!-- 多说评论框 end -->
 </div>  
 
@@ -351,7 +479,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#css知识点回顾"><span class="toc-number">1.</span> <span class="toc-text">css知识点回顾</span></a></li></ol>
   </div>
 
 <div id="asidepart">

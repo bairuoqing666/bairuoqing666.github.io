@@ -4,12 +4,18 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello World | TK-Person</title>
+    <title>正则表达式 | TK-Person</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="左手">
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in ">
+    <meta name="description" content="它是对字符串执行模式匹配的强大工具ps:把规则说给计算机听
+直接量的语法：/pattern/attributes（/正则/正则属性）
+RegExp 对象的语法：new RegExp(pattern, attributes);
+
+pattern里面为一个字符串，代表的就是正则
+
+attributes为">
     
     
     
@@ -270,15 +276,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/01/05/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2016/03/08/正则表达式/" title="正则表达式" itemprop="url">正则表达式</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="左手">左手</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-01-05T15:23:49.000Z" itemprop="datePublished">2016-01-05</time>
-    更新日期:<time datetime="2015-11-24T13:07:00.000Z" itemprop="dateModified">2015-11-24</time>
+    <time datetime="2016-03-08T14:05:41.000Z" itemprop="datePublished">2016-03-08</time>
+    更新日期:<time datetime="2016-03-08T14:14:48.000Z" itemprop="dateModified">2016-03-08</time>
     
   </p>
 </header>
@@ -287,18 +293,61 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#它是对字符串执行模式匹配的强大工具"><span class="toc-number">1.</span> <span class="toc-text">它是对字符串执行模式匹配的强大工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#直接量的语法："><span class="toc-number">1.1.</span> <span class="toc-text">直接量的语法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RegExp_对象的语法："><span class="toc-number">1.2.</span> <span class="toc-text">RegExp 对象的语法：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#元字符："><span class="toc-number">2.</span> <span class="toc-text">元字符：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转义字符："><span class="toc-number">3.</span> <span class="toc-text">转义字符：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方括号："><span class="toc-number">4.</span> <span class="toc-text">方括号：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则方法："><span class="toc-number">5.</span> <span class="toc-text">正则方法：</span></a></li></ol>
 		</div>
 		
-		<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+		<h2 id="它是对字符串执行模式匹配的强大工具">它是对字符串执行模式匹配的强大工具</h2><p>ps:把规则说给计算机听</p>
+<h3 id="直接量的语法：">直接量的语法：</h3><p>/pattern/attributes（/正则/正则属性）</p>
+<h3 id="RegExp_对象的语法：">RegExp 对象的语法：</h3><p>new RegExp(pattern, attributes);</p>
+<ul>
+<li><p>pattern里面为一个字符串，代表的就是正则</p>
+</li>
+<li><p>attributes为可选字符串，包含属性”g”、”i” 和 “m”<br>分别用于指定全局匹配、区分大小写的匹配和多行匹配</p>
+</li>
+</ul>
+<h2 id="元字符：">元字符：</h2><ol>
+<li>.   :查找单个字符，除了换行和行结束符。</li>
+<li>\w:查找单词字符(数字、字母、下划线)。</li>
+<li>\d:查找数字。</li>
+<li>\s:查找空白字符。</li>
+<li>\b:匹配单词边界</li>
+<li>\n:查找换行符</li>
+<li>\u:匹配汉字</li>
+<li>n$:匹配任何结尾为 n 的字符串。</li>
+<li>^n:匹配任何开头为 n 的字符串。</li>
+</ol>
+<h2 id="转义字符：">转义字符：</h2><ul>
+<li><p style="color:red;font-size:20px">前面加\</p>
+
+</li>
+</ul>
+<h2 id="方括号：">方括号：</h2><ul>
+<li><p>[abc]   :查找方括号之间的任何字符。</p>
+</li>
+<li><p>[^abc]:查找任何不在方括号之间的字符。</p>
+</li>
+<li><p>[0-9]:查找任何从 0 至 9 的数字。</p>
+</li>
+<li><p>[a-z]:查找任何从小写 a 到小写 z 的字符。</p>
+</li>
+<li><p>[A-z]:查找任何从大写 A 到小写 z 的字符。</p>
+</li>
+</ul>
+<h2 id="正则方法：">正则方法：</h2><ul>
+<li><p>search：检索与正则表达式相匹配的值。</p>
+</li>
+<li><p>match：找到一个或多个正则表达式的匹配。基本需要配合g</p>
+</li>
+<li><p>replace：替换与正则表达式匹配的子串。</p>
+</li>
+<li><p>test:判断正则是否匹配字符串，返回true和false量词：</p>
+</li>
+</ul>
+<p>n+  :匹配任何包含至少一个 n 的字符串。</p>
+<p>n*:匹配任何包含零个或多个 n 的字符串。</p>
+<p>n?:匹配任何包含零个或一个 n 的字符串。</p>
+<p>n{X}:匹配包含 X 个 n 的序列的字符串。</p>
+<p>n{X,Y}:匹配包含 X 或 Y 个 n 的序列的字符串。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -308,7 +357,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2016/01/05/hello-world/" data-title="Hello World | TK-Person" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2016/03/08/正则表达式/" data-title="正则表达式 | TK-Person" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -318,18 +367,18 @@
 <nav class="article-nav clearfix">
  
  <div class="next" >
- <a href="/2016/01/05/语法大全/" title="JS语法大全">
+ <a href="/2016/03/09/jquery/" title="jquery">
   <strong>NEXT:</strong><br/>
   <span>
-  JS语法大全</span>
+  jquery</span>
 </a>
 </div>
 
 
 <div class="prev">
-<a href="/2015/12/26/DOM对象/"  title="DOM对象和可视区">
+<a href="/2016/03/01/Javascript知识点回顾/"  title="Javascript知识点回顾">
  <strong>PREVIOUS:</strong><br/> 
- <span>DOM对象和可视区
+ <span>Javascript知识点回顾
 </span>
 </a>
 </div>
@@ -338,7 +387,7 @@
 
 
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2016/01/05/hello-world/" data-title="Hello World" data-url="http://yoursite.com/2016/01/05/hello-world/"></div>
+	<div class="ds-thread" data-thread-key="2016/03/08/正则表达式/" data-title="正则表达式" data-url="http://yoursite.com/2016/03/08/正则表达式/"></div>
 	<!-- 多说评论框 end -->
 </div>  
 
@@ -351,7 +400,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#它是对字符串执行模式匹配的强大工具"><span class="toc-number">1.</span> <span class="toc-text">它是对字符串执行模式匹配的强大工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#直接量的语法："><span class="toc-number">1.1.</span> <span class="toc-text">直接量的语法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RegExp_对象的语法："><span class="toc-number">1.2.</span> <span class="toc-text">RegExp 对象的语法：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#元字符："><span class="toc-number">2.</span> <span class="toc-text">元字符：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转义字符："><span class="toc-number">3.</span> <span class="toc-text">转义字符：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方括号："><span class="toc-number">4.</span> <span class="toc-text">方括号：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则方法："><span class="toc-number">5.</span> <span class="toc-text">正则方法：</span></a></li></ol>
   </div>
 
 <div id="asidepart">
