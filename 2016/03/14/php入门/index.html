@@ -4,34 +4,16 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>前端复习- html | TK-Person</title>
+    <title>php入门 | TK-Person</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="左手">
     
-    <meta name="description" content="html知识点回顾－ 创建html文档
-
-html基本结构
-
-doctype声明
-
-HTML标签不区分大小写,但是建议小写
-
-注释方式
-
-
-－ 标签
-
-html 根标签
-
-head (title script link style meta base)
-
-body
-
-
-－标题标签
-h1-h6
-标题标">
+    <meta name="description" content="一.php基本语法
+1.四种不同的开始结束标记
+&amp;lt;?php echo “hello php”; ?&amp;gt; // 推荐使用
+&amp;lt;? echo “hello php”; ?&amp;gt;     //短标记
+&amp;lt;script language=“php”&amp;gt;echo “hello php”">
     
     
     
@@ -292,15 +274,15 @@ h1-h6
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/02/25/前端复习-html/" title="前端复习- html" itemprop="url">前端复习- html</a>
+      <a href="/2016/03/14/php入门/" title="php入门" itemprop="url">php入门</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="左手">左手</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-02-25T08:12:00.000Z" itemprop="datePublished">2016-02-25</time>
-    更新日期:<time datetime="2016-02-25T08:16:26.000Z" itemprop="dateModified">2016-02-25</time>
+    <time datetime="2016-03-14T14:20:33.000Z" itemprop="datePublished">2016-03-14</time>
+    更新日期:<time datetime="2016-03-14T14:25:11.000Z" itemprop="dateModified">2016-03-14</time>
     
   </p>
 </header>
@@ -309,147 +291,99 @@ h1-h6
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#html知识点回顾"><span class="toc-number">1.</span> <span class="toc-text">html知识点回顾</span></a></li></ol>
+		
 		</div>
 		
-		<h3 id="html知识点回顾">html知识点回顾</h3><p>－ 创建html文档</p>
+		<p>一.php基本语法</p>
+<p>1.四种不同的开始结束标记</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">echo</span> “hello php”; <span class="preprocessor">?&gt;</span></span> // 推荐使用
+<span class="php"><span class="preprocessor">&lt;?</span> <span class="keyword">echo</span> “hello php”; <span class="preprocessor">?&gt;</span></span>     //短标记
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">language</span>=<span class="value">“php”</span>&gt;</span><span class="undefined">echo “hello php”</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;<span class="title">%</span> <span class="attribute">echo</span> “<span class="attribute">hello</span> <span class="attribute">php</span>”; %&gt;</span>  //asp风格
+</code></pre><p>2.echo语句<br>echo是php中的输出语句，可以把字符串输出（需要用双引号括起来），例如：</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">echo</span> <span class="string">"hello world!"</span>;<span class="preprocessor">?&gt;</span></span>
+</code></pre><p>我们需要注意，php对分号是完全敏感的，语句一定要以“；”结束，否则会出现语法错误。</p>
+<p>3.注释</p>
+<pre><code><span class="comment">// 被注释的内容; （单行注释）</span>
+<span class="comment">/*注释内容
+注释内容*/</span> （多行注释）
+</code></pre><p>4.变量</p>
+<p>a.变量的声明</p>
+<p>变量以$开头，后面跟变量名</p>
+<p>变量字母，数字，下划线组成，不以数字开头</p>
+<p>变量名区分大小写</p>
+<pre><code>例：<span class="variable">$a</span> = <span class="number">123</span>;
+    <span class="variable">$b</span> = <span class="string">"123"</span>;
+    <span class="variable">$sum</span> = <span class="number">1</span>+<span class="string">"2"</span>;
+</code></pre><p>b.变量的赋值</p>
+<p>(1),值赋值：即将赋值表达式的值复制给变量(直接赋值)<br>(2),引用赋值：php4引用了引用赋值，创建的一个变量与另一个变量引用的内容相同</p>
+<pre><code>例：<span class="variable">$var</span>_1 = <span class="string">"hello"</span>;
+    <span class="variable">$var</span>_2 = &amp;<span class="variable">$var</span>_1;//把变量var_l的内存地址赋值给var_2,即引用赋值
+</code></pre><p>c.超全局变量</p>
+<p>(1)，$_SERVER 服务器变量, 该全局变量包含着服务器和客户端配置及当前请求环境的有关信息</p>
+<pre><code><span class="variable">$_SERVER[</span><span class="string">'SERVER_NAME'</span>]<span class="comment">; : 当前运行脚本所在的服务器的主机名</span>
+
+<span class="variable">$_SERVER[</span><span class="string">'REMOTE_ADDR'</span>]    : 客户端IP地址
+
+<span class="variable">$_SERVER[</span><span class="string">'REQUEST_URI'</span>]    : URL的路径部份
+
+<span class="variable">$_SERVER[</span><span class="string">'HTTP_USER_AGENT'</span>]  :  操作系统和浏览器的有关信息
+</code></pre><p>(2)$_GET 该变量包含使用 GET 方法传递的参数的有关信息<br>例：</p>
+<pre><code>url: http://localhost/test.php?id=<span class="number">100</span>&amp;page=<span class="number">2</span>
+<span class="variable">$id</span> = $_GET[<span class="string">'id'</span>];
+<span class="variable">$page</span> = $_GET[‘page’];
+</code></pre><p>(3). $_POST 该变量包含使用 POST 方法传递的参数的有关信息;<br>例：html:</p>
+<pre><code>&lt;<span class="keyword">form</span> name=<span class="string">"reg"</span> action=<span class="string">"test.php"</span>         method=<span class="string">"post"</span>&gt;
+    用户名：&lt;<span class="keyword">input</span> <span class="keyword">type</span>=<span class="string">"text"</span> name=<span class="string">"username"</span> /&gt;
+    密码: &lt;<span class="keyword">input</span> <span class="keyword">type</span>=<span class="string">"password” name="</span>passwd"/&gt;
+    &lt;<span class="keyword">input</span> <span class="keyword">type</span>=<span class="string">"submit"</span> value=<span class="string">"提交"</span> /&gt;
+&lt;/<span class="keyword">form</span>&gt;
+php:    
+<span class="label">$username</span> = <span class="label">$_POST</span>[‘username’];
+<span class="label">$passwd</span> = <span class="label">$_POST</span>[‘passwd’];
+</code></pre><p>d.常量</p>
+<p>常量是指在程序执行中无法修改的值，如PI（3.1415926）.</p>
+<p>常量对大小写敏感，通常常量名总是大写;</p>
+<p>常量是全局的，可以在脚本的任何地方引用;</p>
+<p>常量分为内置常量和自定义常量;<br>常量使用define()函数定义;</p>
+<pre><code>例：define（<span class="string">"PI"</span>,<span class="number">3.14</span>）;
+    <span class="built_in">echo</span> <span class="literal">PI</span>; <span class="comment">// 3.14</span>
+</code></pre><p>二、数据类型</p>
+<p>1.字符串</p>
 <ul>
-<li><p>html基本结构</p>
+<li><p>字符串有三种定义方式：单引号、双引号、定界符。</p>
 </li>
-<li><p>doctype声明</p>
+<li><p>区别：<br>单引号字符串中出现的变量不会被变量的值替代；</p>
 </li>
-<li><p>HTML标签不区分大小写,但是建议小写</p>
+<li><p>双引号字符串中出现的变量会被变量值替代。</p>
 </li>
-<li><p>注释方式</p>
+<li><p>如果遇到$，解析器会尽可能多的取得后面的字符组成一个合法的变量名，如果想明确的指定名字结束，需要用花括号｛｝括起来。</p>
 </li>
 </ul>
-<p>－ 标签</p>
-<ul>
-<li><p>html 根标签</p>
-</li>
-<li><p>head (title script link style meta base)</p>
-</li>
-<li><p>body</p>
-</li>
-</ul>
-<p>－标题标签</p>
-<p>h1-h6</p>
-<p>标题标签一共有6个，h1、h2、h3、h4、h5、h6分别为一级标题、二级标题、三级标题、四级标题、五级标题、六级标题。并且依据重要性递减。h1是最高的等级。</p>
-<p>-段落</p>
-<p>p</p>
-<p>－ em strong</p>
-<p>两者在强调的语气上有区别:em 表示强调，strong 表示更强烈的强调</p>
-<p>－ div span</p>
-<p>－ 锚点链接 a 超链接</p>
-<ul>
-<li><p>href属性 </p>
-</li>
-<li><p>title属性</p>
-</li>
-<li><p>target</p>
-</li>
-</ul>
-<p>－ img图片 为网页插入图片</p>
-<ul>
-<li><p>src 图像的位置</p>
-</li>
-<li><p>title 提供在图像可见时对图像的描述(鼠标滑过图片时显示的文本)</p>
-</li>
-<li><p>alt 指定图像的描述性文本，当图像不可见时（下载不成功时），可看到该属性指定的文本；</p>
-</li>
-</ul>
-<p>－ q 短文本引用 比如在你的网页的文章里想引用某个作家的一句诗，这样会使你的文章更加出彩，那么<q>标签是你所需要的</q>。</p>
-<p>－ blockquote 长文本引用</p>
-<p>－ br 换行标签 </p>
-<p>－ hr 分割线标签</p>
-<p>－ address 为页面加入地址信息 <address>上海市松江区丽德创业园</address> 样式为斜体</p>
-<p>－ code 在网页中显示一些计算机专业的编程代码，当代码为一行代码时，你就可以使用code标签了 <code>var i = 0;</code></p>
-<p>－ pre 预格式化的文本 要插入多行代码时不能使用code标签，如果是多行代码，可以使用pre标签</p>
-<p>－ 列表</p>
-<ul>
-<li><p>无序列表 ul li</p>
-</li>
-<li><p>有序列表 ol li</p>
-</li>
-<li><p>自定义列表 dl dt dd</p>
-</li>
-</ul>
-<p>－ 表格</p>
-<ul>
-<li><p>table  tbody这个标签基本上不怎么用了 </p>
-</li>
-<li><p>tr 表格的一行</p>
-</li>
-<li><p>th 表格的头部的一个单元格，表格表头</p>
-</li>
-<li><p>td 表格的一个单元格</p>
-</li>
-<li><p>caption 表格标题</p>
-</li>
-<li><p>summary属性 表格的摘要 <table summary="哈哈哈 红红红"></table></p>
-</li>
-</ul>
-<p>－ 表单</p>
-<ul>
-<li><p>from</p>
-</li>
-<li><p>action属性 输入的数据被传送到的地址,比如一个PHP页面(test.php)。</p>
-</li>
-</ul>
-<ul>
-<li>method属性 数据传送的方式（get/post）</li>
-</ul>
-<p>－ input 输入框 text password </p>
-<ul>
-<li><p>当type=”text”时，输入框为文本输入框</p>
-</li>
-<li><p>当type=”password”时, 输入框为密码输入框 </p>
-</li>
-<li><p>name 为文本框命名，以备后台程序ASP 、PHP使用</p>
-</li>
-<li><p>value 为文本输入框设置默认值。(一般起到提示作用)</p>
-</li>
-</ul>
-<p>－ 单选框 复选框 radio checkbox</p>
-<ul>
-<li><p>当type=”radio”时，控件为单选框</p>
-</li>
-<li><p>当type=”checkbox”时，控件为复选框</p>
-</li>
-<li><p>value 提交数据到服务器的值（后台程序PHP使用）</p>
-</li>
-<li><p>name 为控件命名，以备后台程序ASP、PHP使用</p>
-</li>
-<li><p>checked 当设置checked 或 checked=”checked”时，该选项被默认选中</p>
-</li>
-<li><p>注意：同一组的单选按钮，name取值一定要一致，这样同一组的单选按钮才可以起到单选的作用</p>
-</li>
-</ul>
-<p>－ submit reset hidden button…</p>
-<p>－ label 为 input 元素定义标注（标记）</p>
-<ul>
-<li><p>label元素不会向用户呈现任何特殊效果。不过，它为鼠标用户改进了可用性。如果您在 label 元素内点击文本，就会触发此控件。就是说，当用户选择该标签时，浏览器就会自动将焦点转到和标签相关的表单控件上</p>
-</li>
-<li><p>标签的 for 属性应当与相关元素的 id 属性相同</p>
-</li>
-<li><pre><label for="male">Male</label>
-<input type="radio" name="sex" id="male"> </pre>
-</li>
-<li><p>for属性可把 label 绑定到另外一个元素。请把 “for” 属性的值设置为相关元素的 id 属性的值</p>
-</li>
-</ul>
-<p>－ textarea 文本域</p>
-<ul>
-<li><p>cols属性 ：多行输入域的列数</p>
-</li>
-<li><p>rows ：多行输入域的行数</p>
-</li>
-</ul>
-<p>－ select 下拉列表框</p>
-<ul>
-<li><p>multiple属性 可以实现多选功能  </p>
-</li>
-<li><p>option 下拉选项</p>
+<p>如下所示：</p>
+<pre><code><span class="number">1</span>. <span class="variable">$a</span> = <span class="string">"world"</span>;
+   echo <span class="string">'hello $a'</span>; // echo <span class="string">"hello $a"</span>;
+<span class="number">2</span>. <span class="variable">$b</span> = <span class="string">"hello"</span>;
+   echo <span class="string">"$b world"</span>; // echo <span class="string">"hello world"</span>;
+<span class="number">3</span>.     <span class="variable">$beer</span> = <span class="string">"Heineken"</span>;
+    echo <span class="string">"He drank some {$beer}s"</span>;//echo <span class="string">"He drank some Heinekens"</span>
+</code></pre><ul>
+<li><p>字符串定界的方法使用定界符语法”&lt;&lt;&lt;”，例：</p>
+<pre><code>&lt;?php 
+    <span class="variable">$name</span> = <span class="string">'kitty'</span>;
+    echo &lt;&lt;&lt;Eof
+    &lt;table height=<span class="string">"20"</span> border=<span class="string">"1px"</span>&gt;
+        &lt;tr&gt;&lt;td&gt;
+        {<span class="variable">$name</span>}&lt;br/&gt;
+        &lt;script&gt;
+        var p=<span class="string">'hello world'</span>;
+        document.writeln(p);
+        &lt;/script&gt;
+        &lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+Eof;
+?&gt;
+</code></pre><p>在&lt;&lt;&lt;之后的字符Eof是自己定义的，随便什么都是可以的(比如AAA都可以)，但是结尾处的字符一定要和他一样，他们是成对出现的<br>结尾的一行（如上例的Eof;），一定要另起一行，并且改行除了Eof;这个定界符结尾标识之外不能有任何其他字符，前后都不能有，包括空格。如果在本行最前或者最后出现空格，制表符的话，你会收到一个这样的错误信息：<br>Parse error: parse error, unexpected $end in……，提示你语法错误。</p>
 </li>
 </ul>
   
@@ -461,7 +395,7 @@ h1-h6
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2016/02/25/前端复习-html/" data-title="前端复习- html | TK-Person" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2016/03/14/php入门/" data-title="php入门 | TK-Person" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -470,19 +404,11 @@ h1-h6
 	
 <nav class="article-nav clearfix">
  
- <div class="next" >
- <a href="/2016/02/25/前端复习一/" title="前端复习一">
-  <strong>NEXT:</strong><br/>
-  <span>
-  前端复习一</span>
-</a>
-</div>
-
 
 <div class="prev">
-<a href="/2016/01/05/HTML和CSS的学习总结/"  title="HTML和CSS的学习总结">
+<a href="/2016/03/14/ajax的工作原理/"  title="ajax的工作原理">
  <strong>PREVIOUS:</strong><br/> 
- <span>HTML和CSS的学习总结
+ <span>ajax的工作原理
 </span>
 </a>
 </div>
@@ -491,7 +417,7 @@ h1-h6
 
 
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2016/02/25/前端复习-html/" data-title="前端复习- html" data-url="http://yoursite.com/2016/02/25/前端复习-html/"></div>
+	<div class="ds-thread" data-thread-key="2016/03/14/php入门/" data-title="php入门" data-url="http://yoursite.com/2016/03/14/php入门/"></div>
 	<!-- 多说评论框 end -->
 </div>  
 
@@ -504,7 +430,7 @@ h1-h6
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#html知识点回顾"><span class="toc-number">1.</span> <span class="toc-text">html知识点回顾</span></a></li></ol>
+  
   </div>
 
 <div id="asidepart">
