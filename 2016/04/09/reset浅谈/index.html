@@ -4,17 +4,17 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>字符串和数组的操作 | TK-Person</title>
+    <title>reset浅谈 | TK-Person</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="左手">
     
-    <meta name="description" content="字符串和数组的操作
-字符串操作：
-indexOf()方法可返回某个指定字符串值在字符串中首次出现的位置，从前往后查找如果没有找到匹配的字符串则返回-1indexOf(*strValue.position)
-案例：
-var str = &quot;hello world&quot;;
-console.log(str.in">
+    <meta name="description" content="谈谈实用reset
+
+
+最近尝试着结合cms来做套完整的网站。刚准备敲的时候发现自己没有一套完整的reset.css表。于是，要为自己整理一份属于自己的reset表。花了点时间推出了reset0.0.1。
+/*有默认margin以及padding的标签*/
+/*ul,ol,p,blockquote*">
     
     
     
@@ -275,15 +275,15 @@ console.log(str.in">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/12/19/字符串和数组的操作/" title="字符串和数组的操作" itemprop="url">字符串和数组的操作</a>
+      <a href="/2016/04/09/reset浅谈/" title="reset浅谈" itemprop="url">reset浅谈</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="左手">左手</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-12-19T09:39:50.000Z" itemprop="datePublished">2015-12-19</time>
-    更新日期:<time datetime="2015-12-19T11:03:22.000Z" itemprop="dateModified">2015-12-19</time>
+    <time datetime="2016-04-09T01:28:39.000Z" itemprop="datePublished">2016-04-09</time>
+    更新日期:<time datetime="2016-04-09T01:52:51.000Z" itemprop="dateModified">2016-04-09</time>
     
   </p>
 </header>
@@ -292,165 +292,128 @@ console.log(str.in">
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串和数组的操作"><span class="toc-number">1.</span> <span class="toc-text">字符串和数组的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串操作："><span class="toc-number">1.0.1.</span> <span class="toc-text">字符串操作：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组："><span class="toc-number">1.0.2.</span> <span class="toc-text">数组：</span></a></li></ol></li></ol></li></ol>
+		
 		</div>
 		
-		<h1 id="字符串和数组的操作">字符串和数组的操作</h1><p><img src="http://7xoqfs.com1.z0.glb.clouddn.com/TK11-14.jpg"></p>
-<h3 id="字符串操作：">字符串操作：</h3><ul>
-<li><p>indexOf()方法可返回某个指定字符串值在字符串中首次出现的位置，从前往后查找如果没有找到匹配的字符串则返回-1<br>indexOf(*strValue.position)</p>
-<pre><code>案例：
-var <span class="built_in">str</span> = <span class="string">"hello world"</span>;
-console.<span class="built_in">log</span>(<span class="built_in">str</span>.indexOf(<span class="string">"o"</span>,<span class="number">5</span>));
-lastIndexOf()方法可返回某个指定字符串值在字符串中首次
-出现
-的位置,从后往前查找
-如果没有找到匹配的字符串则返回-<span class="number">1</span>
-lastIndexOf(*strValue.position)
+		<p>谈谈实用reset</p>
+<p><img src="http://7xr8h6.com1.z0.glb.clouddn.com/me.JPG" width="300"></p>
+<ul>
+<li><p>最近尝试着结合cms来做套完整的网站。刚准备敲的时候发现自己没有一套完整的reset.css表。于是，要为自己整理一份属于自己的reset表。花了点时间推出了reset0.0.1。</p>
+<pre><code>/<span class="keyword">*</span>有默认margin以及padding的标签<span class="keyword">*</span>/
+/<span class="keyword">*</span>ul,ol,p,blockquote<span class="keyword">*</span>/
 
-案例：
-var <span class="built_in">str</span> = <span class="string">"hello world"</span>;
-console.<span class="built_in">log</span>(<span class="built_in">str</span>.lastIndexOf(<span class="string">"o"</span>,<span class="number">5</span>));
-slice()方法可提取字符串的某个部分，并以新的字符串返回被
-提取
-的部分。
-slice(*positionStart,positionEnd)
+/<span class="keyword">*</span>有默认margin的标签<span class="keyword">*</span>/
+/<span class="keyword">*</span>body,dl,dd,h1,h2,h3,h4,h5,h6,pre<span class="keyword">*</span>/
 
-案例：
-var <span class="built_in">str</span> = <span class="string">"1-2-3-4-5"</span>;
-console.<span class="built_in">log</span>(<span class="built_in">str</span>.slice(<span class="number">3</span>,<span class="number">6</span>));<span class="comment">//字符串长度 6-3 //从</span>
-<span class="number">3</span>开始 不包含<span class="number">6</span>
-<span class="built_in">split</span>()方法用于把一个字符串分割成字符串数组。
-<span class="built_in">split</span>(*strValue,length)
+/<span class="keyword">*</span>有默认padding的标签<span class="keyword">*</span>/
+/<span class="keyword">*</span>legend<span class="keyword">*</span>/
 
-案例：
-var <span class="built_in">str</span> = <span class="string">"1-2-3-4-5"</span>;
-var arr = <span class="built_in">str</span>.<span class="built_in">split</span>(“-“,<span class="number">2</span>);<span class="comment">//用-号分开2个字符串</span>
-[<span class="string">"1"</span>,<span class="string">"2"</span>]
-console.<span class="built_in">log</span>(arr);
+/<span class="keyword">*</span>有默认margin,padding,border的标签<span class="keyword">*</span>/
+/<span class="keyword">*</span>fieldset<span class="keyword">*</span>/
+
+/<span class="keyword">*</span>有默认padding,border的标签<span class="keyword">*</span>/
+/<span class="keyword">*</span>input,textarea,button,th,td<span class="keyword">*</span>/
+
+/<span class="keyword">*</span>有默认border的标签<span class="keyword">*</span>/
+/<span class="keyword">*</span>table<span class="keyword">*</span>/
+
+/<span class="keyword">*</span>需知的一些标签默认属性<span class="keyword">*</span>/
+/<span class="keyword">*</span>    textarea -&gt; resize属性
+ <span class="keyword">*</span>    改变光标  -&gt; cursor属性
+ <span class="keyword">*</span>     table    -&gt; border-collapse
+<span class="keyword">*</span>/
 </code></pre></li>
-<li><p>substring()提取相应区间的字符</p>
-<p>substring(*starIndex,endIndex);</p>
+<li><p>看到这里你会不会有一种新天地的feel。我这里对各个标签分的很细跟大多数网上的reset表是完全不同的，这里也不去评论其他的reset表。推荐大家看下张鑫旭写的<a href="http://www.zhangxinxu.com/wordpress/2010/04/css-reset%E7%9A%84%E9%87%8D%E6%96%B0%E5%AE%A1%E8%A7%86-%E9%81%BF%E5%85%8D%E6%A0%B7%E5%BC%8F%E9%87%8D%E7%BD%AE/" target="_blank" rel="external">CSS reset的重新审视</a>。</p>
 </li>
-</ul>
-<p>取的字符串长度为：endIndex-starIndex</p>
-<p>取的字符内容不包括endIndex字符</p>
-<pre><code>案例：
-var <span class="built_in">str</span> = <span class="string">"1-2-3-4-5"</span>;
-console.<span class="built_in">log</span>(<span class="built_in">str</span>.substring(<span class="number">3</span>));<span class="comment">//从下标3开始</span>
-console.<span class="built_in">log</span>(<span class="built_in">str</span>.substring(<span class="number">3</span>,<span class="number">6</span>));<span class="comment">//字符串长度 6-3 //</span>
-从<span class="number">3</span>开始 不包含<span class="number">6</span>
-charCodeAt()返回指定下标位置的字符Unicode编码
+<li>作为一名前端工程师,我们常把细节、性能优化挂在嘴边。因此从这些角度出发，我更认为自己有必要写这样一份有助于我们工作的reset表。</li>
+<li><p>附表一份</p>
+<pre><code><span class="tag">PC</span>端<span class="tag">reset</span>表
+<span class="tag">body</span><span class="rules">{
+    <span class="rule"><span class="attribute">font</span>:<span class="value"> <span class="number">16px</span>/<span class="number">1.5</span> sans-serif arial <span class="string">"微软雅黑"</span></span></span>;
+    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;
+    }</span>
 
-案例：
-console.<span class="built_in">log</span>(“abc”&gt;<span class="string">"aaa"</span>);<span class="comment">//true</span>
-var str2=“abc”.charCodeAt(<span class="number">0</span>);<span class="comment">//通过括号内的下标来查找</span>
-字符串内数字的编码
-console.<span class="built_in">log</span>(str2);
-charAt()返回指定位置的字符
+    <span class="tag">p</span>,<span class="tag">blockquote</span><span class="rules">{
+        <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;
+        <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;
+    }</span>
 
-案例：
-var <span class="built_in">str</span>=<span class="string">"abcdefj"</span>;
-var str2=<span class="built_in">str</span>.charAt(<span class="number">2</span>);<span class="comment">//通过括号内的下标来查找字符</span>
-console.<span class="built_in">log</span>(str2);
-toUpperCase()把字符串转化为大写；
+    <span class="tag">dl</span>,<span class="tag">dd</span>,<span class="tag">h1</span>,<span class="tag">h2</span>,<span class="tag">h3</span>,<span class="tag">h4</span>,<span class="tag">h5</span>,<span class="tag">h6</span>,<span class="tag">pre</span><span class="rules">{
+        <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;
+    }</span>
 
-案例：
-var <span class="built_in">str</span> = <span class="string">"abcdefj"</span>;
-var str2 = <span class="built_in">str</span>.toUpperCase();<span class="comment">//只能字符串整体变大，不</span>
-能传参或指定字符变大
-console.<span class="built_in">log</span>(str2);
-toLowerCase()把字符串转化为小写；
+    <span class="tag">legend</span><span class="rules">{
+        <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;
+    }</span>
 
-案例：
-var <span class="built_in">str</span> = <span class="string">"ABCDEFJ"</span>;
-console.<span class="built_in">log</span>(<span class="built_in">str</span>.toLowerCase());<span class="comment">//只能字符串整体变小，</span>
-不能传参或指定字符变小
-</code></pre><ul>
-<li><p>delete删除属性</p>
-<pre><code>案例：
-<span class="keyword">var</span> obj={name:”bai”,age:”<span class="number">16</span>”};
-<span class="keyword">delete</span> obj.name<span class="comment">//删除成功显示true</span>
+    <span class="tag">fieldset</span><span class="rules">{
+        <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;
+        <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;
+        <span class="rule"><span class="attribute">border</span>:<span class="value"> none</span></span>;
+    }</span>
 
-quange=“funny”;
-<span class="keyword">delete</span> quange<span class="comment">//删除成功显示true</span>
+    <span class="tag">a</span><span class="rules">{
+        <span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> none</span></span>;
+    }</span>
+    <span class="tag">ul</span>,<span class="tag">ol</span><span class="rules">{
+        <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;
+        <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;
+        <span class="rule"><span class="attribute">list-style</span>:<span class="value"> none</span></span>;
+    }</span>
+
+    <span class="comment">/*清除浮动通用方法*/</span>
+    <span class="class">.clearfix</span><span class="rules">{
+        <span class="rule"><span class="attribute">zoom</span>:<span class="value"><span class="number">1</span></span></span>;
+    }</span>
+    <span class="class">.clearfix</span><span class="pseudo">:after</span><span class="rules">{
+        <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;
+        <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">''</span></span></span>;
+        <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;
+        <span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;
+        <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">0</span></span></span>;
+    }</span>
 </code></pre></li>
 </ul>
-<h3 id="数组：">数组：</h3><ul>
-<li><p>join()用于把数组中的所有元素，通过指定的分隔符放入一个字符串</p>
-<pre><code>案例：
-var arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>];
-var <span class="built_in">str</span> = <span class="string">''</span>;
-<span class="built_in">str</span> = arr.<span class="built_in">join</span>(<span class="string">'|'</span>);<span class="comment">//可以指定分隔符</span>
-console.<span class="built_in">log</span>(<span class="built_in">str</span>);
-</code></pre></li>
-<li><p>pop()移除数组中的最后一个元素并返回该元素</p>
-</li>
-</ul>
-<p>pop()方法将删除Array的最后一个元素，把数组长度减1，并且返回它删除的元素的值，如果数组已经为空，则pop()不改变数组，并返回undfined值</p>
-<pre><code>案例：
-var arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>];
-console.<span class="built_in">log</span>(arr.pop(),arr);
-</code></pre><ul>
-<li>shift()移除数组中的第一个元素并返回该元素</li>
-</ul>
-<p>如果数组是空的，那么shift()方法将不进行任何操作，返回undfined值。请注意，该方法不创建新数组，而是直接修改原因的Array.</p>
-<pre><code>案例：
-var arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>];
-console.<span class="built_in">log</span>(arr.shift(),arr);
-</code></pre><ul>
-<li>push()向数组的末尾添加一个或更多元素，并返回新的长度。</li>
-</ul>
-<p>push()方法可把它的参数顺序添加到Array的尾部。它直接修改arrayObject,而不是创建一个新的数组</p>
-<pre><code>案例：
-var arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>];
-console.<span class="built_in">log</span>(arr.push(<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>),arr);
-</code></pre><p>数组：</p>
-<p>一、</p>
-<ol>
-<li><p>sort()方法用于对数组的元素排序<br>参数可选，不选参数的话，按字母顺序排序，先字符串化，再按照字符编码排序。<br>参数必须是函数，比较函数,这个函数写在外面</p>
-<pre><code>案例：
-var arr=[<span class="number">10</span>,<span class="number">20</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">100</span>];
-console.<span class="built_in">log</span>(arr.sort());
-</code></pre></li>
-<li><p>比较函数：<br>function(a,b){return b-a || a-b}<br>ab代表数组两个任意数值。<br>return&gt;0的值 b在a的前面。<br>return&lt;0的值 a在b的前面。<br>return = 0?<br>简化一下：a-b输出从小到大排序，b-a输出从大到小排序。</p>
-<pre><code>案例：
-var arr=[<span class="number">10</span>,<span class="number">20</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">100</span>];
-<span class="function">function <span class="title">fn</span><span class="params">(a,b)</span></span>{
-     <span class="keyword">return</span> a-b;<span class="comment">//大于0，小于0，等于0的(有兼容问题)</span>
-    <span class="comment">// return b-a;</span>
-}
-console.<span class="built_in">log</span>(arr.sort(fn));
-</code></pre></li>
-<li><p>reverse()方法用于对数组元素逆向排序</p>
-<pre><code>案例：
-var arr=[<span class="number">10</span>,<span class="number">20</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">100</span>];
-console.<span class="built_in">log</span>(arr.reverse());
-</code></pre></li>
-</ol>
-<p>二、</p>
-<ol>
-<li><p>slice()该方法可从指定数组中返回选定的元素<br>slice(*starIndex,endIndex)<br>第一个参数可为负数,-1代表最后一个<br>可用于数组和字符串</p>
-<pre><code>案例：
-var arr=[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>];
-console.<span class="built_in">log</span>(arr.slice(<span class="number">2</span>,<span class="number">6</span>));
-</code></pre></li>
-<li><p>splice()用于对数组的删除，替换，插入，返回被删除的项<br>arr.splice(starIndex,deletCount,item…)<br>starIndex表示位置坐标<br>delet要删除的个数0的话，表示不删除<br>item表示要替换，插入的序列</p>
-<pre><code>案例：
-var arr=[<span class="number">0,1,2,3</span>,<span class="number">4,5,6,7</span>,8]<span class="comment">;</span>
-var arr2<span class="comment">;</span>
-arr2=arr.splice(2,1,'abc')<span class="comment">;</span>
-console.log(arr2,arr)<span class="comment">;</span>
-</code></pre></li>
-<li><p>forEach()</p>
-<pre><code>案例：
-var arr=[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>];
-arr.forEach(function(aa,bb,cc){
-    console.<span class="built_in">log</span>(aa,bb,cc);<span class="comment">//第三个参数代表数组本</span>
-    身，第二个参数代表下标，第一个参数代表下标对应的元素
-});
-</code></pre></li>
-</ol>
-  
+<pre><code>移动端<span class="tag">reset</span>表
+原谅宝宝的懒惰吧(这版权不属于自己)，让我做一个<span class="tag">clever</span> <span class="tag">lazy</span> <span class="tag">boy</span>! <span class="tag">HOHO</span>
+*<span class="rules">{
+    <span class="rule"><span class="attribute">-webkit-tap-highlight-color</span>:<span class="value"> transparent</span></span>;
+    <span class="rule"><span class="attribute">box-sizing</span>:<span class="value"> border-box</span></span>;
+    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;
+}</span>
+<span class="tag">div</span><span class="rules">{
+  <span class="rule"><span class="attribute">-webkit-tap-highlight-color</span>:<span class="value"> transparent</span></span>;
+  <span class="rule"><span class="attribute">user-select</span>:<span class="value"> none</span></span>;
+  <span class="rule"><span class="attribute">-webkit-user-select</span>:<span class="value"> none</span></span>;
+}</span>
+<span class="tag">html</span>,<span class="tag">body</span><span class="rules">{
+    <span class="comment">/*min-height: 1008px;*/</span>
+    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;
+    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>;
+    <span class="rule"><span class="attribute">overflow-x</span>:<span class="value"> hidden</span></span>;
+    <span class="rule"><span class="attribute">user-select</span>:<span class="value"> none</span></span>;
+    <span class="rule"><span class="attribute">-webkit-user-select</span>:<span class="value"> none</span></span>;
+    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#000</span></span></span>;
+    <span class="rule"><span class="attribute">font-family</span>:<span class="value"> <span class="string">'MicrosoftYaHei'</span>, <span class="string">'微软雅黑'</span>, <span class="string">'STHeitiSC'</span></span></span>;
+}</span>
+<span class="class">.fl</span><span class="rules">{<span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;}</span>
+<span class="class">.fr</span><span class="rules">{<span class="rule"><span class="attribute">float</span>:<span class="value"> right</span></span>;}</span>
+<span class="class">.clearfix</span><span class="rules">{
+    <span class="rule"><span class="attribute">zoom</span>:<span class="value"><span class="number">1</span></span></span>;
+}</span>
+<span class="class">.clearfix</span><span class="pseudo">:after</span><span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;
+    <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">''</span></span></span>;
+    <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;
+    <span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;
+    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">0</span></span></span>;
+}</span>
+<span class="tag">ul</span>,<span class="tag">ol</span>,<span class="tag">li</span><span class="rules">{<span class="rule"><span class="attribute">list-style-type</span>:<span class="value"> none</span></span>;}</span>
+<span class="tag">a</span><span class="rules">{<span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> none</span></span>;}</span>
+<span class="tag">img</span><span class="rules">{<span class="rule"><span class="attribute">border</span>:<span class="value"> none</span></span>;<span class="rule"><span class="attribute">outline</span>:<span class="value"> none</span></span>;}</span>
+<span class="tag">input</span><span class="rules">{<span class="rule"><span class="attribute">opacity</span>:<span class="value"> <span class="number">1</span></span></span>;<span class="rule"><span class="attribute">outline</span>:<span class="value"> none</span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value"> none</span></span>;<span class="rule"><span class="attribute">border</span>:<span class="value"> none</span></span>;<span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">30px</span></span></span>;<span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;}</span>
+</code></pre>  
 	</div>
 		<footer class="article-footer clearfix">
 
@@ -459,7 +422,7 @@ arr.forEach(function(aa,bb,cc){
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2015/12/19/字符串和数组的操作/" data-title="字符串和数组的操作 | TK-Person" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2016/04/09/reset浅谈/" data-title="reset浅谈 | TK-Person" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -468,19 +431,11 @@ arr.forEach(function(aa,bb,cc){
 	
 <nav class="article-nav clearfix">
  
- <div class="next" >
- <a href="/2015/12/19/Math和日期对象/" title="Math和日期对象">
-  <strong>NEXT:</strong><br/>
-  <span>
-  Math和日期对象</span>
-</a>
-</div>
-
 
 <div class="prev">
-<a href="/2015/12/07/CSS选择符命名/"  title="CSS选择符命名">
+<a href="/2016/03/14/php入门/"  title="php入门">
  <strong>PREVIOUS:</strong><br/> 
- <span>CSS选择符命名
+ <span>php入门
 </span>
 </a>
 </div>
@@ -489,7 +444,7 @@ arr.forEach(function(aa,bb,cc){
 
 
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2015/12/19/字符串和数组的操作/" data-title="字符串和数组的操作" data-url="http://yoursite.com/2015/12/19/字符串和数组的操作/"></div>
+	<div class="ds-thread" data-thread-key="2016/04/09/reset浅谈/" data-title="reset浅谈" data-url="http://yoursite.com/2016/04/09/reset浅谈/"></div>
 	<!-- 多说评论框 end -->
 </div>  
 
@@ -502,7 +457,7 @@ arr.forEach(function(aa,bb,cc){
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串和数组的操作"><span class="toc-number">1.</span> <span class="toc-text">字符串和数组的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串操作："><span class="toc-number">1.0.1.</span> <span class="toc-text">字符串操作：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组："><span class="toc-number">1.0.2.</span> <span class="toc-text">数组：</span></a></li></ol></li></ol></li></ol>
+  
   </div>
 
 <div id="asidepart">
