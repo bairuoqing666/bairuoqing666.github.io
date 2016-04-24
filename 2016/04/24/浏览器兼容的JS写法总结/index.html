@@ -1,0 +1,807 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>浏览器兼容的JS写法总结 | TK-Person</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="左手">
+    
+    <meta name="description" content="趁还没忘掉，赶快记录下来
+－、元素查找问题
+document.all[name](1)现有问题：Firefox不支持document.all[name](2)解决方法：使用getElementsByName(name)，getElementById(id)等来替代。
+
+集合类对象问题(1)现有问题：">
+    
+    
+    
+    
+    <link rel="alternate" href="/atom.xml## RSS address." title="TK-Person" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/pacman.png">
+    
+    
+    <link rel="apple-touch-icon" href="/img/fish_footer.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/fish_footer.jpg">
+    
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    
+    <!-- 标签云侵入样式 -->
+  <style>
+    .tagcloudlist {position:relative; height:300px;}
+    .tagcloudlist  a {position:absolute; top:0px; left:0px;  text-decoration:none; padding: 3px 6px; }
+    .tagcloudlist  a:hover {border: 1px solid #eee; background: #000; }
+    
+    .ac_results {
+            padding: 0px;
+            border: 1px solid black;
+            background-color: white;
+            overflow: hidden;
+            z-index: 99999;
+        }
+    .ac_results ul {
+        width: 100%;
+        list-style-position: outside;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .ac_results li {
+        margin: 0px;
+        padding: 2px 5px;
+        cursor: default;
+        display: block;
+        font: menu;
+        font-size: 12px;
+        line-height: 16px;
+        overflow: hidden;
+    }
+    .ac_loading {
+        background: #FFF;
+    }
+    .ac_odd {
+        background-color: #EEE;
+    }
+    .ac_over {
+        background-color: #AAA;
+        color: #FFF;
+    }
+
+  </style>
+
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/autocomplete.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/miaov.js"></script>
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/fish_font.jpg" alt="TK-Person" title="TK-Person"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="TK-Person">TK-Person</a></h1>
+				<h2 class="blog-motto">The key person</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/about">About Me</a></li>
+					
+					
+					<li> <a href="/atom.xml">RSS</a> </li>
+
+					<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+
+				<li>
+					
+					 <form id="searchform" class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+                    <label>Search</label>
+                    <input type="text" id="search" autocomplete="off" name="q" maxlength="20" placeholder="搜索" />
+               		 </form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/04/24/浏览器兼容的JS写法总结/" title="浏览器兼容的JS写法总结" itemprop="url">浏览器兼容的JS写法总结</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="左手">左手</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-04-24T08:17:40.000Z" itemprop="datePublished">2016-04-24</time>
+    更新日期:<time datetime="2016-04-24T08:30:44.000Z" itemprop="dateModified">2016-04-24</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#－、元素查找问题"><span class="toc-number">1.</span> <span class="toc-text">－、元素查找问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、DOM操作"><span class="toc-number">2.</span> <span class="toc-text">二、DOM操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、事件"><span class="toc-number">3.</span> <span class="toc-text">三、事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、语法"><span class="toc-number">4.</span> <span class="toc-text">四、语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、XML"><span class="toc-number">5.</span> <span class="toc-text">五、XML</span></a></li></ol>
+		</div>
+		
+		<p>趁还没忘掉，赶快记录下来</p>
+<h2 id="－、元素查找问题">－、元素查找问题</h2><ol>
+<li><p>document.all[name]<br>(1)现有问题：Firefox不支持document.all[name]<br>(2)解决方法：使用getElementsByName(name)，getElementById(id)等来替代。</p>
+</li>
+<li><p>集合类对象问题<br>(1)现有问题：IE中对许多集合类对象取用时可以用 ()，但在Firefox只能用[]。<br>   如：IE中可以使用document.forms(“formName”)来返回名字为”formName”的Form，但在Firefox却行不通。<br>(2)解决方法：使用[]，上例中可以改为document.forms[“formName”]</p>
+</li>
+<li><p>HTML元素的ID在JavaScript可见<br>(1)现有问题：IE中HTML元素中的ID可以作为document的下属对象变量名直接使用。在Firefox中不能。<br>(2)解决方法：使用getElementById(“idName”)代替idName作为对象变量使用。</p>
+</li>
+<li><p>eval(idName)取得对象<br>(1)现有问题：在IE中，利用eval(idName)可以取得ID为idName的HTML对象，在Firefox中不能。<br>(2)解决方法：用 getElementById(idName) 代替 eval(idName)。</p>
+</li>
+<li><p>变量名与某HTML对象ID相同<br>(1)现有问题：在Firefox中，因为对象ID不作为HTML对象的名称，所以可以使用与HTML对象id相同的变量名，IE中不能。<br>(2)解决方法：在声明变量时，一律加上var，以避免歧义，这样在IE中亦可正常运行。此外，最好不要取与HTML对象id相同的变量名，以减少错误。</p>
+<p>注：3、4和5都属于同一类的问题。</p>
+</li>
+<li><p>Frame<br>(1)现有问题：在IE中可以用window.top.frameId和window.top.frameName来得到该Frame所代表的Window，Firefox中只能用window.top.frameName。<br>(2)解决方法：将Frame的Id和Name设置成相同，使用window.top.frameName来访问Frame。</p>
+</li>
+</ol>
+<h2 id="二、DOM操作">二、DOM操作</h2><ol>
+<li><p>设置元素的文本内容。<br>(1)现有问题：IE使用innerText，而Firefox使用textContent来设置元素文本内容。<br>(2)解决方法：如果文本内容不包含”&lt;”和”&gt;”等特殊字符，可以使用innerHTML。否则，可以使用：</p>
+<pre><code><span class="keyword">var</span> child = elem.firstChild;
+    <span class="keyword">if</span> (child != <span class="keyword">null</span>) elem.removeChild(child);
+    elem.appendChild(<span class="built_in">document</span>.createTextNode(content));
+</code></pre></li>
+<li><p>parentElement，parent.children<br>(1)现有问题：IE可以使用parentElement获得父结点，parent.children得到结点的所有孩子结点。Firefox不支持。<br>(2)解决方法：使用parentNode和parent.childNodes。</p>
+</li>
+<li><p>对childNodes的解释。<br>(1)现有问题：IE和Firefox中对childNodes的解释不同，IE不会包含空白文本结点，而Firefox会包含。<br>(2)解决方法：使用childNodes过滤文本结点，如下：<br>   var children = elem.childNodes;</p>
+<pre><code><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; children.length; i++) {
+  <span class="keyword">if</span> (children[i].nodeType != <span class="number">3</span>) { <span class="comment">// 过滤文本结点</span>
+    <span class="comment">// ...</span>
+  }
+}
+</code></pre></li>
+<li><p>对document.getElementsByName的解释。<br>(1)现有问题：IE中getElementsByName只会检查<input>和<img>元素，而在Firefox下会检查所有元素。<br>(2)解决方法：不要使用getElementsByName检查除<input>和<img>之外的元素，如果要获得单个元素，尽量使用getElementById。</p>
+</li>
+<li><p>对document.getElementById的解释。<br>(1)现有问题：IE中getElementById不仅检查Id属性，也会检查Name属性，当Name属性匹配参数时也会返回该元素。而在Firefox中只会检查Id属性。<br>(2)解决方法：尽量保持Id和Name相同，不要让一个元素name属性和另一个元素的id属性相同。</p>
+</li>
+</ol>
+<h2 id="三、事件">三、事件</h2><ol>
+<li><p>event.x与event.y问题<br>(1)现有问题：在IE中，event对象有x,y 属性，Firefox中没有。<br>(2)解决方法：在Firefox中，与event.x 等效的是 event.pageX。可以使用：<br>   mX = event.x ? event.x : event.pageX;</p>
+</li>
+<li><p>window.event</p>
+<p>(1)现有问题：使用window.event无法在Firefox上运行</p>
+<p>(2)解决方法：</p>
+<pre><code> 原代码(可在IE中运行)：
+    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">name</span>=<span class="value">"someButton"</span> <span class="attribute">value</span>=<span class="value">"提交"</span> <span class="attribute">onclick</span>=<span class="value">"javascript:gotoSubmit()"</span>/&gt;</span>
+    ...
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">language</span>=<span class="value">"javascript"</span>&gt;</span><span class="javascript">
+        <span class="function"><span class="keyword">function</span> <span class="title">gotoSubmit</span>(<span class="params"></span>) </span>{
+            ...
+            alert(<span class="built_in">window</span>.event);    <span class="comment">// use window.event</span>
+            ...
+        }
+    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+
+新代码(可在IE和Firefox中运行)：
+    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">name</span>=<span class="value">"someButton"</span> <span class="attribute">value</span>=<span class="value">"提交"</span> <span class="attribute">onclick</span>=<span class="value">"javascript:gotoSubmit(event)"</span>/&gt;</span>
+    ...
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">language</span>=<span class="value">"javascript"</span>&gt;</span><span class="javascript">
+        <span class="function"><span class="keyword">function</span> <span class="title">gotoSubmit</span>(<span class="params">evt</span>) </span>{
+            evt = evt ? evt : (<span class="built_in">window</span>.event ? <span class="built_in">window</span>.event : <span class="literal">null</span>);
+            ...
+            alert(evt);             <span class="comment">// use evt</span>
+            ...
+        }
+    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre></li>
+<li><p>attachEvent和addEventListener</p>
+<p>(1)现有问题：IE中使用attachEvent来添加事件，Firefox中使用addEventListener。</p>
+<p>(2)解决方法：如下，注意事件参数的区别，一个是click，一个是onclick。</p>
+<pre><code><span class="keyword">if</span> (<span class="built_in">document</span>.attachEvent) <span class="built_in">document</span>.attachEvent(<span class="string">"click"</span>, clickHandler,<span class="literal">false</span>);
+<span class="keyword">else</span> <span class="built_in">document</span>.addEventListener(<span class="string">"onclick"</span>,clickHandler);
+</code></pre></li>
+</ol>
+<h2 id="四、语法">四、语法</h2><ol>
+<li><p>const<br>(1)现有问题：在IE中不能使用const关键字。如const constVar = 32;在IE中这是语法错误。<br>(2)解决方法：不使用const，以var代替。</p>
+</li>
+<li><p>多余的逗号<br>(1)现有问题：firefox中对象文字常量容许多余的逗号，在IE中不允许。下面语句在IE中非法。<br>   var obj = { ‘key’ : ‘aaa’, }<br>(2)解决方法：去掉多余逗号。</p>
+</li>
+</ol>
+<h2 id="五、XML">五、XML</h2><ol>
+<li><p>创建XMLHttpRequest</p>
+<p>(1)现有问题：Firefox使用XMLHttpRequest，IE使用ActiveXObject。</p>
+<p>(2)解决方法：</p>
+<pre><code><span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) {
+    req = <span class="keyword">new</span> XMLHttpRequest();
+} <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">window</span>.ActiveXObject) {
+    req = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);
+}
+</code></pre></li>
+<li><p>创建DOM</p>
+<p>(1)现有问题：Firefox和IE创建DOM的方式不同。</p>
+<p>(2)解决方法：</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">createXmlDom</span>(<span class="params"></span>) </span>{
+  <span class="keyword">var</span> oXmlDom;
+  <span class="keyword">if</span> (Window.ActiveXObject) { <span class="comment">// IE</span>
+    oXmlDom = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XmlDom"</span>);
+  } <span class="keyword">else</span> {  <span class="comment">// Firefox</span>
+    oXmlDom = <span class="built_in">document</span>.implementation.createDocument(<span class="string">""</span>, <span class="string">""</span>, <span class="literal">null</span>);
+  }
+}
+</code></pre></li>
+<li><p>加载XML</p>
+<p>(1)现有问题：如果要加载外部文件IE和Firefox都可以用:</p>
+<pre><code> oXmlDom.<span class="keyword">async</span>=<span class="keyword">false</span>;      <span class="comment">// 这在Firefox中是必须的</span>
+ oXmlDom.load(<span class="string">"test.xml"</span>);
+但是它们加载xml字符串的方式不一样，IE中直接可以使用
+oXmlDom.loadXML(<span class="string">"&lt;root&gt;&lt;child/&gt;&lt;/root&gt;"</span>)，
+而Firefox要使用DOMParser:
+   <span class="keyword">var</span> oParser = <span class="keyword">new</span> DOMParser();
+     <span class="keyword">var</span> oXmlDom = oParser.parseFromString(<span class="string">"&lt;root/&gt;"</span>, <span class="string">"text/xml"</span>);
+</code></pre><p>(2)解决方法：比较好的方法是给Firefox产生的XMLDom加上loadXML方法：</p>
+<pre><code><span class="keyword">if</span> (isFirefox) { <span class="comment">// 需要浏览器检测</span>
+  Document.prototype.loadXML = <span class="function"><span class="keyword">function</span><span class="params">(sXml)</span> </span>{
+    <span class="keyword">var</span> oParser = <span class="keyword">new</span> DOMParser();
+    <span class="keyword">var</span> oXmlDom = oParser.parseFromString(sXml, <span class="string">"text/xml"</span>);
+
+    <span class="keyword">while</span> (<span class="keyword">this</span>.firstChild) <span class="keyword">this</span>.removeChild(<span class="keyword">this</span>.firstChild);
+
+    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; oXmlDom.childNodes.length; i++) {
+      <span class="keyword">var</span> oNewNode = <span class="keyword">this</span>.importNode(oXmlDom.childNodes[i], <span class="literal">true</span>);
+      <span class="keyword">this</span>.appendChild(oNewNode);
+    }
+  }
+}
+</code></pre><p>   这样在IE和Firefox就可以调用loadXML方法了。</p>
+</li>
+<li><p>XPath支持</p>
+<p>(1)现有问题：IE中可以直接用XmlDOM的selectNodes来根据XPath表示式来选择结点，Firefox则比较复杂，需要使用XPathEvaluator。</p>
+<pre><code>IE:
+   <span class="keyword">var</span> lstNodes = oXmlDom.documentElement.selectNodes(<span class="string">"employee/name"</span>);
+   <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; lstNodes.length; i++) {
+     alert(lstNodes[i].firstChild.nodeValue);
+   }
+Firefox:
+     <span class="keyword">var</span> oEvaluator = <span class="keyword">new</span> XPathEvaluator();
+     <span class="keyword">var</span> oResult = oEvaluator.evaluate(<span class="string">"employee/name"</span>, oXmlDom.documentElement, <span class="literal">null</span>, XPathResult.ORDERED_NODE_ITERATOR_TYPE, <span class="literal">null</span>);
+     <span class="keyword">var</span> oElement = oResult.iterateNext();
+     <span class="keyword">while</span> (oElement) {
+       alert(oElement.firstChild.nodeValue);
+       oElement = oResult.iterateNext();
+     }
+</code></pre><p>(2)解决方法：比较好的方法给Firefox的Element添加selectNodes方法。</p>
+<pre><code> <span class="keyword">if</span> (isFirefox) { <span class="comment">// 需要浏览器检测</span>
+     Element.prototype.selectNodes = <span class="function"><span class="keyword">function</span>(<span class="params">sXPath</span>) </span>{
+     <span class="keyword">var</span> oEvaluator = <span class="keyword">new</span> XPathEvaluator();
+       <span class="keyword">var</span> oResult = oEvaluator.evaluate(sXPath, <span class="keyword">this</span>, <span class="literal">null</span>, XPathResult.ORDERED_NODE_ITERATOR_TYPE, <span class="literal">null</span>);
+
+       <span class="keyword">var</span> aNodes = <span class="keyword">new</span> <span class="built_in">Array</span>();
+
+       <span class="keyword">if</span> (oResult != <span class="literal">null</span>) {
+         <span class="keyword">var</span> oElement = oResult.iterateNext();
+         <span class="keyword">while</span> (oElement) {
+           aNodes.push(oElement);
+           oElement = oResult.iterateNext();
+         }
+       }
+       <span class="keyword">return</span> aNodes;
+    }
+   }
+这样在IE和Firefox中就都可以调用selectNodes方法了。
+</code></pre></li>
+<li><p>XSLT支持</p>
+<p>(1)现有问题：IE中可以使用XmlDOM的transferNode方法将其转换成html，而Firefox需要使用XSLTProcessor。</p>
+<pre><code>IE:
+      oXmlDom.load(<span class="string">"employee.xml"</span>);
+      oXslDom.load(<span class="string">"employee.xslt"</span>);
+      <span class="variable"><span class="keyword">var</span> sResult</span>=oXmlDom.transformNode(oXslDom);
+  Firefox:
+      <span class="variable"><span class="keyword">var</span> oProcessor</span> = new XSLTProcessor();
+      oProcessor.importStylesheet(oXslDom);
+      <span class="variable"><span class="keyword">var</span> oResultDom</span> = oProcessor.transformToDocument(oXmlDom);       
+      <span class="variable"><span class="keyword">var</span> oSerializer</span> = new XMLSerializer();
+      <span class="variable"><span class="keyword">var</span> sXml</span> = oSerializer.serializeToString(oResultDom, <span class="string">"text/xml"</span>);
+      alert(sXml);
+</code></pre><p>(2)解决方法：比较好的方法给Firefox的Node添加transferNode方法。</p>
+<pre><code><span class="keyword">if</span> (isFirefox) { <span class="comment">// 需要浏览器检测</span>
+  Node.prototype.transformNode = <span class="function"><span class="keyword">function</span><span class="params">(oXslDom)</span> </span>{
+  <span class="keyword">var</span> oProcessor = <span class="keyword">new</span> XSLTProcessor();
+    oProcessor.importStylesheet(oXslDom);
+    <span class="keyword">var</span> oResultDom = oProcessor.transformToDocument(oXmlDom);
+
+    <span class="keyword">var</span> oSerializer = <span class="keyword">new</span> XMLSerializer();
+    <span class="keyword">var</span> sXml = oSerializer.serializeToString(oResultDom, <span class="string">"text/xml"</span>);
+
+    <span class="keyword">return</span> sXml;
+  }
+}
+</code></pre><p>这样在IE和Firefox中就都可以调用transferNode方法了。</p>
+</li>
+</ol>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/04/24/浏览器兼容的JS写法总结/" data-title="浏览器兼容的JS写法总结 | TK-Person" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="prev">
+<a href="/2016/04/09/reset浅谈/"  title="reset浅谈">
+ <strong>PREVIOUS:</strong><br/> 
+ <span>reset浅谈
+</span>
+</a>
+</div>
+
+</nav>
+
+
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/04/24/浏览器兼容的JS写法总结/" data-title="浏览器兼容的JS写法总结" data-url="http://yoursite.com/2016/04/24/浏览器兼容的JS写法总结/"></div>
+	<!-- 多说评论框 end -->
+</div>  
+
+<script src="/js/snowstorm-min.js"></script>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"right","bdTop":"100"},"image":{"viewList":["weixin","qzone","tsina","tqq","renren"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["weixin","qzone","tsina","tqq","renren"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#－、元素查找问题"><span class="toc-number">1.</span> <span class="toc-text">－、元素查找问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、DOM操作"><span class="toc-number">2.</span> <span class="toc-text">二、DOM操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、事件"><span class="toc-number">3.</span> <span class="toc-text">三、事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、语法"><span class="toc-number">4.</span> <span class="toc-text">四、语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、XML"><span class="toc-number">5.</span> <span class="toc-text">五、XML</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  <div>
+<script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_wh.js"></script>
+</div>
+
+
+  <div class="music">
+<p class="asidetitle">Music</p>
+<div class="music_player clearfix">
+<script type="text/javascript" src="http://www.xiami.com/widget/player-single?uid=45521081&sid=381307&mode=js"></script>
+</div>
+</div>
+
+  
+
+  
+<div class="categorieslist">
+<p class="asidetitle">Recent Posts</p>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2016/04/24/浏览器兼容的JS写法总结/">浏览器兼容的JS写法总结</a>
+      </li>
+    
+      <li>
+        <a href="/2016/04/09/reset浅谈/">reset浅谈</a>
+      </li>
+    
+      <li>
+        <a href="/2016/03/14/php入门/">php入门</a>
+      </li>
+    
+      <li>
+        <a href="/2016/03/14/ajax的工作原理/">ajax的工作原理</a>
+      </li>
+    
+      <li>
+        <a href="/2016/03/09/jquery/">jquery</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">Archives</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">4</span></li></ul>
+  </div>
+
+
+  
+<div class="widget">
+  <p class="asidetitle">Recent Comments</p>
+    
+<ul class="entry ds-recent-comments" data-num-items="8" data-show-avatars="0" data-show-time="1" data-show-admin="0" data-excerpt-length="70"></ul>
+</div>
+
+
+  
+
+
+  <div class="linklist">
+<h3 rel="grow" class="grow asidetitle">Blogroll</h3>
+<ul class="entry">
+<li><a href="http://hanmingyang.github.io/">韩明洋</a></li>
+<li><a href="http://zy8232003.github.io/">张跃</a></li>
+<li><a href="http://gcsHaya.github.io/">张俊琪</a></li>
+<li><a href="http://jameblunt1973.github.io/" >张记文</a></li>
+<li><a href="http://running11.github.io/" >邝艳芝</a></li>
+<li><a href="http://zgmn.github.io/" >胡月</a></li>
+<li><a href="http://haomark.github.io/" >郝云鹏</a></li>
+<li><a href="http://luqiqi1225.github.io/">陆琦</a></li>
+<li><a href="http://chumengxing1121.github.io/">褚梦星</a></li>
+<li><a href="http://aoyi551083.github.io/">敖艺</a></li>
+<li><a href="http://zoeyzhou.github.io/">周叶</a></li>
+<li><a href="http://athenachu.github.io/">汪凌峰</a></li>
+<li><a href="http://sundyfuther.github.io/">陈晓佳</a></li>
+<li><a href="http://sh5054.github.io/">孙浩</a></li>
+<li><a href="http://quanquanxuan.github.io/">宣圆圆</a></li>
+<li><a href="http://baobeiaini.github.io/">王贝贝</a></li>
+<li><a href="http://crerich.github.io/">程华</a></li>
+<li><a href="http://tyl1002353363.github.io/">谭于磊</a></li>
+<li><a href="http://yamanai.github.io/">张明</a></li>
+<li><a href="http://lck297231489.github.io/">刘臣康</a></li>
+<li><a href="http://tavey.github.io/">王晓伟</a></li>
+<li><a href="http://weibo0909.github.io/">魏传波</a></li>
+<li><a href="http://wj1213180604.github.io/">王娟</a></li>
+<li><a href="http://tang0916tang.github.io/">张晓翠</a></li>
+<li><a href="http://zhuqy.github.io/">祝倩莹</a></li>
+<li><a href="http://quangege.github.io/">张涌泉</a></li>
+<li><a href="http://niexiaofei1988.github.io/">聂海锋</a></li>
+<li><a href="http://changxiangru.github.io/">常相如</a></li>
+<li><a href="http://xuyanchao.github.io/">许颜超</a></li>
+<li><a href="http://samguoqiang.github.io/">陈国强</a></li>
+<li><a href="http://www.jianshu.com/users/84b5ef6309d6/latest_articles">李士杰</a></li>
+</ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="左手">左手</a>
+		
+		</p>
+</div>
+</footer>
+    
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9723e4a6c94c2638d915c2747e92aef9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<div id="totop" style="position:fixed;bottom:50px;right:50px;cursor: pointer;">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+<script src="/js/scrolltop.js"></script>
+
+  </body>
+</html>
+
+
+<a href="https://github.com/Voidly"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
