@@ -4,17 +4,12 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>reset浅谈 | TK-Person</title>
+    <title>那年那兔那些事儿 | TK-Person</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="左手">
     
-    <meta name="description" content="谈谈实用reset
-
-
-最近尝试着结合cms来做套完整的网站。刚准备敲的时候发现自己没有一套完整的reset.css表。于是，要为自己整理一份属于自己的reset表。花了点时间推出了reset0.0.1。
-/*有默认margin以及padding的标签*/
-/*ul,ol,p,blockquote*">
+    <meta name="description" content="">
     
     
     
@@ -275,15 +270,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/04/09/reset浅谈/" title="reset浅谈" itemprop="url">reset浅谈</a>
+      <a href="/2017/06/20/那年那兔那些事儿/" title="那年那兔那些事儿" itemprop="url">那年那兔那些事儿</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="左手">左手</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-04-09T01:28:39.000Z" itemprop="datePublished">2016-04-09</time>
-    更新日期:<time datetime="2016-04-09T01:56:24.000Z" itemprop="dateModified">2016-04-09</time>
+    <time datetime="2017-06-20T03:11:49.000Z" itemprop="datePublished">2017-06-20</time>
+    更新日期:<time datetime="2017-06-20T03:50:40.000Z" itemprop="dateModified">2017-06-20</time>
     
   </p>
 </header>
@@ -295,125 +290,8 @@
 		
 		</div>
 		
-		<p>谈谈实用reset</p>
-<p><img src="http://7xr8h6.com1.z0.glb.clouddn.com/me.JPG" width="300"></p>
-<ul>
-<li><p>最近尝试着结合cms来做套完整的网站。刚准备敲的时候发现自己没有一套完整的reset.css表。于是，要为自己整理一份属于自己的reset表。花了点时间推出了reset0.0.1。</p>
-<pre><code>/<span class="keyword">*</span>有默认margin以及padding的标签<span class="keyword">*</span>/
-/<span class="keyword">*</span>ul,ol,p,blockquote<span class="keyword">*</span>/
-
-/<span class="keyword">*</span>有默认margin的标签<span class="keyword">*</span>/
-/<span class="keyword">*</span>body,dl,dd,h1,h2,h3,h4,h5,h6,pre<span class="keyword">*</span>/
-
-/<span class="keyword">*</span>有默认padding的标签<span class="keyword">*</span>/
-/<span class="keyword">*</span>legend<span class="keyword">*</span>/
-
-/<span class="keyword">*</span>有默认margin,padding,border的标签<span class="keyword">*</span>/
-/<span class="keyword">*</span>fieldset<span class="keyword">*</span>/
-
-/<span class="keyword">*</span>有默认padding,border的标签<span class="keyword">*</span>/
-/<span class="keyword">*</span>input,textarea,button,th,td<span class="keyword">*</span>/
-
-/<span class="keyword">*</span>有默认border的标签<span class="keyword">*</span>/
-/<span class="keyword">*</span>table<span class="keyword">*</span>/
-
-/<span class="keyword">*</span>需知的一些标签默认属性<span class="keyword">*</span>/
-/<span class="keyword">*</span>    textarea -&gt; resize属性
- <span class="keyword">*</span>    改变光标  -&gt; cursor属性
- <span class="keyword">*</span>     table    -&gt; border-collapse
-<span class="keyword">*</span>/
-</code></pre></li>
-<li><p>看到这里你会不会有一种新天地的feel。我这里对各个标签分的很细跟大多数网上的reset表是完全不同的，这里也不去评论其他的reset表。推荐大家看下张鑫旭写的<a href="http://www.zhangxinxu.com/wordpress/2010/04/css-reset%E7%9A%84%E9%87%8D%E6%96%B0%E5%AE%A1%E8%A7%86-%E9%81%BF%E5%85%8D%E6%A0%B7%E5%BC%8F%E9%87%8D%E7%BD%AE/" target="_blank" rel="external">CSS reset的重新审视</a>。</p>
-</li>
-<li>作为一名前端工程师,我们常把细节、性能优化挂在嘴边。因此从这些角度出发，我更认为自己有必要写这样一份有助于我们工作的reset表。</li>
-<li><p>附表一份</p>
-<pre><code><span class="tag">PC</span>端<span class="tag">reset</span>表
-<span class="tag">body</span><span class="rules">{
-    <span class="rule"><span class="attribute">font</span>:<span class="value"> <span class="number">16px</span>/<span class="number">1.5</span> sans-serif arial <span class="string">"微软雅黑"</span></span></span>;
-    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;
-    }</span>
-
-    <span class="tag">p</span>,<span class="tag">blockquote</span><span class="rules">{
-        <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;
-        <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;
-    }</span>
-
-    <span class="tag">dl</span>,<span class="tag">dd</span>,<span class="tag">h1</span>,<span class="tag">h2</span>,<span class="tag">h3</span>,<span class="tag">h4</span>,<span class="tag">h5</span>,<span class="tag">h6</span>,<span class="tag">pre</span><span class="rules">{
-        <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;
-    }</span>
-
-    <span class="tag">legend</span><span class="rules">{
-        <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;
-    }</span>
-
-    <span class="tag">fieldset</span><span class="rules">{
-        <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;
-        <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;
-        <span class="rule"><span class="attribute">border</span>:<span class="value"> none</span></span>;
-    }</span>
-
-    <span class="tag">a</span><span class="rules">{
-        <span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> none</span></span>;
-    }</span>
-    <span class="tag">ul</span>,<span class="tag">ol</span><span class="rules">{
-        <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;
-        <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;
-        <span class="rule"><span class="attribute">list-style</span>:<span class="value"> none</span></span>;
-    }</span>
-
-    <span class="comment">/*清除浮动通用方法*/</span>
-    <span class="class">.clearfix</span><span class="rules">{
-        <span class="rule"><span class="attribute">zoom</span>:<span class="value"><span class="number">1</span></span></span>;
-    }</span>
-    <span class="class">.clearfix</span><span class="pseudo">:after</span><span class="rules">{
-        <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;
-        <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">''</span></span></span>;
-        <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;
-        <span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;
-        <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">0</span></span></span>;
-    }</span>
-</code></pre></li>
-</ul>
-<pre><code>移动端<span class="tag">reset</span>表
-原谅宝宝的懒惰吧(这版权不属于自己)，让我做一个<span class="tag">clever</span> <span class="tag">lazy</span> <span class="tag">boy</span>! <span class="tag">HOHO</span>
-*<span class="rules">{
-    <span class="rule"><span class="attribute">-webkit-tap-highlight-color</span>:<span class="value"> transparent</span></span>;
-    <span class="rule"><span class="attribute">box-sizing</span>:<span class="value"> border-box</span></span>;
-    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;
-    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;
-}</span>
-<span class="tag">div</span><span class="rules">{
-  <span class="rule"><span class="attribute">-webkit-tap-highlight-color</span>:<span class="value"> transparent</span></span>;
-  <span class="rule"><span class="attribute">user-select</span>:<span class="value"> none</span></span>;
-  <span class="rule"><span class="attribute">-webkit-user-select</span>:<span class="value"> none</span></span>;
-}</span>
-<span class="tag">html</span>,<span class="tag">body</span><span class="rules">{
-    <span class="comment">/*min-height: 1008px;*/</span>
-    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;
-    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>;
-    <span class="rule"><span class="attribute">overflow-x</span>:<span class="value"> hidden</span></span>;
-    <span class="rule"><span class="attribute">user-select</span>:<span class="value"> none</span></span>;
-    <span class="rule"><span class="attribute">-webkit-user-select</span>:<span class="value"> none</span></span>;
-    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#000</span></span></span>;
-    <span class="rule"><span class="attribute">font-family</span>:<span class="value"> <span class="string">'MicrosoftYaHei'</span>, <span class="string">'微软雅黑'</span>, <span class="string">'STHeitiSC'</span></span></span>;
-}</span>
-<span class="class">.fl</span><span class="rules">{<span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;}</span>
-<span class="class">.fr</span><span class="rules">{<span class="rule"><span class="attribute">float</span>:<span class="value"> right</span></span>;}</span>
-<span class="class">.clearfix</span><span class="rules">{
-    <span class="rule"><span class="attribute">zoom</span>:<span class="value"><span class="number">1</span></span></span>;
-}</span>
-<span class="class">.clearfix</span><span class="pseudo">:after</span><span class="rules">{
-    <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;
-    <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">''</span></span></span>;
-    <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;
-    <span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;
-    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">0</span></span></span>;
-}</span>
-<span class="tag">ul</span>,<span class="tag">ol</span>,<span class="tag">li</span><span class="rules">{<span class="rule"><span class="attribute">list-style-type</span>:<span class="value"> none</span></span>;}</span>
-<span class="tag">a</span><span class="rules">{<span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> none</span></span>;}</span>
-<span class="tag">img</span><span class="rules">{<span class="rule"><span class="attribute">border</span>:<span class="value"> none</span></span>;<span class="rule"><span class="attribute">outline</span>:<span class="value"> none</span></span>;}</span>
-<span class="tag">input</span><span class="rules">{<span class="rule"><span class="attribute">opacity</span>:<span class="value"> <span class="number">1</span></span></span>;<span class="rule"><span class="attribute">outline</span>:<span class="value"> none</span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value"> none</span></span>;<span class="rule"><span class="attribute">border</span>:<span class="value"> none</span></span>;<span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">30px</span></span></span>;<span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;}</span>
-</code></pre>  
+		<p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497938308264&di=6fa0bce196a3ef2318ccbbb1de40d5c1&imgtype=0&src=http%3A%2F%2Fa.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F30adcbef76094b36bc4f4f2ca7cc7cd98c109d15.jpg" title="那兔" alt="每一个兔子心里都有一个大国梦"><br><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497938308264&di=e021bdbe9f5dd44bef1bc2cc75374b19&imgtype=0&src=http%3A%2F%2Fcdn.duitang.com%2Fuploads%2Fitem%2F201508%2F26%2F20150826063140_NhiVz.png" title="那兔" alt="每一个兔子心里都有一个大国梦"><br><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497938308262&di=6a5c1385affbca7c13714158161fef9f&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201506%2F13%2F20150613113907_XtGn4.jpeg" title="那兔" alt="每一个兔子心里都有一个大国梦"><br><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497938308262&di=b68e678899b5a33e3136c0ca3456e21c&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201608%2F03%2F20160803103433_M4iV3.jpeg" title="那兔" alt="每一个兔子心里都有一个大国梦"><br><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497938877075&di=74e8e1238e0a1bf0e4af23258184e386&imgtype=0&src=http%3A%2F%2Ff1.diyitui.com%2Fe9%2F2f%2F23%2F79%2Fe7%2Ff5%2F15%2Fda%2Ffe%2F99%2F6e%2Ff0%2F1f%2F44%2F4b%2F24.jpg" title="那兔" alt="每一个兔子心里都有一个大国梦"><br><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497938969880&di=1fb7705002fe89a2a1330a12b0538efa&imgtype=0&src=http%3A%2F%2Fwanzao2.b0.upaiyun.com%2Fsystem%2Fpictures%2F35237478%2Foriginal%2F1461249157_500x303.gif" title="那兔" alt="每一个兔子心里都有一个大国梦"><br><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497939085690&di=a8092aa3b5028b5273d645115d1d1492&imgtype=0&src=http%3A%2F%2Fvpic.video.qq.com%2F54386015%2Fv0313jsjcnj_ori_3.jpg" title="那兔" alt="每一个兔子心里都有一个大国梦"><br><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497939044968&di=4ac6a8cfbeaca1961f21d066910a2ea1&imgtype=0&src=http%3A%2F%2Fa-ssl.duitang.com%2Fuploads%2Fitem%2F201601%2F09%2F20160109170659_nvaV5.jpeg" title="那兔" alt="每一个兔子心里都有一个大国梦"></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=28256636&auto=1&height=66"></iframe>  
 	</div>
 		<footer class="article-footer clearfix">
 
@@ -422,7 +300,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2016/04/09/reset浅谈/" data-title="reset浅谈 | TK-Person" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2017/06/20/那年那兔那些事儿/" data-title="那年那兔那些事儿 | TK-Person" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -431,19 +309,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="next" >
- <a href="/2016/04/24/浏览器兼容的JS写法总结/" title="浏览器兼容的JS写法总结">
-  <strong>NEXT:</strong><br/>
-  <span>
-  浏览器兼容的JS写法总结</span>
-</a>
-</div>
-
 
 <div class="prev">
-<a href="/2016/03/14/php入门/"  title="php入门">
+<a href="/2017/06/19/完美解决ie8以下不兼容H5问题/"  title="完美解决ie8以下不兼容H5问题">
  <strong>PREVIOUS:</strong><br/> 
- <span>php入门
+ <span>完美解决ie8以下不兼容H5问题
 </span>
 </a>
 </div>
@@ -452,7 +322,7 @@
 
 
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2016/04/09/reset浅谈/" data-title="reset浅谈" data-url="http://yoursite.com/2016/04/09/reset浅谈/"></div>
+	<div class="ds-thread" data-thread-key="2017/06/20/那年那兔那些事儿/" data-title="那年那兔那些事儿" data-url="http://yoursite.com/2017/06/20/那年那兔那些事儿/"></div>
 	<!-- 多说评论框 end -->
 </div>  
 
