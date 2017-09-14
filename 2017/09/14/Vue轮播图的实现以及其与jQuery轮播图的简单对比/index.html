@@ -1,0 +1,763 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Vue轮播图的实现以及其与jQuery轮播图的简单对比 | TK-Person</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="左手">
+    
+    <meta name="description" content="最近在学习Vue，然后做了一个轮播图，然后想起之前用jQuery做的轮播图，就打算进行一个对比。
+jQuery轮播图的实现代码和效果代码和效果
+Vue轮播图的代码实现步骤和效果Vue轮播图效果
+
+主要用到的技术
+  1.v-bind：属性绑定
+  2.v-for：列表渲染
+  3.v-show：条件">
+    
+    
+    
+    
+    <link rel="alternate" href="/atom.xml## RSS address." title="TK-Person" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/pacman.png">
+    
+    
+    <link rel="apple-touch-icon" href="/img/fish_footer.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/fish_footer.jpg">
+    
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    
+    <!-- 标签云侵入样式 -->
+  <style>
+    .tagcloudlist {position:relative; height:300px;}
+    .tagcloudlist  a {position:absolute; top:0px; left:0px;  text-decoration:none; padding: 3px 6px; }
+    .tagcloudlist  a:hover {border: 1px solid #eee; background: #000; }
+    
+    .ac_results {
+            padding: 0px;
+            border: 1px solid black;
+            background-color: white;
+            overflow: hidden;
+            z-index: 99999;
+        }
+    .ac_results ul {
+        width: 100%;
+        list-style-position: outside;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .ac_results li {
+        margin: 0px;
+        padding: 2px 5px;
+        cursor: default;
+        display: block;
+        font: menu;
+        font-size: 12px;
+        line-height: 16px;
+        overflow: hidden;
+    }
+    .ac_loading {
+        background: #FFF;
+    }
+    .ac_odd {
+        background-color: #EEE;
+    }
+    .ac_over {
+        background-color: #AAA;
+        color: #FFF;
+    }
+
+  </style>
+
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/autocomplete.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/miaov.js"></script>
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/fish_font.jpg" alt="TK-Person" title="TK-Person"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="TK-Person">TK-Person</a></h1>
+				<h2 class="blog-motto">The key person</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/about">About Me</a></li>
+					
+					
+					<li> <a href="/atom.xml">RSS</a> </li>
+
+					<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+
+				<li>
+					
+					 <form id="searchform" class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+                    <label>Search</label>
+                    <input type="text" id="search" autocomplete="off" name="q" maxlength="20" placeholder="搜索" />
+               		 </form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/09/14/Vue轮播图的实现以及其与jQuery轮播图的简单对比/" title="Vue轮播图的实现以及其与jQuery轮播图的简单对比" itemprop="url">Vue轮播图的实现以及其与jQuery轮播图的简单对比</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="左手">左手</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2017-09-14T08:26:17.000Z" itemprop="datePublished">2017-09-14</time>
+    更新日期:<time datetime="2017-09-14T09:13:16.000Z" itemprop="dateModified">2017-09-14</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery轮播图的实现代码和效果"><span class="toc-number">1.</span> <span class="toc-text">jQuery轮播图的实现代码和效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue轮播图的代码实现步骤和效果"><span class="toc-number">2.</span> <span class="toc-text">Vue轮播图的代码实现步骤和效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#与jQuery轮播图对比"><span class="toc-number">3.</span> <span class="toc-text">与jQuery轮播图对比</span></a></li></ol>
+		</div>
+		
+		<p>最近在学习Vue，然后做了一个轮播图，然后想起之前用jQuery做的轮播图，就打算进行一个对比。</p>
+<h2 id="jQuery轮播图的实现代码和效果">jQuery轮播图的实现代码和效果</h2><p><a href="http://js.jirengu.com/fewivefema/1/edit?html,output" target="_blank" rel="external">代码和效果</a></p>
+<h2 id="Vue轮播图的代码实现步骤和效果">Vue轮播图的代码实现步骤和效果</h2><p><a href="http://js.jirengu.com/fevububice/2/edit?html,output" target="_blank" rel="external">Vue轮播图效果</a></p>
+<ul>
+<li><p>主要用到的技术</p>
+<p>  1.v-bind：属性绑定</p>
+<p>  2.v-for：列表渲染</p>
+<p>  3.v-show：条件渲染</p>
+<p>  4.class的绑定切换</p>
+<p>  5.created钩子</p>
+<p>  6.Vue过渡效果</p>
+</li>
+<li><p>步骤和对比</p>
+<p>  1.写好html和css</p>
+<p>  PS:这里和jQuery轮播图有所不同，因为Vue使用了列表渲染，所以只需要一个简单的结构的可以了</p>
+<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"carousel"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">a</span>&gt;</span><span class="tag">&lt;<span class="title">img</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"bullet"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>  Vue轮播图html结构</p>
+<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"window"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"pic"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"indexCt"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"pageIndex clearfix"</span>&gt;</span><span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>  jQuery轮播图html结构</p>
+<p>  2.初始化一个Vue实例，然后挂在父元素上去，并且设定数据为图片的数组，以及后面计数用的mark，mark的初始值为0（第一张图片）</p>
+<pre><code><span class="xml">new Vue(</span><span class="expression">{
+      <span class="variable">el</span>: '<span class="variable">.carousel</span>',
+      <span class="variable">data</span>: {
+          <span class="variable">mark</span>: 0,
+          <span class="variable">img</span>: ['<span class="variable">http</span>:/<span class="end-block">/upload-images.jianshu.io</span><span class="end-block">/upload</span>_<span class="variable">images</span>/3360875<span class="variable">-</span>5625658440<span class="variable">cb</span>542<span class="variable">d.png</span>?<span class="variable">imageMogr</span>2<span class="end-block">/auto-orient</span><span class="end-block">/strip</span>%7<span class="variable">CimageView</span>2/2<span class="end-block">/w</span>/1240',
+              '<span class="variable">http</span>:/<span class="end-block">/upload-images.jianshu.io</span><span class="end-block">/upload</span>_<span class="variable">images</span>/3360875<span class="variable">-b</span>70<span class="variable">e</span>9<span class="variable">d</span>81<span class="variable">d</span>26<span class="variable">e</span>2<span class="variable">a</span>27<span class="variable">.png</span>?<span class="variable">imageMogr</span>2<span class="end-block">/auto-orient</span><span class="end-block">/strip</span>%7<span class="variable">CimageView</span>2/2<span class="end-block">/w</span>/1240',
+              '<span class="variable">http</span>:/<span class="end-block">/upload-images.jianshu.io</span><span class="end-block">/upload</span>_<span class="variable">images</span>/3360875<span class="variable">-dc</span>724649454<span class="variable">c</span>2<span class="variable">ddc.png</span>?<span class="variable">imageMogr</span>2<span class="end-block">/auto-orient</span><span class="end-block">/strip</span>%7<span class="variable">CimageView</span>2/2<span class="end-block">/w</span>/1240',
+              '<span class="variable">http</span>:/<span class="end-block">/upload-images.jianshu.io</span><span class="end-block">/upload</span>_<span class="variable">images</span>/3360875<span class="variable">-d</span>2148<span class="variable">a</span>1<span class="variable">bb</span>7<span class="variable">ea</span>9<span class="variable">d</span>21<span class="variable">.png</span>?<span class="variable">imageMogr</span>2<span class="end-block">/auto-orient</span><span class="end-block">/strip</span>%7<span class="variable">CimageView</span>2/2<span class="end-block">/w</span>/1240'
+          ]
+      }</span><span class="xml">,</span>
+</code></pre><p>初始化Vue实例</p>
+<p>  3.分别在放置图片的li元素和放置选择标识的span元素中，使用v-for遍历数据中的img属性和它的长度，</p>
+<p>  PS：在这里要注意的是，使用v-for循环的时候最好加上:key=标识，用以对后续对轮播图进行选择的标识</p>
+<pre><code>&lt;li v-<span class="keyword">for</span>=<span class="string">'(image,index) in img'</span> <span class="symbol">:key=<span class="string">'index'</span>&gt;</span>
+    &lt;a&gt;&lt;img <span class="symbol">:src=<span class="string">"image"</span>&gt;&lt;/a&gt;</span>
+&lt;<span class="regexp">/li&gt;</span>
+</code></pre><p>  v-for列表渲染</p>
+<pre><code>&lt;div class=<span class="string">"bullet"</span>&gt;
+     &lt;span v-<span class="keyword">for</span>=<span class="string">'(item,index) in img.length'</span> <span class="symbol">:class=<span class="string">"{'active':index===mark}"</span></span> <span class="variable">@click</span>=<span class="string">'change(index)'</span> <span class="symbol">:key=<span class="string">'index'</span>&gt;&lt;/span&gt;</span>
+&lt;<span class="regexp">/div&gt;</span>
+</code></pre><p>   bullet渲染</p>
+<p>   4.使用v-bind的对img标签的src属性进行绑定，可以使用所写:属性</p>
+<pre><code>&lt;a&gt;&lt;img <span class="symbol">:src=<span class="string">"image"</span>&gt;&lt;/a&gt;</span>
+</code></pre><p>  使用v-bind绑定属性</p>
+<p>  这时候轮播的效果和html结构是这样的，他还不会动以及切换图片，并且最后一张图片在最上面（因为对li使用了position:absolute）</p>
+<p>  5.现在来编写一下运行的逻辑<br>首先，①当图片显示第几张的时候，下面的bullet的第几个就要标红，②并且点击相应的bullet可以切换到对应的图片;</p>
+<p>  ①这个可以使用Vue的class绑定进行条件渲染，当标识index和图片的标识mark相等时就标红，②的话可以用Vue的事件绑定v-on（我这里采用的是缩写@事件=’执行的函数’）对标识进行时间绑定</p>
+<pre><code>&lt;div class=<span class="string">"bullet"</span>&gt;
+         &lt;span v-<span class="keyword">for</span>=<span class="string">'(item,index) in img.length'</span> <span class="symbol">:class=<span class="string">"{'active':index===mark}"</span></span> <span class="variable">@click</span>=<span class="string">'change(index)'</span> <span class="symbol">:key=<span class="string">'index'</span>&gt;&lt;/span&gt;</span>
+&lt;<span class="regexp">/div&gt;</span>
+</code></pre><p>  ③在Vue实例中的methods中添加change方法，change的实现很简单，直接将实例中data属性中的mark变为index的数字即可</p>
+<pre><code><span class="string">methods:</span>{
+    change(i){
+        <span class="keyword">this</span>.mark=i
+    }
+}
+</code></pre><p>  change的实现</p>
+<p>  ④使用v-show对li元素中显示的图片进行条件渲染，方法是当图片标识的index与Vue实例中的mark相等时就显示该li元素</p>
+<pre><code>&lt;li v-<span class="keyword">for</span>=<span class="string">'(image,index) in img'</span> <span class="symbol">:key=<span class="string">'index'</span></span> v-show=<span class="string">'index===mark'</span>&gt;
+    &lt;a&gt;&lt;img <span class="symbol">:src=<span class="string">"image"</span>&gt;&lt;/a&gt;</span>
+&lt;<span class="regexp">/li&gt;</span>
+</code></pre><p>  这时候的Vue轮播图就已经实现了点击下面的bullet标识切换图片的效果了，并且bullet标识也会有相应的标红</p>
+<p>  6.但是，这时候的图片切换还没有平滑过渡的效果，我们可以使用Vue类名过渡方式对图片的切换添加过渡效果</p>
+<p>  <a href="https://cn.vuejs.org/v2/guide/transitions.html#过渡的类名" target="_blank" rel="external">vue的类名过渡</a></p>
+<p>  先要在需要过度的元素的父元素，也就是ul元素中添加一个name属性，作为过渡效果类名的标记</p>
+<pre><code><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"clearfix slide"</span> <span class="attribute">name</span>=<span class="value">'image'</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">v-for</span>=<span class="value">'(image,index) in img'</span> <span class="attribute">:key</span>=<span class="value">'index'</span> <span class="attribute">v-show</span>=<span class="value">'index===mark'</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">a</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">:src</span>=<span class="value">"image"</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+</code></pre><p>  然后在css中添加过渡效果的变化</p>
+<pre><code><span class="class">.image-enter-active</span> <span class="rules">{
+    <span class="rule"><span class="attribute">transform</span>:<span class="value"> <span class="function">translateX</span>(<span class="number">0</span>)</span></span>;
+    <span class="rule"><span class="attribute">transition</span>:<span class="value"> all <span class="number">1s</span> ease</span></span>;
+}</span>
+
+<span class="class">.image-leave-active</span> <span class="rules">{
+    <span class="rule"><span class="attribute">transform</span>:<span class="value"> <span class="function">translateX</span>(-<span class="number">100%</span>)</span></span>;
+    <span class="rule"><span class="attribute">transition</span>:<span class="value"> all <span class="number">1s</span> ease</span></span>;
+}</span>
+
+<span class="class">.image-enter</span> <span class="rules">{
+    <span class="rule"><span class="attribute">transform</span>:<span class="value"> <span class="function">translateX</span>(<span class="number">100%</span>)
+</span></span></span>}
+
+<span class="class">.image-leave</span> <span class="rules">{
+    <span class="rule"><span class="attribute">transform</span>:<span class="value"> <span class="function">translateX</span>(<span class="number">0</span>)
+</span></span></span>}
+</code></pre><p>  最后将使用Vue中的过渡组件，将ul元素改为transition-group，然后添加tag属性，并且tag=ul（不添加的话ul元素名称显示为span元素）</p>
+<pre><code><span class="tag">&lt;<span class="title">transition-group</span> <span class="attribute">tag</span>=<span class="value">'ul'</span> <span class="attribute">class</span>=<span class="value">"clearfix slide"</span> <span class="attribute">name</span>=<span class="value">'image'</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">v-for</span>=<span class="value">'(image,index) in img'</span> <span class="attribute">:key</span>=<span class="value">'index'</span> <span class="attribute">v-show</span>=<span class="value">'index===mark'</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">a</span>&gt;</span><span class="tag">&lt;<span class="title">img</span> <span class="attribute">:src</span>=<span class="value">"image"</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+     <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">transition-group</span>&gt;</span>
+</code></pre><p>   这时候的Vue轮播图已经有平滑过渡的效果了</p>
+<p>  7.最后，我们在methods中添加一个自动切换的函数，然后在created钩子函数中执行即可</p>
+<pre><code>autoPlay() {
+   <span class="keyword">this</span>.mark++
+       <span class="keyword">if</span> (<span class="keyword">this</span>.mark === <span class="number">4</span>) {
+           <span class="keyword">this</span>.mark = <span class="number">0</span>
+           <span class="keyword">return</span>
+       }
+},
+play() {
+    setInterval(<span class="keyword">this</span>.autoPlay, <span class="number">3000</span>)
+}
+</code></pre><p>   定时切换</p>
+<pre><code><span class="function"><span class="title">created</span><span class="params">()</span>{
+  <span class="title">this</span>.<span class="title">play</span><span class="params">()</span>
+},</span>
+</code></pre><p>  created钩子函数</p>
+<h2 id="与jQuery轮播图对比">与jQuery轮播图对比</h2><p>  1.代码量：明显Vue代码量更少</p>
+<p>  2.直观性：Vue更直观且实现更为简单</p>
+</li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2017/09/14/Vue轮播图的实现以及其与jQuery轮播图的简单对比/" data-title="Vue轮播图的实现以及其与jQuery轮播图的简单对比 | TK-Person" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="prev">
+<a href="/2017/06/20/那年那兔那些事儿/"  title="那年那兔那些事儿">
+ <strong>PREVIOUS:</strong><br/> 
+ <span>那年那兔那些事儿
+</span>
+</a>
+</div>
+
+</nav>
+
+
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2017/09/14/Vue轮播图的实现以及其与jQuery轮播图的简单对比/" data-title="Vue轮播图的实现以及其与jQuery轮播图的简单对比" data-url="http://yoursite.com/2017/09/14/Vue轮播图的实现以及其与jQuery轮播图的简单对比/"></div>
+	<!-- 多说评论框 end -->
+</div>  
+
+<script src="/js/snowstorm-min.js"></script>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"right","bdTop":"100"},"image":{"viewList":["weixin","qzone","tsina","tqq","renren"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["weixin","qzone","tsina","tqq","renren"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery轮播图的实现代码和效果"><span class="toc-number">1.</span> <span class="toc-text">jQuery轮播图的实现代码和效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue轮播图的代码实现步骤和效果"><span class="toc-number">2.</span> <span class="toc-text">Vue轮播图的代码实现步骤和效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#与jQuery轮播图对比"><span class="toc-number">3.</span> <span class="toc-text">与jQuery轮播图对比</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  <div>
+<script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_wh.js"></script>
+</div>
+
+
+  <div class="music">
+<p class="asidetitle">Music</p>
+<div class="music_player clearfix">
+<script type="text/javascript" src="http://www.xiami.com/widget/player-single?uid=45521081&sid=381307&mode=js"></script>
+</div>
+</div>
+
+  
+
+  
+<div class="categorieslist">
+<p class="asidetitle">Recent Posts</p>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2017/09/14/Vue轮播图的实现以及其与jQuery轮播图的简单对比/">Vue轮播图的实现以及其与jQuery轮播图的简单对比</a>
+      </li>
+    
+      <li>
+        <a href="/2017/06/20/那年那兔那些事儿/">那年那兔那些事儿</a>
+      </li>
+    
+      <li>
+        <a href="/2017/06/19/完美解决ie8以下不兼容H5问题/">完美解决ie8以下不兼容H5问题</a>
+      </li>
+    
+      <li>
+        <a href="/2016/04/24/浏览器兼容的JS写法总结/">浏览器兼容的JS写法总结</a>
+      </li>
+    
+      <li>
+        <a href="/2016/04/09/reset浅谈/">reset浅谈</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">Archives</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">4</span></li></ul>
+  </div>
+
+
+  
+<div class="widget">
+  <p class="asidetitle">Recent Comments</p>
+    
+<ul class="entry ds-recent-comments" data-num-items="8" data-show-avatars="0" data-show-time="1" data-show-admin="0" data-excerpt-length="70"></ul>
+</div>
+
+
+  
+
+
+  <div class="linklist">
+<h3 rel="grow" class="grow asidetitle">Blogroll</h3>
+<ul class="entry">
+<li><a href="http://hanmingyang.github.io/">韩明洋</a></li>
+<li><a href="http://zy8232003.github.io/">张跃</a></li>
+<li><a href="http://gcsHaya.github.io/">张俊琪</a></li>
+<li><a href="http://jameblunt1973.github.io/" >张记文</a></li>
+<li><a href="http://running11.github.io/" >邝艳芝</a></li>
+<li><a href="http://zgmn.github.io/" >胡月</a></li>
+<li><a href="http://haomark.github.io/" >郝云鹏</a></li>
+<li><a href="http://luqiqi1225.github.io/">陆琦</a></li>
+<li><a href="http://chumengxing1121.github.io/">褚梦星</a></li>
+<li><a href="http://aoyi551083.github.io/">敖艺</a></li>
+<li><a href="http://zoeyzhou.github.io/">周叶</a></li>
+<li><a href="http://athenachu.github.io/">汪凌峰</a></li>
+<li><a href="http://sundyfuther.github.io/">陈晓佳</a></li>
+<li><a href="http://sh5054.github.io/">孙浩</a></li>
+<li><a href="http://quanquanxuan.github.io/">宣圆圆</a></li>
+<li><a href="http://baobeiaini.github.io/">王贝贝</a></li>
+<li><a href="http://crerich.github.io/">程华</a></li>
+<li><a href="http://tyl1002353363.github.io/">谭于磊</a></li>
+<li><a href="http://yamanai.github.io/">张明</a></li>
+<li><a href="http://lck297231489.github.io/">刘臣康</a></li>
+<li><a href="http://tavey.github.io/">王晓伟</a></li>
+<li><a href="http://weibo0909.github.io/">魏传波</a></li>
+<li><a href="http://wj1213180604.github.io/">王娟</a></li>
+<li><a href="http://tang0916tang.github.io/">张晓翠</a></li>
+<li><a href="http://zhuqy.github.io/">祝倩莹</a></li>
+<li><a href="http://quangege.github.io/">张涌泉</a></li>
+<li><a href="http://niexiaofei1988.github.io/">聂海锋</a></li>
+<li><a href="http://changxiangru.github.io/">常相如</a></li>
+<li><a href="http://xuyanchao.github.io/">许颜超</a></li>
+<li><a href="http://samguoqiang.github.io/">陈国强</a></li>
+<li><a href="http://www.jianshu.com/users/84b5ef6309d6/latest_articles">李士杰</a></li>
+</ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2017 
+		
+		<a href="http://yoursite.com" target="_blank" title="左手">左手</a>
+		
+		</p>
+</div>
+</footer>
+    
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9723e4a6c94c2638d915c2747e92aef9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<div id="totop" style="position:fixed;bottom:50px;right:50px;cursor: pointer;">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+<script src="/js/scrolltop.js"></script>
+
+  </body>
+</html>
+
+
+<a href="https://github.com/Voidly"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
