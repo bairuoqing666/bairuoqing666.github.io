@@ -4,21 +4,12 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>JS对象、原型 | TK-Person</title>
+    <title>干妹妹 | TK-Person</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="左手">
     
-    <meta name="description" content="太难理解了！！！！！
-对象：
-案例：var obj = {}; //对象
-var arr = [ ];//数组
-var isNone = null;//空
-var fn = function(){ //函数表达式
-    return 10;
-};
-
-对象是属性的集合,类比数组进行记忆，区别:对象给">
+    <meta name="description" content="干妹妹就是用来干妹妹">
     
     
     
@@ -279,15 +270,15 @@ var fn = function(){ //函数表达式
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/12/02/JS对象、原型/" title="JS对象、原型" itemprop="url">JS对象、原型</a>
+      <a href="/2017/09/15/干妹妹/" title="干妹妹" itemprop="url">干妹妹</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="左手">左手</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-12-02T14:23:41.000Z" itemprop="datePublished">2015-12-02</time>
-    更新日期:<time datetime="2015-12-03T01:15:58.000Z" itemprop="dateModified">2015-12-03</time>
+    <time datetime="2017-09-15T06:41:00.000Z" itemprop="datePublished">2017-09-15</time>
+    更新日期:<time datetime="2017-09-15T06:41:28.000Z" itemprop="dateModified">2017-09-15</time>
     
   </p>
 </header>
@@ -296,200 +287,11 @@ var fn = function(){ //函数表达式
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#对象："><span class="toc-number">1.</span> <span class="toc-text">对象：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS原型"><span class="toc-number">2.</span> <span class="toc-text">JS原型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#prototype_原型_当前函数的原型"><span class="toc-number">3.</span> <span class="toc-text">prototype 原型 当前函数的原型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原型链"><span class="toc-number">3.1.</span> <span class="toc-text">原型链</span></a></li></ol></li></ol>
+		
 		</div>
 		
-		<p>太难理解了！！！！！<br><img src="http://7xoqfs.com1.z0.glb.clouddn.com/TK11-10.jpg"></p>
-<h2 id="对象：">对象：</h2><ul>
-<li><p>案例：var obj = {}; //对象</p>
-<pre><code><span class="keyword">var</span> arr = [ ];<span class="comment">//数组</span>
-<span class="keyword">var</span> isNone = <span class="literal">null</span>;<span class="comment">//空</span>
-<span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{ <span class="comment">//函数表达式</span>
-    <span class="keyword">return</span> <span class="number">10</span>;
-};
-</code></pre></li>
-<li><p>对象是属性的集合,类比数组进行记忆，区别:对象给数组中的元素再取名字,对象没有length</p>
-<pre><code><span class="keyword">var</span> arr = [<span class="number">1</span>,’<span class="number">123</span>’,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{},<span class="literal">false</span>];<span class="comment">//数组</span>
-<span class="built_in">console</span>.log(arr[<span class="number">2</span>]);<span class="comment">//取值</span>
-
-<span class="keyword">var</span> obj = {            <span class="comment">//对象</span>
-    <span class="string">'num'</span>:<span class="number">1</span>,
-    <span class="string">'str'</span>:<span class="string">'123'</span>,
-    <span class="string">'fn'</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-    <span class="keyword">return</span><span class="string">'早上好'</span>;
-},
-    <span class="string">'on'</span>:<span class="literal">false</span>
-}
-<span class="built_in">console</span>.log(obj.num);
-</code></pre></li>
-<li><p>读取当前对象的属性 . 和 [ ‘ ’ ]</p>
-<pre><code><span class="keyword">var</span> link = <span class="built_in">document</span>.querySelectorAll(<span class="string">'a'</span>);
-<span class="keyword">var</span> text = <span class="built_in">document</span>.querySelectorAll(<span class="string">'input'</span>);
-
-<span class="built_in">console</span>.log(link[<span class="number">0</span>][<span class="string">'title'</span>]) <span class="comment">//html元素</span>
-
-link[<span class="number">0</span>].style.borderTop = <span class="string">'1px red solid'</span>;
-link[<span class="number">0</span>].style[<span class="string">'border-top'</span>] = <span class="string">'1px red solid'</span>;
-
-<span class="function"><span class="keyword">function</span> <span class="title">change</span>(<span class="params">ele,样式名称,样式值</span>)</span>{
-
-    <span class="keyword">var</span> ele =<span class="built_in">document</span>.querySelector(ele);
-    ele.style[样式名称] =  样式值;
-}
-
-change(<span class="string">'#box'</span>,<span class="string">'border-top'</span>,<span class="string">'1px red solid’);</span>
-</code></pre></li>
-</ul>
-<ol>
-<li>for in 遍历对象属性语句，枚举语句；查看对像所具有的全部属性；对象循环用for in</li>
-<li><p>for in 不要对数组循环，why?因为for in的顺序不是固定的</p>
-<pre><code><span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> obj){
-    <span class="built_in">console</span>.log(i);
-    <span class="built_in">document</span>.write(‘属性名：’+i+<span class="string">'属性值：'</span>+obj[i]
-    +<span class="string">'&lt;br/&gt;'</span>);<span class="comment">//可以在HTML里面显示</span>
-}
-
-<span class="comment">//obj被所查寻对象替代</span>
-</code></pre></li>
-</ol>
-<h2 id="JS原型">JS原型</h2><ul>
-<li>instanceof 判断数据类型 针对Function ,Object ,Array ,new Number() ,new String(), new Boolean()</li>
-</ul>
-<ol>
-<li><p>数组和对象的关系？<br>数组是对象的子集，对象包含数组。</p>
-<pre><code><span class="keyword">var</span> fn3 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-<span class="keyword">var</span> a =<span class="number">10</span>;
-<span class="keyword">var</span> b = <span class="number">20</span>;
-}
-<span class="keyword">var</span> arr =[‘<span class="number">123</span>’，<span class="number">2</span>，<span class="number">3</span>，<span class="number">4</span>];
-原理<span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();
-
-<span class="built_in">console</span>.log(arr <span class="keyword">instanceof</span> <span class="built_in">Object</span>);
-</code></pre></li>
-<li><p>函数和对象的关系？<br>函数不是对象，对象都是函数。<br>鸡与蛋的关系。</p>
-<pre><code><span class="keyword">var</span> fn2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-<span class="keyword">var</span> a =<span class="number">10</span>;
-<span class="keyword">var</span> b=<span class="number">20</span>;
-<span class="keyword">return</span> a+b;
-}
-原理<span class="keyword">var</span> str = <span class="keyword">new</span> <span class="built_in">String</span>(‘<span class="number">123</span>’);
-原理<span class="keyword">var</span> num = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">123</span>);
-
-<span class="built_in">console</span>.log(<span class="keyword">typeof</span> fn2);
-<span class="built_in">console</span>.log(str <span class="keyword">instanceof</span> <span class="built_in">String</span>)
-</code></pre></li>
-</ol>
-<h2 id="prototype_原型_当前函数的原型">prototype 原型 当前函数的原型</h2><ol>
-<li><strong>proto</strong>指向创建当前对象的函数的prototype,它前面有两个下划线后面有两个下划线。</li>
-<li>所有的函数都有prototype属性，该属性是一个对象。</li>
-<li>所有的对象都有一个<strong>proto</strong>属性,该属性前面有两个下划线后面有两个下划线<br>，该属性也是一个对象。</li>
-<li><p>假如这个函数没有任何属性的话，prototype对象 默认有个constructor属性。</p>
-<pre><code>事例：function <span class="keyword">fn</span>(){
-    <span class="keyword">fn</span>.prototype.name = ‘liuhai’;
-    <span class="keyword">fn</span>.prototype.age =<span class="number">28</span>;
-    <span class="keyword">fn</span>.prototype.sex =‘boy’;
-    console.log(<span class="keyword">fn</span>.prototype);
-}
-
-<span class="keyword">fn</span>();
-
-function <span class="keyword">fn</span>(){
-    <span class="regexp">//</span> console.log(<span class="keyword">fn</span>.prototype.constructor);
-    <span class="keyword">fn</span>.prototype.name = <span class="string">'haoren'</span>;
-    <span class="keyword">fn</span>.prototype.age = <span class="number">4</span>;
-    <span class="keyword">fn</span>.prototype.star = function(){
-        console.log(<span class="string">'123'</span>);
-        <span class="regexp">//this</span>.name=<span class="string">'奥特曼'</span>；
-    }
-}
-var fn2 = new <span class="keyword">fn</span>();<span class="regexp">//fn</span>2为子类，继承父类<span class="keyword">fn</span>的一些属
-性
-console.log(fn2);
-</code></pre></li>
-</ol>
-<ul>
-<li>从fn方法里面new出一个实例</li>
-<li>生成对象</li>
-</ul>
-<ol>
-<li><p>值类型：可以直接引用</p>
-<pre><code><span class="variable"><span class="keyword">var</span> str</span> = ‘<span class="number">123</span>’;
-<span class="variable"><span class="keyword">var</span> num</span> = <span class="number">123</span>;
-<span class="variable"><span class="keyword">var</span> isReady</span> = <span class="literal">true</span>;
-</code></pre></li>
-<li><p>引用类型：不可以直接引用</p>
-<pre><code>var arr = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];
-</code></pre></li>
-</ol>
-<ul>
-<li><p>简化：var arr2 =[1,2,3,4];</p>
-<pre><code>  原理：var arr2 = <span class="keyword">new</span> Array();
-arr2[<span class="number">0</span>]=<span class="number">1</span>;
-arr2[<span class="number">1</span>]=<span class="number">2</span>;
-arr2[<span class="number">2</span>]=<span class="number">3</span>;
-arr2[<span class="number">3</span>]=<span class="number">4</span>;
-console.<span class="built_in">log</span>(Arrgy.prototype);
-</code></pre></li>
-</ul>
-<h3 id="原型链">原型链</h3><ul>
-<li><p>在JavaScript中,一共有两种类型的值,原始值和对象值.每个对象都有一个内部属性[[prototype]],我们通常称之为原型.原型的值可以是一个对象,也可以是null.如果它的值是一个对象,则这个对象也一定有自己的原型.这样就形成了一条线性的链,我们称之为原型链.</p>
-<pre><code>事例：<span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{};
-<span class="keyword">var</span> obj = <span class="keyword">new</span> fn();
-fn.prototype.age=<span class="number">10</span>;
-fn.prototype.sex=<span class="string">'boy'</span>;
-fn,prototype.a=<span class="number">30</span>;
-obj.__proto__.a =‘好好’;<span class="comment">//这句话是在函数里面添加新的</span>
-内容，如过原内容里面有a，它会替代原有内容
-
-<span class="built_in">console</span>.log(fn.prototype);
-</code></pre></li>
-<li><p>hasOwnproperty  查看私有属性</p>
-<pre><code>案例：<span class="function"><span class="title">hasOwnproperty</span><span class="params">(<span class="string">""</span>)</span></span>
-</code></pre></li>
-</ul>
-<p>1、 在全局作用域下面调用this，this指向global，也就是window。<br>       函数声明 匿名函数 函数表达式在全局中调用 this指向window。</p>
-<pre><code>* 事例：(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-      <span class="built_in">console</span>.log(<span class="keyword">this</span>);
-      <span class="keyword">this</span>.x=<span class="number">10</span>;
-      <span class="keyword">this</span>.y=<span class="number">20</span>;
-      })()
-      <span class="built_in">console</span>.log(<span class="keyword">this</span>);
-
-     <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>{
-      <span class="built_in">console</span>.log(<span class="keyword">this</span>);
-      <span class="keyword">this</span>.x=<span class="number">10</span>;
-      <span class="keyword">this</span>.y=<span class="number">20</span>;
-      <span class="keyword">return</span> <span class="keyword">this</span>.x+<span class="keyword">this</span>.y;
-      }
-      add();
-      <span class="keyword">var</span> fn=<span class="keyword">new</span> add();
-      <span class="built_in">console</span>.log(<span class="keyword">this</span>);
-
-      <span class="keyword">var</span> obj=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-      <span class="built_in">console</span>.log(<span class="keyword">this</span>);
-      <span class="keyword">this</span>.x=<span class="number">10</span>;
-      <span class="keyword">this</span>.y=<span class="number">20</span>;
-      }
-      obj();
-      <span class="built_in">console</span>.log(<span class="keyword">this</span>);
-</code></pre><p>2、 new关键词构造的对象，this指向创建该对象的函数。</p>
-<pre><code>* 事例：<span class="keyword">var</span> obj=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-        <span class="built_in">console</span>.log(<span class="keyword">this</span>);
-        <span class="keyword">this</span>.x=<span class="number">10</span>;
-        <span class="keyword">this</span>.y=<span class="number">20</span>;
-        }
-        <span class="keyword">var</span> ne= <span class="keyword">new</span> obj;
-</code></pre><p>3、 this当前的函数为对象属性的时候，this指向该对象。</p>
-<pre><code>* 事例：<span class="keyword">var</span> obj = {
-         x:<span class="number">10</span>,
-         y:<span class="number">20</span>,
-        fn1:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
-        <span class="keyword">this</span>.x=<span class="number">20</span>;
-           }
-        }
-        obj.fn1();
-        congsole.log(obj.x);
-</code></pre>  
+		<p>干妹妹就是用来干妹妹</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 
@@ -498,7 +300,7 @@ obj.__proto__.a =‘好好’;<span class="comment">//这句话是在函数里�
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2015/12/02/JS对象、原型/" data-title="JS对象、原型 | TK-Person" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2017/09/15/干妹妹/" data-title="干妹妹 | TK-Person" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -507,19 +309,11 @@ obj.__proto__.a =‘好好’;<span class="comment">//这句话是在函数里�
 	
 <nav class="article-nav clearfix">
  
- <div class="next" >
- <a href="/2015/12/07/CSS选择符命名/" title="CSS选择符命名">
-  <strong>NEXT:</strong><br/>
-  <span>
-  CSS选择符命名</span>
-</a>
-</div>
-
 
 <div class="prev">
-<a href="/2015/11/28/世界青年说TK11/"  title="世界青年说TK11">
+<a href="/2017/09/14/Vue轮播图的实现以及其与jQuery轮播图的简单对比/"  title="Vue轮播图的实现以及其与jQuery轮播图的简单对比">
  <strong>PREVIOUS:</strong><br/> 
- <span>世界青年说TK11
+ <span>Vue轮播图的实现以及其与jQuery轮播图的简单对比
 </span>
 </a>
 </div>
@@ -528,7 +322,7 @@ obj.__proto__.a =‘好好’;<span class="comment">//这句话是在函数里�
 
 
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2015/12/02/JS对象、原型/" data-title="JS对象、原型" data-url="http://yoursite.com/2015/12/02/JS对象、原型/"></div>
+	<div class="ds-thread" data-thread-key="2017/09/15/干妹妹/" data-title="干妹妹" data-url="http://yoursite.com/2017/09/15/干妹妹/"></div>
 	<!-- 多说评论框 end -->
 </div>  
 
@@ -541,7 +335,7 @@ obj.__proto__.a =‘好好’;<span class="comment">//这句话是在函数里�
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#对象："><span class="toc-number">1.</span> <span class="toc-text">对象：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS原型"><span class="toc-number">2.</span> <span class="toc-text">JS原型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#prototype_原型_当前函数的原型"><span class="toc-number">3.</span> <span class="toc-text">prototype 原型 当前函数的原型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原型链"><span class="toc-number">3.1.</span> <span class="toc-text">原型链</span></a></li></ol></li></ol>
+  
   </div>
 
 <div id="asidepart">
